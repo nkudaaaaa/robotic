@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;700&display=swap');
+
+
+.about {
+    width: 100%;
+    height: 955px;
+    background: linear-gradient(0deg, #41EFFF -7.6%, #0065FD 100%);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-sign-about {
+    z-index: 100;
+    display: inline;
+    color: #FFF;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.50);
+    font-family: "Raleway";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#span-hashtags {
+    margin-top: 50px;
+}
+
+.container-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 86px 150px 0px 150px;
+}
+
+#span-education {
+    margin-top: 90px;
+}
+
+.line {
+    color: #FFF;
+    background-color: #FFF;
+    padding-bottom: 1px;
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.icons {
+    width: 112px;
+    z-index: 10;
+    opacity: 0.95;
+    position: absolute;
+}
+
+
+#minecr {
+    position: absolute;
+    top: 120%;
+    left: 50px;
+    width: 150px;
+}
+
+#wifi {
+    top: 115%;
+    left: 450px;
+    width: 150px;
+}
+
+#fire {
+    top: 133%;
+    left: 700px;
+}
+
+#gear {
+    top: 123%;
+    left: 1200px;
+    width: 150px;
+    animation: gear 4s infinite forwards;
+}
+
+@keyframes gear {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#puzzle {
+    top: 143%;
+    left: 1100px;
+}
+
+#hammer {
+    top: 145%;
+    left: 200px;
+}
+
+#figma {
+    top: 170%;
+    left: 900px;
+}
+
+#lightning {
+    top: 175%;
+    left: 550px;
+}
+
+#span-program {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.cards-directions {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.upper-line {
+    margin-bottom: 10px;
+    flex-direction: row;
+}
+
+.down-line {
+    flex-direction: row;
+
+}
+
+#span-directions {
+    margin-top: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.directions-item {
+    transform: scale(0.95);    
+    transition: .3s ease-in-out;
+}
+.directions-item:hover {
+    transform: scale(1);
+
+}
+
+.cards-education {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
