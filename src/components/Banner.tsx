@@ -1,5 +1,5 @@
-import rs from '../assets/lastRs.svg';
-import ls from '../assets/lastLs.svg';
+import rs from '../assets/Heads/lastRs.svg';
+import ls from '../assets/Heads/lastLs.svg';
 import robotL from '../assets/Heads/robot-banner-l.svg';
 import robotR from '../assets/Heads/robot-banner-r.svg';
 import 'react-dom'

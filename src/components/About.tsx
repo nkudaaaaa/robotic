@@ -1,24 +1,24 @@
 import "../css/About.css"
-import minecr from "../assets/minecraftLogo.svg"
-import wifi from "../assets/wifiLogo.svg"
-import gear from "../assets/gearLogo.svg"
-import fire from "../assets/fireLogo.svg"
-import puzzle from "../assets/puzzle.svg"
-import hummer from "../assets/hammer.svg"
-import figma from "../assets/figma.svg"
-import lightning from "../assets/lightningLogo.svg"
-import legoCard from "../assets/legoCard.svg"
-import htmlCard from "../assets/htmlCard.svg"
-import javaCard from "../assets/javaCard.svg"
-import pythonCard from "../assets/pythonCard.svg"
-import cplusCard from "../assets/cplusCard.svg"
-import cshCard from "../assets/cshLogo.svg"
-import unityCard from "../assets/unityCard.svg";
-import gamedev from "../assets/gamedev.svg"
-import modeling from "../assets/3D.svg"
-import websites from "../assets/websites.svg"
-import programming from "../assets/programming.svg"
-import robots from "../assets/robots.svg"
+import minecr from "../assets/about/minecraftLogo.svg"
+import wifi from "../assets/about/wifiLogo.svg"
+import gear from "../assets/about/gearLogo.svg"
+import fire from "../assets/about/fireLogo.svg"
+import puzzle from "../assets/about/puzzle.svg"
+import hummer from "../assets/about/hammer.svg"
+import figma from "../assets/about/figma.svg"
+import lightning from "../assets/about/lightningLogo.svg"
+import legoCard from "../assets/about/legoCard.svg"
+import htmlCard from "../assets/about/htmlCard.svg"
+import javaCard from "../assets/about/javaCard.svg"
+import pythonCard from "../assets/about/pythonCard.svg"
+import cplusCard from "../assets/about/cplusCard.svg"
+import cshCard from "../assets/about/cshLogo.svg"
+import unityCard from "../assets/about/unityCard.svg";
+import gamedev from "../assets/about/gamedev.svg"
+import modeling from "../assets/about/3D.svg"
+import websites from "../assets/about/websites.svg"
+import programming from "../assets/about/programming.svg"
+import robots from "../assets/about/robots.svg"
 
 
 
@@ -68,7 +68,7 @@ const About = () => {
                     </div>
                     <div className="upper-directions">
                         <img src={programming} alt="" />
-                        <img src={robots} alt="" />
+                        <img src={robots} alt="" id="robototechnics"/>
                     </div>
                 </div>
             </div>

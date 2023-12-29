@@ -1,6 +1,8 @@
 import NavBar from "./components/Navbar";
 import Banner from "./components/Banner";
 import About from "./components/About";
+import DirectionsMain from "./components/DirectionsMain";
+
 
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
       <NavBar />
       <Banner />
       <About />
-
+      <DirectionsMain />
 
     </>
   );

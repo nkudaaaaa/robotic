@@ -33,10 +33,10 @@ function NavBar() {
           <Nav className='mr-auto'>
           <Nav.Link href="#about">O нас</Nav.Link>
             <NavDropdown title="Направления" show={isMenuOpenCat} onToggle={toggleMenuCategories} className={isMenuOpenCat ? 'rotate custom-nav-dropdown ' : 'custom-nav-dropdown'}>
-              <NavDropdown.Item href="#programming">Программирование</NavDropdown.Item>
               <NavDropdown.Item href="#robototechnics">
                 Робототехника
               </NavDropdown.Item>
+              <NavDropdown.Item href="#programming">Программирование</NavDropdown.Item>
               <NavDropdown.Item href="#gamedev">Разработка игр</NavDropdown.Item>
             </NavDropdown>
           <NavDropdown title="Дополнительно" show={isMenuOpenAdd} onToggle={toggleMenuAdd} className={isMenuOpenAdd ? 'rotate' : ''} >

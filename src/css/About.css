@@ -3,9 +3,9 @@
 
 .about {
     width: 100%;
-    height: 955px;
     background: linear-gradient(0deg, #41EFFF -7.6%, #0065FD 100%);
     padding-top: 20px;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -56,24 +56,24 @@
 
 #minecr {
     position: absolute;
-    top: 120%;
+    top: 122%;
     left: 50px;
     width: 150px;
 }
 
 #wifi {
-    top: 115%;
+    top: 117%;
     left: 450px;
     width: 150px;
 }
 
 #fire {
-    top: 133%;
+    top: 135%;
     left: 700px;
 }
 
 #gear {
-    top: 123%;
+    top: 125%;
     left: 1200px;
     width: 150px;
     animation: gear 4s infinite forwards;
@@ -92,22 +92,22 @@
 }
 
 #puzzle {
-    top: 143%;
+    top: 145%;
     left: 1100px;
 }
 
 #hammer {
-    top: 145%;
+    top: 147%;
     left: 200px;
 }
 
 #figma {
-    top: 170%;
+    top: 172%;
     left: 900px;
 }
 
 #lightning {
-    top: 175%;
+    top: 178%;
     left: 550px;
 }
 

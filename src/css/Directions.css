@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.directions-main {
+    padding-top: 60px;
+    height: 1600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.directions-sign {
+    color: #000;
+    font-family: "Raleway";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 44px;
+}
+
+.robot-dir-main {
+    cursor: pointer;
+    transition: transform 0.25s;
+    transform-style: preserve-3d;
+}
+
+.robot-dir1 {
+    width: 1300px;
+    padding: 30px 83px 50px 83px;
+    height: 332px;
+    display: flex;
+    background-color: #41EFFF;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+
+.robot-dir-left {
+    display: flex;
+    flex-direction: column;
+}
+
+#robot-dir-left-sign {
+    font-size: 32px;
+    margin-bottom: 26px;
+}
+
+#robot-dir-left-thin {
+    line-height: 35px;
+    width: 23rem;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 43px;
+}
+
+.robot-dir-left-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.signup {
+    width: 14rem;
+    height: 71px;
+    border-radius: 20px;
+    background: #0054FF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23px;
+    outline: none;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.signup:hover {
+    box-shadow: 0 0 10px 5px rgba(105, 140, 211, 0.5); 
+}
+.signup:active {
+    box-shadow: 0 0 10px 10px rgba(105, 140, 211, 0.6); 
+}
+
+
+.more {
+    width: 15rem;
+    height: 71px;
+    border-radius: 20px;
+    outline: none;
+    border: 3px solid #FFF;
+    background: transparent;
+    color: #FFF;
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23px;
+    transition: .2s ease-in-out;
+}
+
+
+ .more:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+ }
+ .more:active {
+    box-shadow: 0 0 13px 13px rgba(255, 255, 255, 0.9);
+ }
+
+.robot-dir-mid {
+    display: flex;
+    flex-direction: column;
+}
+
+#robothead {
+    width: 65%;
+    position: relative;
+    top: -2px;
+    left: 40px;
+    animation: robothead 4s infinite;
+    transition: .2s ease-in-out;
+}
+
+@keyframes robothead {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#robotbody {
+    width: 100%;
+    position: relative;
+    top: -35px;
+    left: -8px;
+}
+
+.robot-dir-right {
+    display: flex;
+    flex-direction: column;
+}
+
+#robot-dir-right-age {
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 46px;
+}
+
+#robot-dir-right-ul {
+    font-size: 24px;
+    position: relative;
+    left: 13px;
+    margin-bottom: 15px;
+}
+
+ul {
+    color: #EBFF00;
+}
+
+li {
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+#li {
+    color: #000;
+}
+
+
+.robot-dir2 {
+    width: 1300px;
+    padding: 30px 23px 50px 23px;
+    height: 332px;
+    display: flex;
+    background-image: url("../assets/directions/bgrobots.svg");
+    background-size: cover;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+
+}
+
+.robot-dir-flipped {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+
+}
+
+#robot-dir-flipped-main {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#robot-dir-flipped-thin {
+    width: 970px;
+    text-align: center;
+    font-family: "Raleway";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin-bottom: 40px;
+}
+
+.close-icon {
+    position: absolute;
+    border: none;
+    background: transparent;
+    outline: none;
+    top: 0%;
+    right: 2%;
+}
+
+.robot-dir-flipped-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+}
+
+.flipped-btn {
+    border-radius: 20px;
+    border: 1px solid #000;
+    width: 610px;
+    height: 57px;
+    background: #FFF;
+    color: #000;
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    transition: all .3s ease-in-out;
+}
+
+.flipped-btn-active {
+    width: 610px;
+    background: #0054FF;
+    color: #fff;
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 1px solid #000;
+    height: 57px;
+    transition: all .3s ease-in-out;
+}
+
+#leftman {
+    position: absolute;
+    top: 17.95%;
+    left: 3%;
+}
+
+#rightman {
+    position: absolute;
+    top: 17.95%;
+    left: 85%;
+}
