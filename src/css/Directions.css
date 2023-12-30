@@ -8,6 +8,14 @@
     align-items: center;
 }
 
+.container-directions {
+    width: 100%;
+    padding: 0px 76px 0px 76px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .directions-sign {
     color: #000;
     font-family: "Raleway";
@@ -19,13 +27,13 @@
 }
 
 .robot-dir-main {
-    cursor: pointer;
     transition: transform 0.25s;
     transform-style: preserve-3d;
+    width: 100%;
 }
 
 .robot-dir1 {
-    width: 1300px;
+    width: 100%;
     padding: 30px 83px 50px 83px;
     height: 332px;
     display: flex;
@@ -82,10 +90,11 @@
 }
 
 .signup:hover {
-    box-shadow: 0 0 10px 5px rgba(105, 140, 211, 0.5); 
+    box-shadow: 0 0 10px 5px rgba(105, 140, 211, 0.5);
 }
+
 .signup:active {
-    box-shadow: 0 0 10px 10px rgba(105, 140, 211, 0.6); 
+    box-shadow: 0 0 10px 10px rgba(105, 140, 211, 0.6);
 }
 
 
@@ -106,25 +115,43 @@
 }
 
 
- .more:hover {
+.more:hover {
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
- }
- .more:active {
+}
+
+.more:active {
     box-shadow: 0 0 13px 13px rgba(255, 255, 255, 0.9);
- }
+}
 
 .robot-dir-mid {
     display: flex;
     flex-direction: column;
+    animation: robot 4s infinite;
+}
+
+@keyframes robot {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 #robothead {
     width: 65%;
     position: relative;
-    top: -2px;
-    left: 40px;
-    animation: robothead 4s infinite;
+    top: -5px;
+    left: 48px;
+    animation: robothead 5s infinite;
     transition: .2s ease-in-out;
+    z-index: 10;
 }
 
 @keyframes robothead {
@@ -132,20 +159,17 @@
         transform: rotate(0deg);
     }
 
-    25% {
-        transform: rotate(8deg);
-    }
 
     50% {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 
     75% {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 
     100% {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -187,13 +211,13 @@ li {
     margin-bottom: 15px;
 }
 
-#li {
+.li {
     color: #000;
 }
 
 
 .robot-dir2 {
-    width: 1300px;
+    width: 100%;
     padding: 30px 23px 50px 23px;
     height: 332px;
     display: flex;
@@ -211,7 +235,7 @@ li {
 .robot-dir-flipped {
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
 
 }
 
@@ -290,4 +314,342 @@ li {
     position: absolute;
     top: 17.95%;
     left: 85%;
+}
+
+.programming-gamedev, .oge-ege {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.program-card-main, .game-card-main, .ege-card-main, .oge-card-main{
+    transition: transform 0.25s;
+    transform-style: preserve-3d;
+    width: 48%;
+    margin-top: 26px;
+    left: 0%;
+}
+
+.program-front,  .game-front{
+    width: 100%;
+    padding: 50px 43px 50px 33px;
+    height: 300px;
+    display: flex;
+    background-color: #87FE78;
+    border-radius: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.program-front-left,.game-front-left, .ege-front-main, .oge-front-main{
+    width: 160px;
+}
+
+#computer-img {
+    position: relative;
+    left: -20%;
+    top: 14%;
+    animation: comp 5s linear infinite;
+}
+
+@keyframes comp {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.program-front-right,.game-front-right, .ege-front-right, .oge-front-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.program-front-btn,.game-front-btn, .ege-front-btn, .oge-front-btn  {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: relative;
+    left: -4%;
+}
+
+.smallw {
+    width: 190px;
+    height: 65px;
+    font-size: 20px;
+}
+
+.program-front-mainsign, .game-front-mainsign, .ege-front-mainsign, .oge-front-mainsign {
+    font-family: "Raleway";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.program-front-thinsign , .game-front-thinsign, .oge-front-thinsign, .ege-front-thinsign{
+    color: #000;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+.age {
+    position: absolute;
+    top: 8%;
+    right: 6%;
+}
+
+.program-back, .game-back  {
+    width: 100%;
+    background-image: url("../assets/directions/bgprogram.svg");
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    padding: 35px 70px 30px 38px;
+    height: 300px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: left;
+}
+
+.program-back-sign, .game-back-sign {
+    font-family: "Raleway";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 37px;
+}
+
+.game-front {
+    background-color: #FFDF6E;
+    border-radius: 30px;
+}
+
+
+#minecr-img {
+    position: relative;
+    left: -25%;
+    top: 17%;
+    animation: minecr 6s infinite linear;
+}
+
+@keyframes minecr {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(10px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.game-back {
+    background-image: url("../assets/directions/bggamedev.svg");
+    background-size: cover;
+    text-align: left;
+}
+
+.oge-front {
+    background-color: #98AEFE;
+    border-radius: 30px;
+}
+
+
+#pensil-img1 {
+    position: relative;
+    bottom: 40px;
+    left: -25%;
+    animation: pensil 4s infinite linear;
+}
+
+#pensil-img2 {
+    position: relative;
+    bottom: 40px;
+    left: -20%;
+    animation: pensil 4s infinite 1s ;
+}
+
+
+@keyframes pensil {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(11%) translateY(10%) rotateX(25deg);
+    }
+    50% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+}
+
+.ege-front, .oge-front {
+    width: 100%;
+    padding: 50px 43px 50px 33px;
+    height: 300px;
+    display: flex;
+    border-radius: 30px;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ege-front {
+    background-color: #FEC998;
+    border-radius: 30px;
+}
+
+.bigw {
+    margin-top: 5px;
+    width: 290px;
+    height: 75px;
+    font-size: 24px;
+}
+
+
+.holiday-dir-main {
+    position: relative;
+    width: 100%;
+    margin-top: 26px;
+}
+
+.holiday-card {
+    position: relative;
+    width: 100%;
+    padding: 30px 83px 50px 83px;
+    height: 332px;
+    display: flex;
+    background-color: #97E0FF;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.h-dir-left {
+    display: flex;
+    flex-direction: column;
+}
+
+#h-dir-left-sign {
+    font-size: 32px;
+    margin-bottom: 26px;
+}
+
+#h-dir-left-thin {
+    line-height: 35px;
+    width: 558px ;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 43px;
+}
+
+.h-dir-left-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.h-dir-right {
+    display: flex;
+    flex-direction: column;
+}
+
+#h-dir-right-age {
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 46px;
+}
+
+#holiday-img {
+    position: relative;
+    left: -35%;
+    top: -10%;
+    animation: holiday 6s infinite ease-in-out;
+}
+
+@keyframes holiday {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#present {
+    width: 120px;
+    position: relative;
+    left: 55%;
+    top: -40%;
+    animation: present 6s infinite;
+    transition: opacity 0s;
+}
+
+@keyframes present {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+        
+    }
+    5% {
+        transform: rotate(35deg);
+    }
+    10% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(25deg);
+    }
+
+    20% {
+        transform: rotate(0deg);
+    }
+    43% {
+        opacity: 1;
+        transform: rotate(30deg);
+  
+    }
+    55% {
+
+        transform: translateY(10px) translateY(300px) ;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }

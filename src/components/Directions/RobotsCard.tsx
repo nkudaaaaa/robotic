@@ -43,12 +43,12 @@ const RobotsCard = () => {
 
     return (
 
-            <motion.div className="robot-dir-main"
-                initial={false}
-                animate={{ rotateY: isFlipped ? 180 : 360 }}
-                transition={{ duration: 0.6, animationDirection: "normal" }}
-                onAnimationComplete={() => setIsAnimating(false)}
-            >
+        <motion.div className="robot-dir-main"
+            initial={false}
+            animate={{ rotateY: isFlipped ? 180 : 360 }}
+            transition={{ duration: 0.6, animationDirection: "normal" }}
+            onAnimationComplete={() => setIsAnimating(false)}
+        >
                 <div className="robot-dir1">
                     <div className="robot-dir-left">
                         <span className="directions-sign" id="robot-dir-left-sign">Робототехника</span>
@@ -66,9 +66,9 @@ const RobotsCard = () => {
                         <span className="directions-sign" id="robot-dir-right-age">4-16 лет</span>
                         <span className="directions-sign" id="robot-dir-right-ul">Работа с роботами:</span>
                         <ul>
-                            <li><span id="li">Развивает мышление</span> </li>
-                            <li><span id="li">Развивает мелкую моторику</span> </li>
-                            <li><span id="li">Помогает понять базу IT</span> </li>
+                            <li><span className="li">Развивает мышление</span> </li>
+                            <li><span className="li">Развивает мелкую моторику</span> </li>
+                            <li id="programming" ><span className="li" id="gamedev" >Помогает понять базу IT</span> </li>
                         </ul>
                     </div>
 
@@ -79,14 +79,14 @@ const RobotsCard = () => {
                         <span className="directions-sign" id="robot-dir-flipped-thin">{texts[textId]}</span>
                         <div className="robot-dir-flipped-buttons">
                             {threeBtnActive ? <img src={leftman} id="leftman" /> : ""}
-                            <button className={threeBtnActive ?  "flipped-btn-active" : "flipped-btn"} onClick={threeHandle}>3 месяца (Базовый курс)</button>
-                            {sixBtnActive ? <img src={rightman} alt="" id="rightman"/> : ""}
-                            <button className={sixBtnActive ?  "flipped-btn-active" : "flipped-btn"} onClick={sixHandle}>6 месяцев (Продвинутый курс)</button>
+                            <button className={threeBtnActive ? "flipped-btn-active" : "flipped-btn"} onClick={threeHandle}>3 месяца (Базовый курс)</button>
+                            {sixBtnActive ? <img src={rightman} alt="" id="rightman" /> : ""}
+                            <button className={sixBtnActive ? "flipped-btn-active" : "flipped-btn"} onClick={sixHandle}>6 месяцев (Продвинутый курс)</button>
                         </div>
                         <button onClick={handleFlip} className="close-icon"><img src={closeIcon} alt="" /></button>
                     </div>
                 </div>
-            </motion.div>
+        </motion.div>
     )
 }
 

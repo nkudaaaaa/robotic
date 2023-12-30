@@ -44,6 +44,9 @@ function NavBar() {
             <NavDropdown.Item href="#ege">
               Подготовка к ЕГЭ
             </NavDropdown.Item>
+            <NavDropdown.Item href="#holidays">
+              Проведение праздников
+            </NavDropdown.Item>
           </NavDropdown>
    
           <Nav.Link href="#contacts">Контакты</Nav.Link>
