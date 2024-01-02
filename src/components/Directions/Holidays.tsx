@@ -1,5 +1,4 @@
 import holidayImg from "../../assets/directions/holidays.svg"
-import present from "../../assets/directions/present.svg"
 
 const Holidays = () => {
 
@@ -17,7 +16,6 @@ const Holidays = () => {
                 <div className="h-dir-right" >
                     <span className="directions-sign" id="h-dir-right-age">5-17 лет</span>
                     <img src={holidayImg} id="holiday-img" />
-                    <img src={present} id="present" />
                 </div>
 
             </div>

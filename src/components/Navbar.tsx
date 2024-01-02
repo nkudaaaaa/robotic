@@ -27,7 +27,7 @@ function NavBar() {
 
     <Navbar collapseOnSelect expand="lg" className="navbar" bg='black'>
       <Container className='navbar-cont'>
-        <Navbar.Brand href="/">РОБОТИК</Navbar.Brand>
+        <Navbar.Brand href="/">Роботик</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav " className='ml-auto'>
           <Nav className='mr-auto'>

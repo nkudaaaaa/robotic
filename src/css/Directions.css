@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.container-directions {
+.container-main {
     width: 100%;
     padding: 0px 76px 0px 76px;
     display: flex;
@@ -591,7 +591,7 @@ li {
 #holiday-img {
     position: relative;
     left: -35%;
-    top: -10%;
+    top: -13%;
     animation: holiday 6s infinite ease-in-out;
 }
 
@@ -602,7 +602,7 @@ li {
 
     50% {
 
-        transform: translateY(10px);
+        transform: translateY(7px);
     }
 
     100% {
@@ -617,39 +617,4 @@ li {
     top: -40%;
     animation: present 6s infinite;
     transition: opacity 0s;
-}
-
-@keyframes present {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 1;
-        
-    }
-    5% {
-        transform: rotate(35deg);
-    }
-    10% {
-        transform: rotate(0deg);
-    }
-    15% {
-        transform: rotate(25deg);
-    }
-
-    20% {
-        transform: rotate(0deg);
-    }
-    43% {
-        opacity: 1;
-        transform: rotate(30deg);
-  
-    }
-    55% {
-
-        transform: translateY(10px) translateY(300px) ;
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
 }

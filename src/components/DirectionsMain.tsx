@@ -7,7 +7,7 @@ import '../css/Directions.css'
 const DirectionsMain = () => {
     return (
         <div className="directions-main">
-            <div className="container-directions">
+            <div className="container-main">
                 <span className="directions-sign" >Наши направления</span>
                 <RobotsCard />
                 <ProgramCard />
