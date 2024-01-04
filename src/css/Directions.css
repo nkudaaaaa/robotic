@@ -10,7 +10,7 @@
 
 .container-main {
     width: 100%;
-    padding: 0px 76px 0px 76px;
+    padding: 0px 120px 0px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +54,7 @@
 }
 
 #robot-dir-left-sign {
-    font-size: 32px;
+    font-size: 29px;
     margin-bottom: 26px;
 }
 
@@ -204,7 +204,7 @@ ul {
 
 li {
     font-family: "Raleway";
-    font-size: 24px;
+    font-size: 21px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -218,12 +218,13 @@ li {
 
 .robot-dir2 {
     width: 100%;
-    padding: 30px 23px 50px 23px;
+    padding: 30px 23px 50px 63px;
     height: 332px;
     display: flex;
     background-image: url("../assets/directions/bgrobots.svg");
     background-size: cover;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     border-radius: 30px;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
@@ -240,7 +241,7 @@ li {
 }
 
 #robot-dir-flipped-main {
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -275,7 +276,7 @@ li {
 .flipped-btn {
     border-radius: 20px;
     border: 1px solid #000;
-    width: 610px;
+    width: 550px;
     height: 57px;
     background: #FFF;
     color: #000;
@@ -289,7 +290,7 @@ li {
 }
 
 .flipped-btn-active {
-    width: 610px;
+    width: 560px;
     background: #0054FF;
     color: #fff;
     font-family: "Raleway";
@@ -306,13 +307,13 @@ li {
 
 #leftman {
     position: absolute;
-    top: 17.95%;
+    top: 17.90%;
     left: 3%;
 }
 
 #rightman {
     position: absolute;
-    top: 17.95%;
+    top: 17.90%;
     left: 85%;
 }
 
@@ -333,7 +334,7 @@ li {
 
 .program-front,  .game-front{
     width: 100%;
-    padding: 50px 43px 50px 33px;
+    padding: 50px 63px 50px 33px;
     height: 300px;
     display: flex;
     background-color: #87FE78;
@@ -380,7 +381,7 @@ li {
 .program-front-btn,.game-front-btn, .ege-front-btn, .oge-front-btn  {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 15px;
     position: relative;
     left: -4%;
 }
@@ -407,6 +408,7 @@ li {
     font-weight: 400;
     line-height: 30px;
     margin-bottom: 35px;
+    width: 336px;
 }
 
 .age {
@@ -431,10 +433,11 @@ li {
 
 .program-back-sign, .game-back-sign {
     font-family: "Raleway";
-    font-size: 19px;
+    font-size: 17px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 37px;
+
 }
 
 .game-front {
@@ -522,13 +525,6 @@ li {
 .ege-front {
     background-color: #FEC998;
     border-radius: 30px;
-}
-
-.bigw {
-    margin-top: 5px;
-    width: 290px;
-    height: 75px;
-    font-size: 24px;
 }
 
 

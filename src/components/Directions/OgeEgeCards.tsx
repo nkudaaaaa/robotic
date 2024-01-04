@@ -31,7 +31,7 @@ const OgeEgeCard = () => {
                         <span className="ege-front-mainsign">Подготовка к ЕГЭ</span>
                         <span className="ege-front-thinsign">Информатика, математика</span>
                         <div className="ege-front-btn">
-                            <button className="signup bigw">Записаться!</button>
+                            <button className="signup bigw" id="holidays">Записаться!</button>
                         </div>
 
                     </div>

@@ -62,15 +62,17 @@
 }
 
 .call-form {
-    height: 411px;
     border-radius: 30px;
     background: #FFF;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25), 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
     position: relative;
-    top: -50px;
-    padding: 40px 44px 40px 91px;
+    top: -100px;
+    padding: 40px 64px 40px 91px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
 }
 
 .call-form-text {
@@ -134,7 +136,7 @@ form {
     font-family: "Raleway";
     font-size: 24px;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     transition: .3s ease-in-out;
 }
 
@@ -149,4 +151,83 @@ form {
 .politicy-span {
     font-family: 'Raleway';
     font-size: 12px;
+    margin-top: 4px;
+    padding-left: 7px;
+}
+
+.icons-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding-right: 100px;
+    padding-top: 15px;
+}
+
+.contacts-div {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacts-text {
+    font-family: "Raleway";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 23px;
+    margin-bottom: 19px;
+}
+
+.social-icon {
+    width: 57px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+iframe {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.footer-info {
+    color: #FFF;
+    font-family: 'Raleway';
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    margin-top: 169px;
+    margin-bottom: 136px;
+    line-height: 23px;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.doc-text {
+    font-size: 20px;
+    font-weight: 400;
+}
+.documents {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-logo {
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+a {
+    text-decoration: none;
 }
