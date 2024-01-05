@@ -38,18 +38,18 @@ const ProgramCard = () => {
                         <img src={comp} alt="" id="computer-img" />
                     </div>
                     <div className="program-front-right">
-                        <span className="program-front-mainsign">Программирование</span>
-                        <span className="program-front-thinsign">Научим Вашего ребенка основам различных языков</span>
-                        <div className="program-front-btn">
+                        <span className="card-front-mainsign">Программирование</span>
+                        <span className="card-front-thinsign">Научим Вашего ребенка основам различных языков</span>
+                        <div className="card-front-btn">
                             <button className="signup smallw" id="ege">Записаться!</button>
                             <button className="more smallw" onClick={handleFlipPr} id="oge">Подробнее</button>
                         </div>
-                        <span className="program-front-mainsign age">12-18 лет</span>
+                        <span className="card-front-mainsign age">12-18 лет</span>
                     </div>
                 </div>
 
                 <div className="program-back">
-                    <span className="program-back-sign">В основе курса лежит изучение таких языков программирования как Java, C#,
+                    <span className="card-back-sign">В основе курса лежит изучение таких языков программирования как Java, C#,
                         HTML и CSS, основы вёрстки и FRONTEND-разработки. Курс рассчитан на 2 года, затрагивает разные направления
                         программирования и даёт ребёнку полное понимание того, чем ему интересно занимать в сфере IT.</span>
                     <img src={closeIcon} className="close-icon" onClick={handleFlipPr} />
@@ -67,18 +67,18 @@ const ProgramCard = () => {
                         <img src={minecr} alt="" id="minecr-img" />
                     </div>
                     <div className="game-front-right">
-                        <span className="game-front-mainsign">Разработка игр</span>
-                        <span className="game-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
-                        <div className="game-front-btn">
+                        <span className="card-front-mainsign">Разработка игр</span>
+                        <span className="card-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
+                        <div className="card-front-btn">
                             <button className="signup smallw">Записаться!</button>
                             <button className="more smallw" onClick={handleFlipGm}>Подробнее</button>
                         </div>
-                        <span className="game-front-mainsign age">12-18 лет</span>
+                        <span className="card-front-mainsign age">12-18 лет</span>
                     </div>
                 </div>
 
                 <div className="game-back">
-                    <span className="game-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если ваш ребёнок творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов с помощью игрового движка Unity.</span>
+                    <span className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если ваш ребёнок творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов с помощью игрового движка Unity.</span>
                     <img src={closeIcon} className="close-icon" onClick={handleFlipGm} />
                 </div>
             </motion.div>

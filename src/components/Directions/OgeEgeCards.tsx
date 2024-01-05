@@ -13,10 +13,10 @@ const OgeEgeCard = () => {
                         <img src={pensil} alt="" id="pensil-img1" />
                     </div>
                     <div className="oge-front-right">
-                        <span className="oge-front-mainsign">Подготовка к ОГЭ</span>
-                        <span className="oge-front-thinsign">Информатика, математика</span>
-                        <div className="oge-front-btn">
-                            <button className="signup bigw">Записаться!</button>
+                        <span className="card-front-mainsign">Подготовка к ОГЭ</span>
+                        <span className="card-front-thinsign">Информатика, математика</span>
+                        <div className="card-front-btn">
+                            <button className="signup">Записаться!</button>
                         </div>
                     </div>
                 </div>
@@ -28,10 +28,10 @@ const OgeEgeCard = () => {
                         <img src={pensil} id="pensil-img2" />
                     </div>
                     <div className="ege-front-right">
-                        <span className="ege-front-mainsign">Подготовка к ЕГЭ</span>
-                        <span className="ege-front-thinsign">Информатика, математика</span>
-                        <div className="ege-front-btn">
-                            <button className="signup bigw" id="holidays">Записаться!</button>
+                        <span className="card-front-mainsign">Подготовка к ЕГЭ</span>
+                        <span className="card-front-thinsign">Информатика, математика</span>
+                        <div className="card-front-btn">
+                            <button className="signup" id="holidays">Записаться!</button>
                         </div>
 
                     </div>

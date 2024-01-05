@@ -10,6 +10,7 @@
 
 .container-main {
     width: 100%;
+    max-width: 1540px;
     padding: 0px 120px 0px 120px;
     display: flex;
     flex-direction: column;
@@ -73,8 +74,8 @@
 }
 
 .signup {
-    width: 14rem;
-    height: 71px;
+    width: 13rem;
+    height: 67px;
     border-radius: 20px;
     background: #0054FF;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
@@ -99,8 +100,8 @@
 
 
 .more {
-    width: 15rem;
-    height: 71px;
+    width: 13rem;
+    height: 67px;
     border-radius: 20px;
     outline: none;
     border: 3px solid #FFF;
@@ -192,7 +193,7 @@
 }
 
 #robot-dir-right-ul {
-    font-size: 24px;
+    font-size: 22px;
     position: relative;
     left: 13px;
     margin-bottom: 15px;
@@ -204,7 +205,7 @@ ul {
 
 li {
     font-family: "Raleway";
-    font-size: 21px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -218,9 +219,8 @@ li {
 
 .robot-dir2 {
     width: 100%;
-    padding: 30px 23px 50px 63px;
+    padding: 30px 63px 50px 63px;
     height: 332px;
-    display: flex;
     background-image: url("../assets/directions/bgrobots.svg");
     background-size: cover;
     flex-direction: row;
@@ -247,7 +247,7 @@ li {
 }
 
 #robot-dir-flipped-thin {
-    width: 970px;
+    width: 880px;
     text-align: center;
     font-family: "Raleway";
     font-size: 20px;
@@ -269,14 +269,15 @@ li {
 .robot-dir-flipped-buttons {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    justify-content: space-between;
+    width: 100%;
 
 }
 
 .flipped-btn {
     border-radius: 20px;
     border: 1px solid #000;
-    width: 550px;
+    width: 47%;
     height: 57px;
     background: #FFF;
     color: #000;
@@ -290,7 +291,7 @@ li {
 }
 
 .flipped-btn-active {
-    width: 560px;
+    width: 47.7%;
     background: #0054FF;
     color: #fff;
     font-family: "Raleway";
@@ -307,14 +308,14 @@ li {
 
 #leftman {
     position: absolute;
-    top: 17.90%;
-    left: 3%;
+    top: 17.6%;
+    left: 2.5%;
 }
 
 #rightman {
     position: absolute;
-    top: 17.90%;
-    left: 85%;
+    top: 17.6%;
+    left: 82%;
 }
 
 .programming-gamedev, .oge-ege {
@@ -334,7 +335,7 @@ li {
 
 .program-front,  .game-front{
     width: 100%;
-    padding: 50px 63px 50px 33px;
+    padding: 50px 43px 50px 20px;
     height: 300px;
     display: flex;
     background-color: #87FE78;
@@ -348,12 +349,12 @@ li {
 }
 
 .program-front-left,.game-front-left, .ege-front-main, .oge-front-main{
-    width: 160px;
+    width: 120px;
 }
 
 #computer-img {
     position: relative;
-    left: -20%;
+    left: 0%;
     top: 14%;
     animation: comp 5s linear infinite;
 }
@@ -376,9 +377,11 @@ li {
 .program-front-right,.game-front-right, .ege-front-right, .oge-front-right {
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: -3%;
 }
 
-.program-front-btn,.game-front-btn, .ege-front-btn, .oge-front-btn  {
+.card-front-btn, .ege-front-btn, .oge-front-btn  {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -387,12 +390,12 @@ li {
 }
 
 .smallw {
-    width: 190px;
+    width: 90%;
     height: 65px;
     font-size: 20px;
 }
 
-.program-front-mainsign, .game-front-mainsign, .ege-front-mainsign, .oge-front-mainsign {
+.card-front-mainsign, .ege-front-mainsign, .oge-front-mainsign {
     font-family: "Raleway";
     font-size: 22px;
     font-style: normal;
@@ -401,7 +404,7 @@ li {
     margin-bottom: 20px;
 }
 
-.program-front-thinsign , .game-front-thinsign, .oge-front-thinsign, .ege-front-thinsign{
+.card-front-thinsign , .oge-front-thinsign, .ege-front-thinsign{
     color: #000;
     font-size: 19px;
     font-style: normal;
@@ -413,8 +416,8 @@ li {
 
 .age {
     position: absolute;
-    top: 8%;
-    right: 6%;
+    top: -8%;
+    right:-3%;
 }
 
 .program-back, .game-back  {
@@ -431,7 +434,7 @@ li {
     text-align: left;
 }
 
-.program-back-sign, .game-back-sign {
+.card-back-sign {
     font-family: "Raleway";
     font-size: 17px;
     font-style: normal;
@@ -483,12 +486,14 @@ li {
 #pensil-img1 {
     position: relative;
     bottom: 40px;
+    margin-right: 20px;
     left: -25%;
     animation: pensil 4s infinite linear;
 }
 
 #pensil-img2 {
     position: relative;
+    margin-right: 20px;
     bottom: 40px;
     left: -20%;
     animation: pensil 4s infinite 1s ;
@@ -513,12 +518,13 @@ li {
 
 .ege-front, .oge-front {
     width: 100%;
-    padding: 50px 43px 50px 33px;
+    padding: 50px 23px 50px 33px;
     height: 300px;
     display: flex;
     border-radius: 30px;
     flex-direction: row;
     align-items: center;
+    gap: 3%;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 

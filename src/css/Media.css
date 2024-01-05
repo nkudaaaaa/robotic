@@ -1,0 +1,63 @@
+body {
+    transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1240px) {
+    #robot-dir-flipped-thin {
+        font-size: 18px;
+        width: 865px;
+    }
+    li {
+        font-size: 19px;
+    }
+    .signup, .more {
+        width: 11rem;
+        font-size: 20px;
+    }
+    .program-front-left {
+        width: 200px;
+    }
+
+    .game-front-left {
+        width: 140px;
+    }
+
+    #computer-img {
+        width: 130px;
+        left: -10%;
+    }
+
+    #minecr-img {
+        width: 150px;
+    }
+
+    .card-front-mainsign {
+        font-size: 20px;
+    }
+
+    .card-front-thinsign {
+        font-size: 17px;
+        width: 95%;
+    }
+
+    .smallw {
+        width: 90%;
+        font-size: 18px;
+    }
+    #pensil-img1, #pensil-img2 {
+        width: 140px;
+    }
+
+    #h-dir-left-sign {
+        font-size: 30px;
+    }
+
+    #holiday-img {
+        width: 110%;
+        top: 3%;
+    }
+
+    .bigw {
+        width: 50%;
+    }
+}

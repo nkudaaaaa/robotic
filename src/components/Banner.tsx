@@ -25,6 +25,7 @@ const Banner = () => {
                         <ul className="list-inline">
                             <li><img src={rs} alt="" /></li>
                         </ul>
+
                     </div>
                 </div>
                 <div className="marquee2">
@@ -41,6 +42,8 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
+            <div className="container-main">
+
             <div className="down-banner">
                 <m.div className="banner-text" variants={leftAnimation} initial="hidden" animate="visible">
                     <span className='banner-text-bold'>в Краснодаре</span>
@@ -50,6 +53,7 @@ const Banner = () => {
                     <m.img src={robotL} id='robotL'/>
                     <m.img src={robotR} id='robotR' />
                 </m.div>
+            </div>
             </div>
 
 
