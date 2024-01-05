@@ -3,6 +3,7 @@ import { useState } from "react";
 import comp from "../../assets/directions/computer.svg"
 import closeIcon from "../../assets/directions/add.svg"
 import minecr from "../../assets/directions/minecr.svg"
+import ModalWindow from "../ModalWindow";
 
 const ProgramCard = () => {
 
@@ -10,6 +11,12 @@ const ProgramCard = () => {
     const [isAnimatingPr, setIsAnimatingPr] = useState<boolean>(false);
     const [isFlippedGm, setIsFlippedGm] = useState<boolean>(false);
     const [isAnimatingGm, setIsAnimatingGm] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    }
 
     function handleFlipPr() {
         if (!isAnimatingPr) {
@@ -24,6 +31,8 @@ const ProgramCard = () => {
             setIsAnimatingGm(!isAnimatingGm);
         }
     }
+
+
 
     return (
         <div className="programming-gamedev" >
@@ -41,7 +50,7 @@ const ProgramCard = () => {
                         <span className="card-front-mainsign">Программирование</span>
                         <span className="card-front-thinsign">Научим Вашего ребенка основам различных языков</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw" id="ege">Записаться!</button>
+                            <button className="signup smallw" id="ege" onClick={toggleModal}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipPr} id="oge">Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
@@ -70,7 +79,7 @@ const ProgramCard = () => {
                         <span className="card-front-mainsign">Разработка игр</span>
                         <span className="card-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw">Записаться!</button>
+                            <button className="signup smallw" onClick={toggleModal}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipGm}>Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
@@ -82,6 +91,7 @@ const ProgramCard = () => {
                     <img src={closeIcon} className="close-icon" onClick={handleFlipGm} />
                 </div>
             </motion.div>
+            {isModalOpen && <ModalWindow onClose={toggleModal} />}
         </div>
     )
 }

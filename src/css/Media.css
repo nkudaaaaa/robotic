@@ -1,6 +1,4 @@
-body {
-    transition: all .3s ease-in-out;
-}
+
 
 @media screen and (max-width: 1440px) and (min-width: 1240px) {
     #robot-dir-flipped-thin {

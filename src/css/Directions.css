@@ -27,6 +27,10 @@
     margin-bottom: 44px;
 }
 
+.robot-super-main {
+    width: 100%;
+}
+
 .robot-dir-main {
     transition: transform 0.25s;
     transform-style: preserve-3d;
@@ -619,4 +623,8 @@ li {
     top: -40%;
     animation: present 6s infinite;
     transition: opacity 0s;
+}
+
+.bigw {
+    width: 60%;
 }

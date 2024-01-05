@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import closeIcon from "../../assets/directions/add.svg"
 import leftman from "../../assets/directions/3monthman.svg"
 import rightman from "../../assets/directions/6monthman.svg"
+import ModalWindow from "../ModalWindow";
 
 const RobotsCard = () => {
 
@@ -14,6 +15,11 @@ const RobotsCard = () => {
     const [textId, setTextId] = useState<number>(0);
     const [threeBtnActive, setThreeBtnActive] = useState<boolean>(false);
     const [sixBtnActive, setSixBtnActive] = useState<boolean>(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    }
 
     const texts = ['Хотите научиться создавать и программировать своих собственных роботов? Тогда наши курсы по робототехнике идеально подойдут для вас! Наши занятия проводятся в небольших группах, а полный курс рассчитан на 9 месяцев.',
         'Ваш ребёнок хочет сделать первые шаги в робототехнике? Наш базовый курс познакомит его с основами, за 3 месяца мы изучим основы сборки и программирования, а также основные инструменты взаимодействия с роботами.',
@@ -42,19 +48,20 @@ const RobotsCard = () => {
     }
 
     return (
-
+            <div className="robot-super-main">
         <motion.div className="robot-dir-main"
             initial={false}
             animate={{ rotateY: isFlipped ? 180 : 360 }}
             transition={{ duration: 0.6, animationDirection: "normal" }}
             onAnimationComplete={() => setIsAnimating(false)}
         >
+
                 <div className="robot-dir1">
                     <div className="robot-dir-left">
                         <span className="directions-sign" id="robot-dir-left-sign">Робототехника</span>
                         <span className="directions-sign" id="robot-dir-left-thin">Научим Вашего ребенка работать с роботами</span>
                         <div className="robot-dir-left-buttons">
-                            <button className="signup">Записаться!</button>
+                            <button className="signup" onClick={toggleModal}>Записаться!</button>
                             <button className="more" onClick={handleFlip}>Подробнее</button>
                         </div>
                     </div>
@@ -85,8 +92,11 @@ const RobotsCard = () => {
                         </div>
                         <button onClick={handleFlip} className="close-icon"><img src={closeIcon} alt="" /></button>
                     </div>
+
                 </div>
         </motion.div>
+        {isModalOpen && <ModalWindow onClose={toggleModal} />}
+        </div>
     )
 }
 
