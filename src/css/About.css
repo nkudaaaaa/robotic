@@ -69,11 +69,6 @@
     position: absolute;
 }
 
-.images-bg {
-
-}
-
-
 #minecr {
     position: absolute;
     top: 122%;
@@ -165,13 +160,14 @@
 }
 
 .directions-item {
-    transform: scale(0.95);    
-    transition: .3s ease-in-out;
-}
-.directions-item:hover {
-    transform: scale(1);
-
-}
+    transform: scale(0.95);
+    transition: transform 0.7s ease-in-out;
+  }
+  
+  .directions-item.animated {
+    transform: scale(1.02);
+  }
+  
 
 .cards-education {
     z-index: 20;
