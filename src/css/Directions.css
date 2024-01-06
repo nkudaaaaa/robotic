@@ -330,7 +330,7 @@ li {
 }
 
 .program-card-main, .game-card-main, .ege-card-main, .oge-card-main{
-    transition: transform 0.25s;
+    transition: transform 0.1s;
     transform-style: preserve-3d;
     width: 48%;
     margin-top: 26px;
