@@ -37,11 +37,11 @@ function NavBar() {
                 Робототехника
               </NavDropdown.Item>
               <NavDropdown.Item href="#programming">Программирование</NavDropdown.Item>
-              <NavDropdown.Item href="#gamedev">Разработка игр</NavDropdown.Item>
+              <NavDropdown.Item href="#programming">Разработка игр</NavDropdown.Item>
             </NavDropdown>
           <NavDropdown title="Дополнительно" show={isMenuOpenAdd} onToggle={toggleMenuAdd} className={isMenuOpenAdd ? 'rotate' : ''} >
             <NavDropdown.Item href="#oge">Подготовка к ОГЭ</NavDropdown.Item>
-            <NavDropdown.Item href="#holidays">
+            <NavDropdown.Item href="#oge">
               Проведение праздников
             </NavDropdown.Item>
           </NavDropdown>

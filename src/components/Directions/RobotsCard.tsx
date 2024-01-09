@@ -66,7 +66,7 @@ const RobotsCard = () => {
                         <span className="directions-sign" id="robot-dir-right-age">4-16 лет</span>
                         </div>
                     </div>
-                    <div className="robot-dir-mid">
+                    <div className="robot-dir-mid" id="programming" >
                         <img src={robotHead} id="robothead" />
                         <img src={robotBody} id="robotbody" alt="" />
                     </div>
@@ -77,7 +77,7 @@ const RobotsCard = () => {
                             <ul>
                                 <li><span className="li">Развивает мышление</span> </li>
                                 <li><span className="li">Развивает мелкую моторику</span> </li>
-                                <li id="programming" ><span className="li" id="gamedev" >Помогает понять базу IT</span> </li>
+                                <li ><span className="li" id="gamedev" >Помогает понять базу IT</span> </li>
                             </ul>
                         </div>
                     </div>

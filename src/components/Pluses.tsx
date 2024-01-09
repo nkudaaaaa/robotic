@@ -11,9 +11,9 @@ const Pluses = () => {
 
 
 
+            <span className="main-sign-pluses">Почему стоит выбрать нас?</span>
             <div className="container-main">
                 <div className="pluses-main">
-                    <span className="main-sign-pluses">Почему стоит выбрать нас?</span>
                     <div className="plus">
                         <img src={first} alt="" className="image-plus" />
                         <div className="plus-text-div">

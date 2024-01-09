@@ -212,6 +212,7 @@
 
 ul {
     color: #EBFF00;
+    pointer-events: none;
 }
 
 li {
@@ -221,10 +222,12 @@ li {
     font-weight: 500;
     line-height: normal;
     margin-top: 20px;
+    pointer-events: none;
 }
 
 .li {
     color: #000;
+    pointer-events: none;
 }
 
 
@@ -434,6 +437,10 @@ li {
 
 }
 
+.nowraps {
+    margin-top: 25px;
+}
+
  .oge-front-thinsign {
     width: 400px;
 }
@@ -473,9 +480,9 @@ li {
 }
 
 .nowrap {
-    margin-top: 15px;
+    margin-top: 5px;
     white-space: nowrap;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
 }
 
 
@@ -608,4 +615,5 @@ li {
 
 .bigw {
     width: 60%;
+    
 }

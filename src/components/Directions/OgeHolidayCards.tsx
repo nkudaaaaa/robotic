@@ -24,7 +24,7 @@ const OgeEgeCard = () => {
                     </div>
                     <div className="oge-front-right">
                         <span className="card-front-mainsign">Подготовка к ОГЭ</span>
-                        <span className="card-front-thinsign nowrap">Математика, информатика</span>
+                        <span className="card-front-thinsign nowraps">Математика, информатика</span>
                         <div className="card-front-btn">
                             <button className="signup big" onClick={() => toggleModal("Подготовка к ОГЭ")}>Записаться!</button>
                         </div>
