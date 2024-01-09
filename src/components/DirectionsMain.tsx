@@ -1,20 +1,18 @@
 import RobotsCard from "./Directions/RobotsCard";
 import ProgramCard from "./Directions/ProgramGamedevCard";
-import OgeEgeCard from "./Directions/OgeEgeCards";
-import Holidays from "./Directions/Holidays";
+import OgeHolidaysCard from "./Directions/OgeHolidayCards";
 import '../css/Directions.css'
 
 const DirectionsMain = () => {
     return (
-        <div className="directions-main">
+        <section className="directions-main">
             <div className="container-main">
                 <span className="directions-sign" >Наши направления</span>
                 <RobotsCard />
                 <ProgramCard />
-                <OgeEgeCard />
-                <Holidays />
+                <OgeHolidaysCard />
             </div>
-        </div>
+        </section>
     )
 }
 

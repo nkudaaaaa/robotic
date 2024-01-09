@@ -48,13 +48,13 @@ const RobotsCard = () => {
     }
 
     return (
-            <div className="robot-super-main">
-        <motion.div className="robot-dir-main"
-            initial={false}
-            animate={{ rotateY: isFlipped ? 180 : 360 }}
-            transition={{ duration: 0.6, animationDirection: "normal" }}
-            onAnimationComplete={() => setIsAnimating(false)}
-        >
+        <div className="robot-super-main">
+            <motion.div className="robot-dir-main"
+                initial={false}
+                animate={{ rotateY: isFlipped ? 180 : 360 }}
+                transition={{ duration: 0.6, animationDirection: "normal" }}
+                onAnimationComplete={() => setIsAnimating(false)}
+            >
 
                 <div className="robot-dir1">
                     <div className="robot-dir-left">
@@ -63,6 +63,7 @@ const RobotsCard = () => {
                         <div className="robot-dir-left-buttons">
                             <button className="signup" onClick={toggleModal}>Записаться!</button>
                             <button className="more" onClick={handleFlip}>Подробнее</button>
+                        <span className="directions-sign" id="robot-dir-right-age">4-16 лет</span>
                         </div>
                     </div>
                     <div className="robot-dir-mid">
@@ -70,13 +71,15 @@ const RobotsCard = () => {
                         <img src={robotBody} id="robotbody" alt="" />
                     </div>
                     <div className="robot-dir-right" >
-                        <span className="directions-sign" id="robot-dir-right-age">4-16 лет</span>
-                        <span className="directions-sign" id="robot-dir-right-ul">Работа с роботами:</span>
-                        <ul>
-                            <li><span className="li">Развивает мышление</span> </li>
-                            <li><span className="li">Развивает мелкую моторику</span> </li>
-                            <li id="programming" ><span className="li" id="gamedev" >Помогает понять базу IT</span> </li>
-                        </ul>
+                        <div className="robot-dir-right-list">
+
+                            <span className="directions-sign" id="robot-dir-right-ul">Работа с роботами:</span>
+                            <ul>
+                                <li><span className="li">Развивает мышление</span> </li>
+                                <li><span className="li">Развивает мелкую моторику</span> </li>
+                                <li id="programming" ><span className="li" id="gamedev" >Помогает понять базу IT</span> </li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -90,12 +93,12 @@ const RobotsCard = () => {
                             {sixBtnActive ? <img src={rightman} alt="" id="rightman" /> : ""}
                             <button className={sixBtnActive ? "flipped-btn-active" : "flipped-btn"} onClick={sixHandle}>6 месяцев (Продвинутый курс)</button>
                         </div>
-                        <button onClick={handleFlip} className="close-icon"><img src={closeIcon} alt="" /></button>
+                        <button onClick={handleFlip} className="close-icon"><img src={closeIcon} alt="" className="close-icon"/></button>
                     </div>
 
                 </div>
-        </motion.div>
-        {isModalOpen && <ModalWindow onClose={toggleModal} />}
+            </motion.div>
+            {isModalOpen && <ModalWindow onClose={toggleModal} selectedDirection="Робототехника" />}
         </div>
     )
 }

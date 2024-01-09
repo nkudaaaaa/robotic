@@ -12,10 +12,12 @@ const ProgramCard = () => {
     const [isFlippedGm, setIsFlippedGm] = useState<boolean>(false);
     const [isAnimatingGm, setIsAnimatingGm] = useState<boolean>(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedDirection, setSelectedDirection] = useState<string>('')
 
 
-    const toggleModal = () => {
+    const toggleModal = (d:string) => {
         setIsModalOpen(!isModalOpen);
+        setSelectedDirection(d);
     }
 
     function handleFlipPr() {
@@ -50,7 +52,7 @@ const ProgramCard = () => {
                         <span className="card-front-mainsign">Программирование</span>
                         <span className="card-front-thinsign">Научим Вашего ребенка основам различных языков</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw" id="ege" onClick={toggleModal}>Записаться!</button>
+                            <button className="signup smallw" id="holidays" onClick={() => toggleModal("Программирование")}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipPr} id="oge">Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
@@ -79,7 +81,7 @@ const ProgramCard = () => {
                         <span className="card-front-mainsign">Разработка игр</span>
                         <span className="card-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw" onClick={toggleModal}>Записаться!</button>
+                            <button className="signup smallw"  onClick={() => toggleModal("Разработка игр")}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipGm}>Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
@@ -87,12 +89,12 @@ const ProgramCard = () => {
                 </div>
 
                 <div className="game-back">
-                    <span className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если ваш ребёнок творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов с помощью игрового движка Unity.</span>
+                    <span className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если Ваш ребёнок - творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов</span>
                     <img src={closeIcon} className="close-icon" onClick={handleFlipGm} />
                 </div>
             </motion.div>
-            {isModalOpen && <ModalWindow onClose={toggleModal} />}
-        </div>
+            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} />}
+        </div >
     )
 }
 

@@ -6,7 +6,7 @@ import ws from "../assets/footer/Whatsapp.svg"
 const Footer = () => {
     return (
 
-        <div className="footer">
+        <section className="footer">
             <div className="container-main">
                 <div className="call-form">
                     <div className="call-form-text">
@@ -22,7 +22,7 @@ const Footer = () => {
                         <span className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="#!">обработкой персональных данных</a></span>
                     </div>
                 </div>
-                <div className="call-form">
+                <div className="call-form cont">
                     <div className="contacts-div">
                         <span className="contacts-text">ул. Героя Пешкова, 14</span>
                         <span className="contacts-text">+7 (999) - 999 - 99 - 99</span>
@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

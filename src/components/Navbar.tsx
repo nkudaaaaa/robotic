@@ -41,9 +41,6 @@ function NavBar() {
             </NavDropdown>
           <NavDropdown title="Дополнительно" show={isMenuOpenAdd} onToggle={toggleMenuAdd} className={isMenuOpenAdd ? 'rotate' : ''} >
             <NavDropdown.Item href="#oge">Подготовка к ОГЭ</NavDropdown.Item>
-            <NavDropdown.Item href="#ege">
-              Подготовка к ЕГЭ
-            </NavDropdown.Item>
             <NavDropdown.Item href="#holidays">
               Проведение праздников
             </NavDropdown.Item>

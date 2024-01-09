@@ -11,19 +11,19 @@ import { motion as m } from 'framer-motion'
 const Banner = () => {
 
     return (
-        <div className="banner-main" >
+        <section className="banner-main" >
             <div className="home-routing"></div>
             <div className="banner">
                 <div className="marquee">
                     <div className="marquee__content">
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" /></li>
+                            <li><img src={rs} alt="" id='rs'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" /></li>
+                            <li><img src={rs} alt="" id='rs'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" /></li>
+                            <li><img src={rs} alt="" id='rs'/></li>
                         </ul>
 
                     </div>
@@ -31,13 +31,13 @@ const Banner = () => {
                 <div className="marquee2">
                     <div className="marquee2__content">
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" /></li>
+                            <li><img src={ls} alt="" id='ls'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" /></li>
+                            <li><img src={ls} alt="" id='ls'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" /></li>
+                            <li><img src={ls} alt="" id='ls'/></li>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Banner = () => {
             </div>
 
 
-        </div>
+        </section>
     )
 }
 

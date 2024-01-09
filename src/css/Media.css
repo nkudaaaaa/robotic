@@ -1,17 +1,30 @@
-
-
 @media screen and (max-width: 1440px) and (min-width: 1240px) {
     #robot-dir-flipped-thin {
         font-size: 18px;
         width: 865px;
     }
+
     li {
         font-size: 19px;
     }
-    .signup, .more {
+
+    .main-sign-pluses {
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    .pluses-main {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signup,
+    .more {
         width: 11rem;
         font-size: 20px;
     }
+
     .program-front-left {
         width: 200px;
     }
@@ -25,6 +38,12 @@
         left: -10%;
     }
 
+    .card-back-sign {
+        font-size: 17px;
+        width: 95%;
+        line-height: 32px;
+    }
+
     #minecr-img {
         width: 150px;
     }
@@ -35,15 +54,16 @@
 
     .card-front-thinsign {
         font-size: 17px;
-        width: 95%;
+        width: 105%;
     }
 
     .smallw {
         width: 90%;
         font-size: 18px;
     }
-    #pensil-img1, #pensil-img2 {
-        width: 140px;
+
+    #pensil-img1 {
+        width: 150px;
     }
 
     #h-dir-left-sign {
@@ -51,11 +71,1183 @@
     }
 
     #holiday-img {
-        width: 110%;
+        width: 80%;
         top: 3%;
     }
 
     .bigw {
+        width: 40%;
+    }
+
+    .program-front-right,
+    .game-front-right {
+        left: 0%;
+    }
+
+    .oge-front-right {
+        left: -20%;
+    }
+
+    #robot-dir-flipped-thin {
+        font-size: 18px;
+        width: 85%;
+    }
+
+    .age {
+        right: -5%;
+        top: -13%;
+    }
+
+    #holiday-img {
+        width: 90%;
+    }
+
+    .holiday-front-right {
+        width: 300px;
+        left: -13%;
+    }
+
+    .holiday-front-left {
+        width: 230px;
+    }
+}
+
+@media screen and (max-width: 1319px) and (min-width: 1018px) {
+
+    .down-line {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    #unity {
+        grid-column: span 3;
+        justify-self: center;
+    }
+}
+
+
+@media screen and (max-width: 1239px) and (min-width: 1086px) {
+
+    .container-main {
+        padding: 0px 90px;
+    }
+
+    .banner-text-bold {
+        font-size: 28px;
+    }
+
+
+    .robots {
+        width: 450px;
+    }
+
+    .banner-text-sign {
+        font-size: 20px;
+    }
+
+    #about-bg {
+        width: 1087px;
+        top: -0px;
+        left: -600px;
+    }
+
+    .upper-line {
+        align-items: center;
+        justify-content: center;
+    }
+
+    li {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .robot-dir1 {
+        padding: 35px 63px;
+    }
+
+    .robot-dir-mid {
+        position: relative;
+    }
+
+    #robot-dir-right-ul {}
+
+    .robot-dir-right-list {
+        position: relative;
+        width: 300px;
+        height: 200px;
+    }
+
+    #robot-dir-left-sign {
+        font-size: 28px;
+    }
+
+    #robot-dir-left-thin {
+        font-size: 20px;
+        width: 250px;
+    }
+
+    .flipped-btn {
+        font-size: 20px;
+    }
+
+    .flipped-btn-active {
+        font-size: 20px;
+    }
+
+    .signup,
+    .more {
+        width: 9rem;
+        font-size: 18px;
+    }
+
+    .program-front-left {
+        width: 180px;
+    }
+
+    .game-front-left {
+        width: 120px;
+    }
+
+    #computer-img {
+        width: 110px;
+        left: -10%;
+    }
+
+    #minecr-img {
+        width: 140px;
+    }
+
+    .card-front-mainsign {
+        font-size: 19px;
+    }
+
+    .card-front-thinsign {
+        font-size: 16px;
+        width: 106%;
+    }
+
+    .smallw {
+        width: 90%;
+        font-size: 17px;
+    }
+
+    #pensil-img1 {
+        width: 130px;
+    }
+
+    #h-dir-left-sign {
+        font-size: 28px;
+    }
+
+    #holiday-img {
+        width: 80%;
+        top: 3%;
+    }
+
+    .bigw {
+        width: 40%;
+    }
+
+    .program-front-right,
+    .game-front-right {
+        left: 0%;
+    }
+
+    .oge-front-right {
+        left: -20%;
+    }
+
+    .age {
+        right: -5%;
+        top: -13%;
+    }
+
+    #holiday-img {
+        width: 90%;
+    }
+
+    .holiday-front-right {
+        width: 350px;
+        left: -13%;
+        white-space: unset;
+    }
+
+    .holiday-front-left {
+        width: 200px;
+    }
+
+    .holiday-front-right {
+        width: 300px;
+    }
+
+    #robot-dir-flipped-thin {
+        font-size: 16px;
+        width: 85%;
+    }
+
+    #rightman {
+        left: 80%;
+    }
+
+    .card-back-sign {
+        font-size: 16px;
+        width: 95%;
+        line-height: 30px;
+    }
+
+    .main-sign-pluses {
+        font-size: 38px;
+    }
+
+    .plus-name {
+        font-size: 30px;
+    }
+
+    .plus-description {
+        font-size: 22px;
+    }
+
+    .main-sign-about {
+        font-size: 22px;
+    }
+
+    .call-form-header {
+        font-size: 27px;
+    }
+
+    .call-form-desc {
+        font-size: 17px;
+        width: 380px;
+    }
+
+    .politicy-span {
+        font-size: 10px;
+    }
+
+    .footer-logo {
+        font-size: 58px;
+    }
+
+    .doc-text {
+        font-size: 18px;
+    }
+
+    .card-front-mainsign {
+        width: 120%;
+    }
+
+    .age {
+        top: -15%;
+        right: -94%;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 1085px) and (min-width: 715px) {
+
+    .container-main {
+        padding: 0px 50px;
+    }
+
+    .about {
+        overflow-y: hidden;
+    }
+
+    .marquee {
+        margin-top: 10px;
+    }
+
+    #rs {
+        height: 50px;
+    }
+
+    #ls {
+        height: 50px;
+    }
+
+    #robotR {
+        width: 150px;
+    }
+
+    #robotL {
+        width: 100px;
+    }
+
+    .down-banner {
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .robots {
+        position: relative;
+        top: -45%;
+        gap: 40px;
+        align-items: end;
+        justify-content: end;
+    }
+
+    .about,
+    .banner-main,
+    .direcions-main {
+        overflow-x: hidden;
+    }
+
+    .banner-main {
+        height: 700px;
+    }
+
+    .banner-text {
+        width: 150%;
+        top: 45%;
+    }
+
+    .banner-text-bold {
+        font-size: 27px;
+    }
+
+    .banner-text-sign {
+        font-size: 19px;
+        font-weight: 400;
+        width: 400px;
+    }
+
+    .images-bg {
+        width: 100px;
+    }
+
+    .main-sign-about {
+        font-size: 19px;
+    }
+
+    .down-line {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    #unity {
+        grid-column: span 3;
+        justify-self: center;
+    }
+
+    .directions-item {
+        width: 200px;
+    }
+
+    .down-directions-item {
+        width: 95%;
+    }
+
+    .cards-education {
+        width: 600px;
+    }
+
+    .directions-sign {
+        font-size: 30px;
+    }
+
+    .robot-dir-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .robot-dir1 {
+        padding: 40px 33px 50px 53px;
+        max-width: 750px;
+    }
+
+    .robot-dir2 {
+        padding: 40px 33px 50px 53px;
+        max-width: 750px;
+    }
+
+    .robot-dir-right {
+        position: absolute;
+        opacity: 0;
+        width: 0px;
+    }
+
+    .robot-dir-mid {
+        position: relative;
+        left: -4%;
+        top: 5%;
+    }
+
+    .signup {
+        width: 45%;
+        font-size: 19px;
+    }
+
+    .more {
+        width: 45%;
+        font-size: 19px;
+    }
+
+    #robot-dir-flipped-main {
+        margin-top: 10px;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    #robot-dir-flipped-thin {
+        font-size: 17px;
+        width: 81%;
+        line-height: 21px;
+        z-index: 100;
+    }
+
+    #rightman {
+        left: 74%;
+        top: 18.5%;
+    }
+
+    #leftman {
+        top: 18.5%;
+    }
+
+    .flipped-btn-active {
+        font-size: 16px;
+    }
+
+    .flipped-btn {
+        font-size: 15px;
+    }
+
+    .programming-gamedev {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .program-card-main {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .smallw {
+        width: 80%;
+    }
+
+    .game-card-main {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .oge-holidays {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .oge-card-main {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .holiday-dir-main {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .container-main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .oge-front {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .oge-front-right {
+        left: -11%;
+    }
+
+    .holiday-card {
+        justify-content: space-between;
+        padding-top: 40px;
+    }
+
+    .nowrap {
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+    .holiday-front-left {
+        width: 100px;
+    }
+
+    .holiday-front-right {
+        left: -10%;
+    }
+
+    .big {
+        width: 300px;
+    }
+
+    .h-dir-left-buttons {
+        position: relative;
+        left: -4%;
+    }
+
+    .main-sign-pluses {
+        font-size: 34px;
+    }
+
+    .image-plus {
+        width: 100px;
+    }
+
+    .plus-name {
+        font-size: 28px;
+    }
+
+    .plus-description {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .pluses-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .pluses {
+        overflow-x: hidden;
+    }
+
+    .plus {
+        width: 80%;
+        position: relative;
+        left: 5%;
+    }
+
+    .call-form {
+        padding-left: 40px;
+    }
+
+    .call-form-header {
+        font-size: 24px;
+    }
+
+    .call-form-desc {
+        font-size: 17px;
+        width: 300px;
+    }
+
+    .icons-footer {
+        padding-right: 0px;
+    }
+
+    iframe {
+        height: 350px;
+    }
+
+    .footer-info {
+        margin-top: 140px;
+        margin-bottom: 80px;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        position: relative;
+        top: 5px;
+        font-size: 35px;
+    }
+
+    .social-icon {
+        width: 40px;
+    }
+
+    .documents {
+        gap: 5px;
+    }
+
+    .doc-text {
+        font-size: 11px;
+    }
+
+    .form-input {
+        width: 100%;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    .form-btn {
+        width: 100%;
+        font-size: 19px;
+        height: 60px;
+    }
+
+    .politicy-span {
+        font-size: 10px;
+    }
+
+    .contacts-text {
+        font-size: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 714px) and (min-width: 50px) {
+
+    body {
+        min-width: 350px !important;
+    }
+
+    .navbar-brand {
+        padding-left: 20px;
+        font-size: 20px;
+    }
+
+    .navbar-toggler {
+        margin-right: 20px;
+    }
+
+    .container-main {
+        padding: 0px 25px;
+    }
+    .marquee {
+        margin-top: 10px;
+    }
+
+    .marquee2 {
+        margin-top: 0px;
+    }
+
+    #rs {
+        height: 28px;
+    }
+
+    #ls {
+        height: 28px;
+    }
+
+    #robotR {
+        width: 140px;
+    }
+
+    #robotL {
+        width: 90px;
+    }
+
+    .down-banner {
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .robots {
+        position: relative;
+        top: -45%;
+        gap: 40px;
+        align-items: end;
+        justify-content: end;
+    }
+
+    .about,
+    .banner-main,
+    .direcions-main {
+        overflow-x: hidden;
+    }
+
+    .banner-main {
+        height: 750px;
+    }
+
+    .banner-text {
+        width: 150%;
+        top: 85%;
+    }
+
+    .banner-text-bold {
+        font-size: 22px;
+    }
+
+    .banner-text-sign {
+        font-size: 13px;
+        font-weight: 400;
+        width: 300px;
+    }
+
+    .images-bg {
+        width: 500px;
+    }
+
+    .main-sign-about {
+        font-size: 17px;
+        text-align: left;
+    }
+
+    .upper-line {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+        margin-bottom: 0px;
+    }
+
+    .down-line {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    #unity {
+        justify-self: center;
+        position: relative;
+        top: -200%;
+    }
+
+    #csharp {
+        position: relative;
+        right: -50%;
+    }
+
+    .directions-item {
+        width: 170px;
+    }
+
+    .down-directions-item {
+        width:100%;
+        height: 35px;
+        gap: 0px;
+    }
+
+    .down-directions {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .upper-directions {
+        display: grid;
+        position: relative;
+        left: 17%;
+        height: 35px;
+        margin-bottom: 20px;
+    }
+
+    #gamedev {
+        grid-column: span 2;
+        justify-self: center;
+    }
+
+
+    .cards-education {
+        width: 400px;
+    }
+
+    .directions-sign {
+        font-size: 25px;
+    }
+
+    .robot-dir-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+    }
+
+    .robot-dir1 {
+        padding: 23px 18px 25px 21px;
+        max-width: 300px;
+        height: 200px;
+    }
+
+    .robot-dir2 {
+        padding: 15px 18px 25px 18px;
+        max-width: 300px;
+        height: 200px;
+    }
+
+    #robot-dir-left-sign {
+        font-size: 17px;
+        margin-bottom: 20px;
+    }
+
+    #robot-dir-left-thin {
+        font-size: 10px;
+        width: 150px;
+        line-height: 18px;
+        margin-bottom: 18px;
+    }
+
+    .robot-dir-left-buttons {
+        gap: 12px;
+    }
+
+    .robot-dir-right {
+        position: absolute;
+        opacity: 0;
+        width: 0px;
+    }
+
+    .robot-dir-mid {
+        position: relative;
+        left: -8%;
+        top: 5%;
+    }
+
+    .signup {
+        width: 100%;
+        font-size: 10px;
+        height: 50px;
+    }
+
+    .more {
+        width: 100%;
+        height: 50px;
+        font-size: 10px;
+        border: 2px solid rgba(255, 255, 255, 1);
+    }
+
+    #robothead {
+        width: 70px;
+        left: 43px;
+        top: 5%;
+    }
+
+    #robotbody {
+        top: -10%;
+        width: 150px;
+    }
+
+    #robot-dir-flipped-main {
+        margin-top: 10px;
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    #robot-dir-flipped-thin {
+        font-size: 8px;
+        width: 83%;
+        line-height: 16px;
+        z-index: 100;
+        margin-bottom: 10px;
+
+    }
+
+    #rightman {
+        left: 77%;
+        top: 37%;
+        width: 25%;
+    }
+
+    #leftman {
+        width: 25%;
+        top: 37%;
+        left: -0.5%;
+    }
+
+    .flipped-btn-active {
+        width: 48%;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .flipped-btn {
+        width: 48%;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .programming-gamedev {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .program-card-main, .oge-card-main {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+    }
+
+    .program-front, .game-front, .oge-front, .holiday-card  {
+        height: 200px;
+        padding: 23px 18px 25px 21px;
+    }
+
+    .program-front-right, .game-front-right{
+        position: relative;
+        left: -37%;
+    }
+
+    #minecr-img {
+        position: relative;
+        width: 100px;
+        left: 165%;
+    }
+    
+    .game-card-main {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card-front-thinsign {
+        font-size: 10px;
+        width: 150px;
+        line-height: 18px;
+        margin-bottom: 15px;
+    }
+
+    #robot-dir-right-age {
+        font-size: 16px;
+        margin-bottom: 18px;
+        width: 100px;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+
+    .age {
+        top: -7%;
+        left: 112%;
+        width: 100px;
+
+    }
+
+    #computer-img {
+        left: 175%;
+        top: 10px;
+        width: 100px;
+    }
+
+    .card-front-mainsign {
+        font-size: 16px;
+    }
+
+    .program-back, .game-back {
+        height: 200px;
+        padding-top: 15px;
+        padding-right: 30px;
+        padding-left: 25px;
+    }
+
+    .close-icon {
+        width: 50px;
+    }
+    
+    .card-back-sign {
+        line-height: 1px;
+        font-size: 9.5px;
+        width: 120%;
+    }
+
+    .nowrap{
+        margin-top: 10px;
+        margin-bottom: 25px;        
+        line-height: 8px;
+    }
+    .big {
+        width: 150px;
+    }
+
+    #holiday-img {
+        width: 150px;
+    }
+
+    .oge-holidays {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .oge-card-main {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    .holiday-dir-main {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .container-main {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .oge-front-right {
+        margin-top: 3px;
+        left: -64%;
+    }
+
+    .oge-front-left {
+        left: 5%;
+        transform: rotate(90deg);
+    }
+    
+    #pensil-img1 {  
+        position: relative;
+        left: 4%;
+        top: -90%;
+        animation: none;
+        width: 150px;
+    }
+
+    .holiday-front-left {
+        left: 65%;
+        top: 18%;
+    }
+
+    .holiday-front-right {
+        left: -57%;
+        width: 300px;
+    }
+
+    .h-dir-left-buttons {
+        position: relative;
+        left: -4%;
+    }
+
+    .main-sign-pluses {
+        font-size: 20px;
+    }
+
+    .image-plus {
+        width: 50px;
+    }
+
+    .plus-name {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    .plus-description {
+        font-size: 10px;
+        line-height: 20px;
         width: 50%;
     }
+
+    .pluses-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #plus-last {
+        position: relative;
+        right: -2%;
+    }
+
+    .pluses {
+        overflow-x: hidden;
+        margin-bottom: 100px;
+    }
+
+    .plus {
+        width: 70%;
+        position: relative;
+        left: 15%;
+    }
+
+    .call-form {
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-top: 20px;
+        height: 200px;
+    }
+
+    .call-form-header {
+        font-size: 12px;
+        width: 90px;
+        line-height: 20px;
+    }
+
+    .call-form-desc {
+        font-size: 8px;
+        width: 100px;
+        line-height: 15px;
+    }
+
+    .icons-footer {
+        padding-right: 0px;
+    }
+
+    iframe {
+        position: relative;
+        top: -60px;
+        height: 150px;
+    }
+
+    .footer-info {
+        margin-top: 80px;
+        margin-bottom: 80px;
+        gap: 20px;
+    }
+
+    .footer-logo {
+        position: relative;
+        top: 5px;
+        font-size: 20px;
+    }
+
+    .social-icon {
+        width: 25px;
+    }
+
+    .socials {
+        gap: 7px;
+    }
+
+    .documents {
+        gap: 0px;
+    }
+
+    .doc-text {
+        font-size: 5px;
+        width: 100px;
+        line-height: 12px;
+    }
+
+    .form-input {
+        width:130%;
+        height: 40px;
+        font-size: 10px;
+        padding-left: 15px;
+    }
+
+    .form-div {
+        padding-left: 20px;
+    }
+
+    .form-btn {
+        width: 130%;
+        font-size: 10px;
+        height: 40px;
+    }
+
+    #contacts {
+        font-size: 5px;
+        width:100px;
+    }
+    .cont {
+        height: 100px;
+        padding-right: 30px;
+    }
+
+    .contacts-div {
+        height: 100px;
+        justify-content: center;
+        position: relative;
+        top: -37%;
+    }
+
+    .contacts-text {
+        font-size: 10px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+    }
+
+    .icons-footer {
+        gap: 10px;
+    }
+
 }
