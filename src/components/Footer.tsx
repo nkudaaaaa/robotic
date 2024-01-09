@@ -4,6 +4,8 @@ import vk from "../assets/footer/Vk.svg"
 import ws from "../assets/footer/Whatsapp.svg"
 
 const Footer = () => {
+
+    console.error = function() {};
     return (
 
         <section className="footer">
@@ -34,7 +36,7 @@ const Footer = () => {
                     </div>
 
                 </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor" width="1140" height="571" ></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor" width="940" height="271" />
 
                 <div className="footer-info">
                     <a href="/"><span className="footer-logo" >Роботик</span></a>
