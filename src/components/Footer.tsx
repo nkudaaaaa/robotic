@@ -5,7 +5,6 @@ import ws from "../assets/footer/Whatsapp.svg"
 
 const Footer = () => {
 
-    console.error = function() {};
     return (
 
         <section className="footer">

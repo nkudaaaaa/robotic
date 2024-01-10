@@ -66,7 +66,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
     direction: string;
   }
   const formDataPost = () => {
-    const url = 'http://localhost:8080/post'; 
+    const url = 'http://51.250.77.229:8080/submitUserData'; 
 
     const dataToSend:data = {
       name,

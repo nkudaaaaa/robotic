@@ -332,14 +332,16 @@ li {
     left: 82%;
 }
 
-.programming-gamedev, .oge-holidays {
+.programming-gamedev,
+.oge-holidays {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.program-card-main, .game-card-main{
+.program-card-main,
+.game-card-main {
     transition: transform 0.25s;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -347,7 +349,9 @@ li {
     margin-top: 26px;
     left: 0%;
 }
-.oge-card-main, .holiday-dir-main {
+
+.oge-card-main,
+.holiday-dir-main {
     width: 48%;
     margin-top: 26px;
     left: 0%;
@@ -355,7 +359,8 @@ li {
 }
 
 
-.program-front,  .game-front{
+.program-front,
+.game-front {
     width: 100%;
     padding: 50px 43px 50px 20px;
     height: 300px;
@@ -366,12 +371,17 @@ li {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    backface-visibility:hidden;
-    z-index: 100;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: rotateY(0deg);
+    z-index: 150;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
-.program-front-left,.game-front-left, .oge-front-main{
+.program-front-left,
+.game-front-left,
+.oge-front-main {
     width: 120px;
 }
 
@@ -397,14 +407,17 @@ li {
     }
 }
 
-.program-front-right,.game-front-right, .oge-front-right {
+.program-front-right,
+.game-front-right,
+.oge-front-right {
     display: flex;
     flex-direction: column;
     position: relative;
     left: -10%;
 }
 
-.card-front-btn, .oge-front-btn  {
+.card-front-btn,
+.oge-front-btn {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -418,7 +431,8 @@ li {
     font-size: 20px;
 }
 
-.card-front-mainsign, .oge-front-mainsign {
+.card-front-mainsign,
+.oge-front-mainsign {
     font-family: "Raleway";
     font-size: 22px;
     font-style: normal;
@@ -427,7 +441,7 @@ li {
     margin-bottom: 20px;
 }
 
-.card-front-thinsign{
+.card-front-thinsign {
     color: #000;
     font-size: 19px;
     font-style: normal;
@@ -443,17 +457,18 @@ li {
     margin-top: 25px;
 }
 
- .oge-front-thinsign {
+.oge-front-thinsign {
     width: 400px;
 }
 
 .age {
     position: absolute;
     top: -10%;
-    right:-16%;
+    right: -16%;
 }
 
-.program-back, .game-back  {
+.program-back,
+.game-back {
     width: 100%;
     backdrop-filter: blur(10px);
     background-size: cover;
@@ -461,9 +476,16 @@ li {
     height: 300px;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    backface-visibility: hidden;
+    backface-visibility: hidden !important;
     transform: rotateY(180deg);
     text-align: left;
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    -moz-backface-visibility: hidden;
+
+
 }
 
 .card-back-sign {
@@ -513,14 +535,14 @@ li {
     background-image: url("../assets/directions/bgprogram.svg");
     background-size: cover;
     text-align: left;
-    backface-visibility: hidden;
+    z-index: 200;
 }
 
 .game-back {
     background-image: url("../assets/directions/bggamedev.svg");
     background-size: cover;
     text-align: left;
-    backface-visibility: hidden;
+    z-index: 200;
 }
 
 .oge-front {
@@ -548,18 +570,22 @@ li {
     0% {
         transform: translateX(0) translateY(0);
     }
+
     25% {
         transform: translateX(11%) translateY(10%) rotateX(25deg);
     }
+
     50% {
         transform: translateX(0) translateY(0);
     }
+
     100% {
         transform: translateX(0) translateY(0);
     }
 
 }
- .oge-front {
+
+.oge-front {
     width: 100%;
     padding: 50px 23px 50px 20px;
     height: 300px;
@@ -583,6 +609,7 @@ li {
     border-radius: 30px;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
+
 .holiday-front-right {
     position: relative;
     left: -17%;
@@ -624,5 +651,5 @@ li {
 
 .bigw {
     width: 60%;
-    
+
 }
