@@ -12,7 +12,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
   const initialDir = selectedDirection;
   const [name, setName] = useState<string>('');
   const [surname, setSurname] = useState<string>('');
-  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [selected, setSelected] = useState(initialDir);
   const [isActive, setIsActive] = useState(false);
 

@@ -15,7 +15,7 @@ const ProgramCard = () => {
     const [selectedDirection, setSelectedDirection] = useState<string>('')
 
 
-    const toggleModal = (d:string) => {
+    const toggleModal = (d: string) => {
         setIsModalOpen(!isModalOpen);
         setSelectedDirection(d);
     }
@@ -44,7 +44,7 @@ const ProgramCard = () => {
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimatingPr(false)}>
 
-                <div className="program-front">
+                <div className={isFlippedPr ? "program-front close" : "program-front"}>
                     <div className="program-front-left">
                         <img src={comp} alt="" id="computer-img" />
                     </div>
@@ -81,7 +81,7 @@ const ProgramCard = () => {
                         <span className="card-front-mainsign">Разработка игр</span>
                         <span className="card-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw"  onClick={() => toggleModal("Разработка игр")}>Записаться!</button>
+                            <button className="signup smallw" onClick={() => toggleModal("Разработка игр")}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipGm}>Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>

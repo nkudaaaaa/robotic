@@ -1382,7 +1382,7 @@ label {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #ffffff; /
-        color: #000000; 
+        background-color: #ffffff !important; 
+        color: #000000 !important; 
     }
 }

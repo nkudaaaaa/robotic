@@ -342,6 +342,7 @@ li {
 .program-card-main, .game-card-main{
     transition: transform 0.25s;
     transform-style: preserve-3d;
+    perspective: 1000px;
     width: 48%;
     margin-top: 26px;
     left: 0%;
@@ -365,7 +366,8 @@ li {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    backface-visibility: hidden;
+    backface-visibility:hidden;
+    z-index: 100;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -453,7 +455,6 @@ li {
 
 .program-back, .game-back  {
     width: 100%;
-    background-image: url("../assets/directions/bgprogram.svg");
     backdrop-filter: blur(10px);
     background-size: cover;
     padding: 35px 70px 30px 38px;
@@ -508,10 +509,18 @@ li {
     }
 }
 
+.program-back {
+    background-image: url("../assets/directions/bgprogram.svg");
+    background-size: cover;
+    text-align: left;
+    backface-visibility: hidden;
+}
+
 .game-back {
     background-image: url("../assets/directions/bggamedev.svg");
     background-size: cover;
     text-align: left;
+    backface-visibility: hidden;
 }
 
 .oge-front {
