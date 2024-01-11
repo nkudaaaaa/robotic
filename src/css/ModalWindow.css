@@ -19,16 +19,15 @@ label {
 .modal {
   background: #fff;
   position: relative;
-  padding: 40px 30px;
+  padding: 30px 30px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 420px;
   height: 480px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .input-field {
@@ -69,6 +68,14 @@ label {
   font-weight: 800;
   line-height: 30px;
   line-height: normal;
+  overflow: hidden;
+}
+
+.modal-first {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -109,4 +116,39 @@ label {
 }
 .dropdown-form .dropdown-form-content .dropdown-form-item:hover {
   background: #f4f4f4;
+}
+
+.sms-field {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  background-color: #f0f0f0;
+  font-family: "Raleway";
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  padding-left: 16px;
+  color: #333;
+}
+
+.modal-second {
+  background: #fff;
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.inputs-div {
+  padding-top: 70px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
 }

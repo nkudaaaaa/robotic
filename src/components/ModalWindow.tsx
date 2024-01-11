@@ -1,5 +1,7 @@
 import "../css/ModalWindow.css"
 import React, { useState, ChangeEvent, useEffect } from 'react';
+import { motion, useAnimation } from "framer-motion";
+import SMSValidation from "./SMSValidation";
 
 
 interface LessonRegistrationModalProps {
@@ -10,11 +12,15 @@ interface LessonRegistrationModalProps {
 
 const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selectedDirection }) => {
   const initialDir = selectedDirection;
+
   const [name, setName] = useState<string>('');
   const [surname, setSurname] = useState<string>('');
   const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [selected, setSelected] = useState(initialDir);
+
   const [isActive, setIsActive] = useState(false);
+
+  const [isModalFirstVisible, setIsModalFirstVisible] = useState(true);
 
   const options = ["Робототехника", "Программирование", "Разработка игр", "Подготовка к ОГЭ (математика)", "Подготовка к ОГЭ (информатика)", "Проведение праздников"];
 
@@ -32,6 +38,12 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
     setPhoneNumber(formatted);
   };
 
+  const controls = useAnimation();
+
+  const animateForm = async () => {
+    await controls.start({ x: -400, opacity: 0, transition: {duration: 1} });
+    setIsModalFirstVisible(false);
+  };
 
 
   const formatPhone = (value: string) => {
@@ -66,9 +78,9 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
     direction: string;
   }
   const formDataPost = () => {
-    const url = 'http://51.250.77.229:8080/submitUserData'; 
+    const url = 'http://localhost:8080/post';
 
-    const dataToSend:data = {
+    const dataToSend: data = {
       name,
       surname,
       phone: phoneNumber,
@@ -83,8 +95,9 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
       alert("Вы не заполнили правильно номер телефона ")
       return;
     }
-    onClose();
-    console.log('Отправляемые данные:', JSON.stringify(dataToSend)); 
+    animateForm();
+    console.log('Отправляемые данные:', JSON.stringify(dataToSend));
+
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(dataToSend),
@@ -112,8 +125,9 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
   }, []);
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
+    <motion.div className="modal-overlay" onClick={onClose}>
+      <motion.div className="modal" onClick={(e) => e.stopPropagation()}>
+        {isModalFirstVisible && <motion.div className="modal-first" animate={controls}>
         <span className="modal-main-sign">Заполните форму для записи на интересующее направление</span>
         <div className="inputs">
           <input type="text" value={name} onChange={handleNameChange} className="input-field" placeholder="Имя" />
@@ -138,12 +152,17 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
                   </div>
                 ))}
               </div>
+              
             )}
           </div>
+            <button onClick={formDataPost} className="signup" id="form-btn">Записаться</button>
         </div>
-        <button onClick={formDataPost} className="signup" id="form-btn">Записаться</button>
-      </div>
-    </div>
+        </motion.div>}
+        {!isModalFirstVisible && <SMSValidation phone={phoneNumber.slice(13)} onClose={onClose}/>
+        }
+
+      </motion.div>
+    </motion.div>
   );
 };
 

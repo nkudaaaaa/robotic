@@ -17,12 +17,9 @@
 }
 
 .directions-sign {
-    color: #000;
     font-family: "Raleway";
     font-size: 35px;
-    font-style: normal;
     font-weight: 800;
-    line-height: normal;
     margin-bottom: 44px;
 }
 
@@ -49,8 +46,6 @@
     position: absolute;
     backface-visibility: hidden;
 }
-
-
 
 .robot-dir-left {
     display: flex;
@@ -85,10 +80,8 @@
     color: #FFF;
     font-family: "Raleway";
     font-size: 24px;
-    font-style: normal;
     font-weight: 800;
     line-height: 23px;
-    outline: none;
     border: none;
     transition: .2s ease-in-out;
 }
