@@ -41,7 +41,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
   const controls = useAnimation();
 
   const animateForm = async () => {
-    await controls.start({ x: -400, opacity: 0, transition: {duration: 1} });
+    await controls.start({ x: -400, opacity: 0, transition: {duration: 0.5} });
     setIsModalFirstVisible(false);
   };
 
