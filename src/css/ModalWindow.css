@@ -27,7 +27,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
+overflow: hidden;
   transition: all .3s ease-in-out;
 }
 
@@ -56,9 +56,6 @@ label {
   width: 100%;
 }
 
-.modal-open {
-  overflow: hidden;
-}
 
 .modal-main-sign {
   margin-bottom: 20px;
@@ -74,10 +71,14 @@ label {
 }
 
 .modal-first {
-  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: visible;
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 
@@ -85,6 +86,7 @@ label {
   width: 90%;
   user-select: none;
   position: relative;
+  overflow-y: visible;
 
 }
 .dropdown-form  .dropdown-form-btn {
@@ -102,14 +104,20 @@ label {
 }
 
 .dropdown-form .dropdown-form-content {
-  position: absolute;
+
   padding: 10px;
   background: #fff;
   box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
   font-weight: 500;
   color: #333;
   border-radius: 15px;
-  width: 100%;
+  width: 320px;
+}
+
+.dropdown-form-content{
+  position: fixed;
+  z-index: 999; 
+
 }
 .dropdown-form .dropdown-form-content .dropdown-form-item {
   padding: 10px;

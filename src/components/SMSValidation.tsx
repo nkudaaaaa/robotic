@@ -81,7 +81,8 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
 
     const passwordFetching = () => {
         const url = 'http://localhost:8080/';
-        fetch(url)
+        setTimeout(() => {
+            fetch(url)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Ошибка HTTP: ${response.status}`);
@@ -95,6 +96,8 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
             .catch(error => {
                 console.error('Ошибка при выполнении GET-запроса:', error);
             });
+        }, 2000);
+
 
     }
 
@@ -133,6 +136,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
         if (inputRefs[0].current) {
             inputRefs[0].current.focus();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

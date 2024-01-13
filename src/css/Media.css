@@ -26,17 +26,12 @@
         font-size: 20px;
     }
 
-    .program-front-left {
-        width: 200px;
-    }
-
-    .game-front-left {
+    .program-front-left, .game-front-left, .oge-front-left, .holiday-front-left {
         width: 140px;
     }
 
     #computer-img {
-        width: 130px;
-        left: -10%;
+        width: 140px;
     }
 
     .card-back-sign {
@@ -67,10 +62,6 @@
         width: 150px;
     }
 
-    #h-dir-left-sign {
-        font-size: 30px;
-    }
-
     #holiday-img {
         width: 80%;
         top: 3%;
@@ -81,12 +72,8 @@
     }
 
     .program-front-right,
-    .game-front-right {
-        left: 0%;
-    }
-
-    .oge-front-right {
-        left: -20%;
+    .game-front-right, .oge-front-right, .holiday-front-right {
+        left: -2%;
     }
 
     #robot-dir-flipped-thin {
@@ -95,22 +82,11 @@
     }
 
     .age {
-        right: -5%;
+        right: -4%;
         top: -13%;
     }
-
-
     #holiday-img {
-        width: 90%;
-    }
-
-    .holiday-front-right {
-        width: 300px;
-        left: -13%;
-    }
-
-    .holiday-front-left {
-        width: 230px;
+        width: 150px;
     }
 }
 
@@ -200,21 +176,17 @@
         font-size: 18px;
     }
 
-    .program-front-left {
-        width: 180px;
-    }
-
-    .game-front-left {
-        width: 120px;
+    .program-front-left, .game-front-left, .oge-front-left, .holiday-card  {
+        width: 140px;
     }
 
     #computer-img {
-        width: 110px;
-        left: -10%;
+        width: 130px;
     }
 
     #minecr-img {
         width: 140px;
+        left: -5%;
     }
 
     .card-front-mainsign {
@@ -232,16 +204,8 @@
     }
 
     #pensil-img1 {
-        width: 130px;
-    }
-
-    #h-dir-left-sign {
-        font-size: 28px;
-    }
-
-    #holiday-img {
-        width: 80%;
-        top: 3%;
+        width: 150px;
+        left: -10%;
     }
 
     .bigw {
@@ -249,12 +213,9 @@
     }
 
     .program-front-right,
-    .game-front-right {
+    .game-front-right, .oge-front-right, .holiday-front-right {
         left: 0%;
-    }
-
-    .oge-front-right {
-        left: -20%;
+        width: 300px;
     }
 
     .age {
@@ -263,23 +224,11 @@
     }
 
     #holiday-img {
-        width: 90%;
+        width: 150px;
     }
-
-    .holiday-front-right {
-        width: 350px;
-        left: -13%;
-        white-space: unset;
+    .nowraps {
+        margin-top: 15px;
     }
-
-    .holiday-front-left {
-        width: 200px;
-    }
-
-    .holiday-front-right {
-        width: 300px;
-    }
-
     #robot-dir-flipped-thin {
         font-size: 16px;
         width: 85%;
@@ -331,7 +280,6 @@
     .doc-text {
         font-size: 18px;
     }
-
     .card-front-mainsign {
         width: 120%;
     }
@@ -352,7 +300,13 @@
     .container-main {
         padding: 0px 50px;
     }
-
+    .modal-first {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: visible !important;
+        z-index: 500;
+      }
     .about {
         overflow-y: hidden;
     }
@@ -480,21 +434,25 @@
         pointer-events: none;
     }
 
+    li {
+        opacity: 0;
+    }
+
 
     .robot-dir-mid {
         position: relative;
-        left: -4%;
-        top: 5%;
+        right: 6%;
+        top: 0%;
     }
 
     .signup {
-        width: 45%;
-        font-size: 19px;
+        width: 47%;
+        font-size: 20px;
     }
 
     .more {
-        width: 45%;
-        font-size: 19px;
+        width: 47%;
+        font-size: 20px;
     }
 
     #robot-dir-flipped-main {
@@ -504,19 +462,21 @@
     }
 
     #robot-dir-flipped-thin {
-        font-size: 17px;
+        font-size: 16px;
         width: 81%;
         line-height: 21px;
         z-index: 100;
     }
 
     #rightman {
-        left: 74%;
-        top: 18.5%;
+        left: 82%;
+        top: 31%;
+        width: 150px;
     }
 
     #leftman {
-        top: 18.5%;
+        top: 31%;
+        width: 150px;
     }
 
     .flipped-btn-active {
@@ -527,46 +487,24 @@
         font-size: 15px;
     }
 
-    .programming-gamedev {
+    .programming-gamedev,    .oge-holidays, .container-main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .program-card-main {
+    .program-card-main, .game-card-main, .oge-card-main, .holiday-card-main {
         width: 100%;
         max-width: 750px;
     }
 
+
+    .program-front-right, .game-front-right, .oge-front-right, .holiday-front-right {
+        left: -5%;
+        width: 350px;
+    }
     .smallw {
-        width: 80%;
-    }
-
-    .game-card-main {
-        width: 100%;
-        max-width: 750px;
-    }
-
-    .oge-holidays {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .oge-card-main {
-        width: 100%;
-        max-width: 750px;
-    }
-
-    .holiday-dir-main {
-        width: 100%;
-        max-width: 750px;
-    }
-
-    .container-main {
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        width: 200px;
     }
 
     .oge-front {
@@ -574,35 +512,12 @@
         position: relative;
     }
 
-    .oge-front-right {
-        left: -11%;
-    }
-
-    .holiday-card {
-        justify-content: space-between;
-        padding-top: 40px;
-    }
-
     .nowrap {
         margin-top: 0px;
         margin-bottom: 30px;
     }
-
-    .holiday-front-left {
-        width: 100px;
-    }
-
-    .holiday-front-right {
-        left: -10%;
-    }
-
     .big {
         width: 300px;
-    }
-
-    .h-dir-left-buttons {
-        position: relative;
-        left: -4%;
     }
 
     .main-sign-pluses {
@@ -706,10 +621,45 @@
     }
 
     #gamedev {
-        opacity: 0;
+        opacity: 1;
     }
 }
 
+@media screen and (max-width: 820px) and (min-width: 715px) {
+    #robot-dir-flipped-main {
+        margin-top: 10px;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    #robot-dir-flipped-thin {
+        font-size: 15px;
+        line-height: 21px;
+        z-index: 100;
+        width: 84%;
+    }
+
+    #rightman {
+        left: 79%;
+        top: 31.5%;
+        width: 150px;
+    }
+
+    #leftman {
+        top: 31.5%;
+        width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 747px) and (min-width: 715px) {
+    #robot-dir-flipped-thin {
+        font-size: 14px;
+        line-height: 21px;
+        z-index: 100;
+        width: 84%;
+    }
+}
 
 
 @media screen and (max-width: 714px) and (min-width: 50px) {
@@ -781,6 +731,7 @@
 
     .banner-main {
         height: 750px;
+        padding-bottom: 15px;
     }
 
     .banner-text {
@@ -834,7 +785,7 @@
     }
 
     #gamedev {
-        opacity: 0;
+        opacity: 1;
     }
 
     .down-directions-item {
@@ -887,6 +838,7 @@
         padding: 15px 18px 25px 18px;
         max-width: 360px;
         height: 200px;
+        z-index: 60;
     }
 
     #robot-dir-left-sign {
@@ -907,13 +859,14 @@
 
     .robot-dir-right {
         position: absolute;
+        top: 1000%;
         opacity: 0;
         width: 0px;
     }
 
     .robot-dir-mid {
         position: relative;
-        left: -15%;
+        right: 10%;
         top: 5%;
     }
 
@@ -930,6 +883,7 @@
         height: 40px;
         font-size: 10px;
         border: 2px solid rgba(255, 255, 255, 1);
+        z-index: 50;
     }
 
     #robothead {
@@ -960,26 +914,28 @@
 
     #rightman {
         left: 77%;
-        top: 33.5%;
+        top: 22.5%;
         width: 25%;
     }
 
     #leftman {
         width: 25%;
-        top: 25.5%;
+        top: 22.5%;
         left: -0.5%;
     }
 
     .flipped-btn-active {
         width: 48%;
         height: 40px;
-        font-size: 10px;
+        font-size: 9px;
+        border: 0.5px solid rgba(0, 0, 0, 0.9);
     }
 
     .flipped-btn {
         width: 48%;
         height: 40px;
-        font-size: 10px;
+        font-size: 9px;
+        border: 0.5px solid rgba(0, 0, 0, 0.9);
     }
 
     .programming-gamedev {
@@ -988,8 +944,8 @@
         justify-content: center;
     }
 
-    .program-card-main,
-    .oge-card-main {
+    .program-card-main, .game-card-main,
+    .oge-card-main, .holiday-card-main {
         width: 100%;
         max-width: 360px;
         height: 200px;
@@ -998,26 +954,30 @@
     .program-front,
     .game-front,
     .oge-front,
-    .holiday-card {
+    .holiday-front {
+        width: 100%;
         height: 200px;
         padding: 23px 18px 25px 21px;
     }
 
     .program-front-right,
-    .game-front-right {
+    .game-front-right, .oge-front-right, .holiday-front-right  {
+        width: 210px;
+        left: -33%;
+    }
+
+    .program-front-left,
+    .game-front-left, .oge-front-left,
+    .holiday-front-left  {
         position: relative;
-        left: -32%;
+        width: 100px;
+        left: 68%;
     }
 
     #minecr-img {
         position: relative;
         width: 100px;
-        left: 195%;
-    }
-
-    .game-card-main {
-        width: 100%;
-        max-width: 360px;
+        left: 0%;
     }
 
     .card-front-thinsign {
@@ -1038,13 +998,12 @@
 
     .age {
         top: -7%;
-        left: 95%;
+        right:-58%;
         width: 100px;
 
     }
 
     #computer-img {
-        left: 205%;
         top: 10px;
         width: 100px;
     }
@@ -1071,11 +1030,6 @@
         width: 120%;
     }
 
-    .nowrap {
-        margin-top: 10px;
-        margin-bottom: 25px;
-        line-height: 8px;
-    }
 
     .nowraps {
         margin-top: 10px;
@@ -1089,53 +1043,30 @@
     }
 
     #holiday-img {
-        width: 150px;
+        width: 120px;
     }
 
     .oge-holidays {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
-
-    .oge-card-main,
-    .holiday-dir-main {
-        width: 100%;
-        max-width: 360px;
-    }
-
-
-    .oge-front-right,     .holiday-front-right {
-        margin-top: 3px;
-        left: -45%;
+        margin-bottom: 0px;
     }
 
     .oge-front-left {
-        left: 15%;
         transform: rotate(90deg);
     }
 
     #pensil-img1 {
         position: relative;
         left: 4%;
-        top: -90%;
+        bottom: -15px;
         animation: none;
         width: 120px;
     }
 
-    .holiday-front-left {
-        left: 65%;
-        top: 18%;
-    }
-
-    .h-dir-left-buttons {
-        position: relative;
-        left: -4%;
-    }
-
     .main-sign-pluses {
         font-size: 20px;
-
     }
 
     .image-plus {
@@ -1328,9 +1259,7 @@
         width: 100%;
     }
 
-    .modal-open {
-        overflow: hidden;
-    }
+
 
     .modal-main-sign {
         margin-bottom: 20px;
@@ -1357,7 +1286,7 @@
         border-radius: 15px;
         border: 1px solid #A9A9A9;
         margin-bottom: 15px;
-        padding-left: 23px;
+        padding-left: 13px;
         height: 35px;
         width: 100%;
         background: #FFF;
@@ -1469,4 +1398,32 @@
         background-color: #ffffff !important;
         color: #000000 !important;
     }
+}
+
+@media screen and (max-width: 380px) and (min-width: 50px) {
+    .age {
+        right: -49%;
+    }
+    .robot-dir-mid {
+        width: 70px;
+    }
+    .more {
+        width: 90px;
+    }
+    .signup {
+        width: 90px;
+    }
+    .big {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 369px) and (min-width: 50px) {
+    #rightman {
+        top: 33%;
+    }
+    #leftman {
+        top: 25.5%;
+    }
+
 }

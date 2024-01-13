@@ -4,7 +4,6 @@
     padding-top: 60px;
     padding-bottom: 10px;
     margin-bottom: 80px;
-    overflow-x: hidden;
 }
 
 .container-main {
@@ -312,13 +311,13 @@ li {
 
 #leftman {
     position: absolute;
-    top: 17.6%;
+    top: 20%;
     left: 2.5%;
 }
 
 #rightman {
     position: absolute;
-    top: 17.6%;
+    top: 20%;
     left: 82%;
 }
 
@@ -330,8 +329,12 @@ li {
     justify-content: space-between;
 }
 
+.oge-holidays {
+    margin-bottom: 300px;
+}
+
 .program-card-main,
-.game-card-main {
+.game-card-main, .oge-card-main, .holiday-card-main {
     transition: transform 0.25s;
     transform-style: preserve-3d;
     perspective: 1000px;
@@ -340,17 +343,9 @@ li {
     left: 0%;
 }
 
-.oge-card-main,
-.holiday-dir-main {
-    width: 48%;
-    margin-top: 26px;
-    left: 0%;
-
-}
-
 
 .program-front,
-.game-front {
+.game-front, .oge-front, .holiday-front  {
     width: 100%;
     padding: 50px 43px 50px 20px;
     height: 300px;
@@ -364,15 +359,14 @@ li {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    -webkit-transform: rotateY(0deg);
     z-index: 150;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .program-front-left,
 .game-front-left,
-.oge-front-main {
-    width: 120px;
+.oge-front-left, .holiday-front-left {
+    width: 140px;
 }
 
 #computer-img {
@@ -399,15 +393,15 @@ li {
 
 .program-front-right,
 .game-front-right,
-.oge-front-right {
+.oge-front-right, .holiday-front-right {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: -10%;
+    left: -7%;
+    width: 306px;
 }
 
-.card-front-btn,
-.oge-front-btn {
+.card-front-btn {
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -421,8 +415,7 @@ li {
     font-size: 20px;
 }
 
-.card-front-mainsign,
-.oge-front-mainsign {
+.card-front-mainsign {
     font-family: "Raleway";
     font-size: 22px;
     font-style: normal;
@@ -447,14 +440,10 @@ li {
     margin-top: 25px;
 }
 
-.oge-front-thinsign {
-    width: 400px;
-}
-
 .age {
     position: absolute;
-    top: -10%;
-    right: -16%;
+    top: -7%;
+    right: -13%;
 }
 
 .program-back,
@@ -466,13 +455,11 @@ li {
     height: 300px;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    backface-visibility: hidden !important;
+    backface-visibility: hidden;
     transform: rotateY(180deg);
     text-align: left;
     backface-visibility: hidden;
-
     -webkit-backface-visibility: hidden;
-
     -moz-backface-visibility: hidden;
 
 
@@ -489,6 +476,11 @@ li {
 
 .game-front {
     background-color: #FFDF6E;
+    border-radius: 30px;
+}
+
+.holiday-front {
+    background-color: #97E0FF;
     border-radius: 30px;
 }
 
@@ -541,20 +533,12 @@ li {
 
 }
 
-.oge-front-left {
-    width: 250px;
-}
-
-
 #pensil-img1 {
     position: relative;
-    bottom: -10px;
-    margin-right: 20px;
-    left: -15%;
+    left: -25%;
+    top: 17%;
     animation: pensil 4s infinite linear;
 }
-
-
 
 @keyframes pensil {
     0% {
@@ -575,52 +559,12 @@ li {
 
 }
 
-.oge-front {
-    width: 100%;
-    padding: 50px 23px 50px 20px;
-    height: 300px;
-    display: flex;
-    border-radius: 30px;
-    flex-direction: row;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-
-
-
-.holiday-card {
-    position: relative;
-    width: 100%;
-    padding: 50px 23px 50px 33px;
-    height: 300px;
-    display: flex;
-    background-color: #97E0FF;
-    flex-direction: row;
-    border-radius: 30px;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.holiday-front-right {
-    position: relative;
-    left: -17%;
-    display: flex;
-    flex-direction: column;
-}
-
-.holiday-front-left {
-    position: relative;
-    top: 15%;
-    left: -1%;
-    width: 500px;
-}
-
-
 #holiday-img {
     position: relative;
-    left: -30%;
-    top: 10px;
-    animation: holiday 6s infinite ease-in-out;
+    left: -25%;
+    top: 17%;
     width: 200px;
+    animation: holiday 6s infinite ease-in-out;
 }
 
 @keyframes holiday {
@@ -637,7 +581,6 @@ li {
         transform: translateY(0px);
     }
 }
-
 
 .bigw {
     width: 60%;

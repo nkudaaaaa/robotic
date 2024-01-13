@@ -98,7 +98,7 @@ const RobotsCard = () => {
 
                 </div>
             </motion.div>
-            {isModalOpen && <ModalWindow onClose={toggleModal} selectedDirection="Робототехника" />}
+            {isModalOpen && <ModalWindow onClose={toggleModal} selectedDirection="Робототехника" isVisible={true} info={{name: '', phone: ''}}/>}
         </div>
     )
 }

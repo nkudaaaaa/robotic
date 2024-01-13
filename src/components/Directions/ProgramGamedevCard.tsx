@@ -93,7 +93,7 @@ const ProgramCard = () => {
                     <img src={closeIcon} className="close-icon" onClick={handleFlipGm} />
                 </div>
             </motion.div>
-            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} />}
+            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} isVisible={true} info={{name: '', phone: ''}}/>}
         </div >
     )
 }

@@ -32,22 +32,22 @@ const OgeEgeCard = () => {
                 </div>
             </div>
 
-        <div className="holiday-dir-main">
-        <div className="holiday-card">
+        <div className="holiday-card-main">
+        <div className="holiday-front">
             <div className="holiday-front-left">
             <img src={holidayImg} id="holiday-img" />
             </div>
             <div className="holiday-front-right" >
                 <span className="card-front-mainsign nowrap">Проведение праздников</span>
                 <span className="card-front-thinsign" >Создадим праздник по Вашим пожеланиям</span>
-                <div className="h-dir-left-buttons">
+                <div className="card-front-btn">
                     <button className="signup big" onClick={() => toggleModal("Проведение праздников")}>Записаться!</button>
                 </div>
             </div>
 
         </div>
     </div>
-            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} />}
+            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} isVisible={true} info={{name: '', phone: ''}}/>}
         </div>
     )
 }

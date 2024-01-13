@@ -3,16 +3,25 @@ import tg from "../assets/footer/Telegram.svg"
 import vk from "../assets/footer/Vk.svg"
 import ws from "../assets/footer/Whatsapp.svg"
 import { ChangeEvent, useState } from "react"
+import ModalWindow from "./ModalWindow"
 
 interface callBackData {
     name: string;
     phone: string;
+    isConsultation: true
 }
 
 const Footer = () => {
 
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
+    const [isSMS, setIsSMS] = useState(false)
+
+    const toggleModal = () => {
+        setIsSMS(!isSMS);
+        setName('')
+        setPhone('')
+    }    
 
     const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
@@ -56,11 +65,12 @@ const Footer = () => {
     }
 
     const submitForm = () => {
-        const url = 'http://localhost:8080';
+        const url = 'http://localhost:8080/postConsultation';
 
         const dataToSend: callBackData = {
-            name,
-            phone,
+            name: name,
+            phone: phone,
+            isConsultation: true
         }
 
         if (name === "" || phone === "") {
@@ -71,8 +81,8 @@ const Footer = () => {
             alert("Вы не заполнили правильно номер телефона ")
             return;
         }
-        setName("");
-        setPhone("");
+        setIsSMS(true)
+        console.log(phone+'qqqqq');
         console.log(dataToSend);
         return fetch(url, {
             method: 'POST',
@@ -83,6 +93,7 @@ const Footer = () => {
         })
             .then(response => response.json())
             .then(responseData => {
+
                 console.log('Успешно отправлено и получено:', responseData);
 
                 return responseData;
@@ -137,7 +148,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
+        
+        {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{name, phone}}>
+            </ModalWindow>}
         </section>
     )
 }
