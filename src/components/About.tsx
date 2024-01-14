@@ -61,8 +61,8 @@ const About = () => {
                         <img src={robots} alt="" id="robototechnics" className="down-directions-item" />
                     </div>
                     <div className="upper-directions">
-                        <img src={modeling} alt="" className="down-directions-item" />
-                        <img src={websites} alt="" className="down-directions-item" />
+                        <img src={websites} alt="" className="down-directions-item grid" />
+                        <img src={modeling} alt="" className="down-directions-item grid" />
                         <img src={gamedev} alt="" className="down-directions-item" id="gamedev"/>
                     </div>
                 </div>
