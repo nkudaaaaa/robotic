@@ -88,6 +88,10 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
     if (e.key === 'Enter') {
       formDataPost()
     }
+    if (e.key === 'Backspace') {
+      const n = phoneNumber.length;
+      if (phoneNumber[n - 1] === '-' || phoneNumber[n - 1] === ')'|| phoneNumber[n - 1] === '(') setPhoneNumber(phoneNumber.slice(0, phoneNumber.length -1))
+    }
   }
 
 

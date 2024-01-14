@@ -59,8 +59,11 @@ const Footer = () => {
     const submitFromInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             submitForm();
-            return
         }
+        if (e.key === 'Backspace') {
+            const n = phone.length;
+            if (phone[n - 1] === '-' || phone[n - 1] === ')'|| phone[n - 1] === '(') setPhone(phone.slice(0, n -1))
+          }
     }
 
     const submitForm = () => {

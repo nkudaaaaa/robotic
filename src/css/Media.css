@@ -336,6 +336,7 @@
         padding-bottom: 70px;
     }
 
+
     .down-banner {
         margin: 20px 0px 0px 0px;
         display: flex;
@@ -351,7 +352,6 @@
     }
 
     .about,
-    .banner-main,
     .direcions-main {
         overflow-x: hidden;
     }
@@ -435,11 +435,13 @@
         pointer-events: none;
     }
 
-    li {
+    .li {
         opacity: 0;
     }
 
-
+    .robot-dir-right {
+        opacity: 0;
+    }
     .robot-dir-mid {
         position: relative;
         right: 6%;
