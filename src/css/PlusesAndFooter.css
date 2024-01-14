@@ -213,6 +213,7 @@ iframe {
 .doc-text {
     font-size: 20px;
     font-weight: 400;
+    color: #FFF;
 }
 .documents {
     display: flex;

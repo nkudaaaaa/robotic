@@ -4,6 +4,7 @@ import vk from "../assets/footer/Vk.svg"
 import ws from "../assets/footer/Whatsapp.svg"
 import { ChangeEvent, useState } from "react"
 import ModalWindow from "./ModalWindow"
+import { Link } from 'react-router-dom';
 
 interface callBackData {
     name: string;
@@ -20,7 +21,7 @@ const Footer = () => {
         setIsSMS(!isSMS);
         setName('')
         setPhone('')
-    }    
+    }
 
     const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
@@ -62,8 +63,8 @@ const Footer = () => {
         }
         if (e.key === 'Backspace') {
             const n = phone.length;
-            if (phone[n - 1] === '-' || phone[n - 1] === ')'|| phone[n - 1] === '(') setPhone(phone.slice(0, n -1))
-          }
+            if (phone[n - 1] === '-' || phone[n - 1] === ')' || phone[n - 1] === '(') setPhone(phone.slice(0, n - 1))
+        }
     }
 
     const submitForm = () => {
@@ -83,7 +84,7 @@ const Footer = () => {
             return;
         }
         setIsSMS(true)
-        console.log(phone+'qqqqq');
+        console.log(phone + 'qqqqq');
         console.log(dataToSend);
         return fetch(url, {
             method: 'POST',
@@ -115,8 +116,8 @@ const Footer = () => {
                     </div>
                     <div className="form-div">
                         <form method="post">
-                            <input type="text" placeholder="Имя..." className="form-input" value={name} onChange={handleChangeName} onKeyDown={submitFromInput}/>
-                            <input type="text" placeholder="Телефон..." className="form-input" value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput}/>
+                            <input type="text" placeholder="Имя..." className="form-input" value={name} onChange={handleChangeName} onKeyDown={submitFromInput} />
+                            <input type="text" placeholder="Телефон..." className="form-input" value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput} />
                             <input type="button" value="Заказать звонок" className="form-btn" onClick={submitForm} />
                         </form>
                         <span className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="#!">обработкой персональных данных</a></span>
@@ -144,13 +145,16 @@ const Footer = () => {
                         <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" /></a>
                     </div>
                     <div className="documents">
-                        <span className="doc-text">Политика конфиденциальности</span>
-                        <span className="doc-text">Пользвательское соглашение</span>
+                        <Link to="/privacy#privacy" className="doc-text">Политика конфиденциальности </Link>
+                        <Link to="/privacy" className="doc-text">
+                            Пользовательское соглашение
+                        </Link>
+
                     </div>
                 </div>
             </div>
-        
-        {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{name, phone}}>
+
+            {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}>
             </ModalWindow>}
         </section>
     )
