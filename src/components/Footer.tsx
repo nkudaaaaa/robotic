@@ -8,7 +8,6 @@ import ModalWindow from "./ModalWindow"
 interface callBackData {
     name: string;
     phone: string;
-    isConsultation: true
 }
 
 const Footer = () => {
@@ -70,7 +69,6 @@ const Footer = () => {
         const dataToSend: callBackData = {
             name: name,
             phone: phone,
-            isConsultation: true
         }
 
         if (name === "" || phone === "") {
