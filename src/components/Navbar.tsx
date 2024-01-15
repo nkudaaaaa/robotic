@@ -7,6 +7,7 @@ import { useState } from 'react';
 import "../css/NavbarBanner.css"
 import { motion as m } from 'framer-motion'
 import { parentNav } from '../animations/animations';
+import logoMain from '../assets/Heads/logoMain.svg'
 
 
 function NavBar() {
@@ -27,7 +28,7 @@ function NavBar() {
 
     <Navbar collapseOnSelect expand="lg" className="navbar" bg='black'>
       <Container className='navbar-cont'>
-        <Navbar.Brand href="/">Роботик</Navbar.Brand>
+        <Navbar.Brand href="/"><img src={logoMain} alt="" id='logo' /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav " className='ml-auto'>
           <Nav className='mr-auto'>

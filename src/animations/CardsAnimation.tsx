@@ -17,22 +17,20 @@ export const plusesAnimation = {
 
 export const animationDir = {
     hidden: {
-        y: '8%',
-        height: "90%"
+
+        y: "10%"
     },
     visible: {
-        y: '0%',
-        height: "100%"
+        y: "0%"
     }
 }
 export const animationDirReversed = {
     hidden: {
-        y: '-8%',
-        height: "90%"
+        y: '-10%',
+
     },
     visible: {
         y: '0%',
-        height: "100%"
     }
 }
 export const hrAnimation = {

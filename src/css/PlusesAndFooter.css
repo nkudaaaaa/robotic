@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-
 .pluses {
     margin-bottom: 272px;
     display: flex;
@@ -228,6 +226,7 @@ iframe {
     font-size: 64px;
     font-style: normal;
     font-weight: 500;
+    overflow-y: hidden;
 }
 
 .socials {
@@ -237,4 +236,23 @@ iframe {
 
 a {
     text-decoration: none;
+    height: 20px;
+}
+
+#logo-footer {
+    width: 230px;
+
+    position: relative;
+    left: -30%;
+    top: -65%;
+    transition: .2s ease-in-out;
+
+}
+#logo-footer:hover {
+    transform: scale(1.1);
+}
+
+#logo-a {
+    width: 150px;
+    height: 100px;
 }

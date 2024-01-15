@@ -22,7 +22,7 @@ const Pluses = () => {
                         whileInView="visible"
                         transition={{ duration: 0.8, delay: 0.1, type: 'spring' }}
                         viewport={{ amount: 0.1}}>
-                        <img src={first} alt="" className="image-plus" />
+                        <img src={first} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div">
 
                             <span className="plus-name">Результативность</span>
@@ -37,7 +37,7 @@ const Pluses = () => {
                         transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
                         viewport={{ amount: 0.1}}
                         exit="hidden">
-                        <img src={second} alt="" className="image-plus" />
+                        <img src={second} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div">
 
                             <span className="plus-name">Участие в олимпиадах</span>
@@ -51,7 +51,7 @@ const Pluses = () => {
                         whileInView="visible"
                         transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
                         viewport={{ amount: 0.1}}>
-                        <img src={third} alt="" className="image-plus" />
+                        <img src={third} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div" id="plus-last">
                             <span className="plus-name">Профессиональные кураторы</span>
                             <span className="plus-description">Наши программы обучения разработаны высококвалифицированными экспертами, а лучшие педагоги помогут все понять с первого раза.</span>

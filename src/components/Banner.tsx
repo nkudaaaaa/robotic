@@ -1,4 +1,5 @@
-import rs from '../assets/Heads/lastRs.svg';
+import rs from '../assets/Heads/lastRs.webp';
+import { useQuery } from 'react-query';
 import ls from '../assets/Heads/lastLs.svg';
 import robotL from '../assets/Heads/robot-banner-l.svg';
 import robotR from '../assets/Heads/robot-banner-r.svg';
@@ -8,7 +9,17 @@ import { downAnimation } from '../animations/animations';
 import { leftAnimation } from '../animations/animations';
 import { motion as m } from 'framer-motion'
 
+const loadImage = async (src: string) => {
+    const response = await fetch(src);
+    const data = await response.blob();
+    return URL.createObjectURL(data);
+  };
+
 const Banner = () => {
+    const { data: robotLData } = useQuery('robotL', () => loadImage(robotL));
+    const { data: robotRData } = useQuery('robotR', () => loadImage(robotR));
+    const { data: rsData } = useQuery('rs', () => loadImage(rs));
+    const { data: lsData } = useQuery('ls', () => loadImage(ls));
 
     return (
         <section className="banner-main" >
@@ -17,13 +28,13 @@ const Banner = () => {
                 <div className="marquee">
                     <div className="marquee__content">
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" id='rs'/></li>
+                            <li><img src={rsData} alt="" id='rs'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" id='rs'/></li>
+                            <li><img src={rsData} alt="" id='rs'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="" id='rs'/></li>
+                            <li><img src={rsData} alt="" id='rs'/></li>
                         </ul>
 
                     </div>
@@ -31,13 +42,13 @@ const Banner = () => {
                 <div className="marquee2">
                     <div className="marquee2__content">
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" id='ls'/></li>
+                            <li><img src={lsData} alt="" id='ls'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" id='ls'/></li>
+                            <li><img src={lsData} alt="" id='ls'/></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={ls} alt="" id='ls'/></li>
+                            <li><img src={lsData} alt="" id='ls'/></li>
                         </ul>
                     </div>
                 </div>
@@ -50,8 +61,8 @@ const Banner = () => {
                     <span className='banner-text-sign'>Влюбляемся в IT профессии, повышаем успеваемость в школе и учимся по-новому взаимодействовать с гаджетами</span>
                 </m.div>
                 <m.div className="robots" variants={downAnimation} initial="hidden" animate="visible">
-                    <m.img src={robotL} id='robotL'/>
-                    <m.img src={robotR} id='robotR' />
+                    <m.img src={robotLData} id='robotL' loading='lazy'/>
+                    <m.img src={robotRData} id='robotR' loading='lazy'/>
                 </m.div>
             </div>
             </div>

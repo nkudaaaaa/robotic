@@ -227,7 +227,7 @@ li {
     width: 100%;
     padding: 30px 63px 50px 63px;
     height: 332px;
-    background-image: url("../assets/directions/bgrobots.svg");
+    background-image: url("../assets/directions/bgrobots.webp");
     background-size: cover;
     flex-direction: row;
     align-items: center;
@@ -524,7 +524,7 @@ li {
 }
 
 .game-back {
-    background-image: url("../assets/directions/bggamedev.svg");
+    background-image: url("../assets/directions/bggamedev.webp");
     background-size: cover;
     text-align: left;
     z-index: 200;

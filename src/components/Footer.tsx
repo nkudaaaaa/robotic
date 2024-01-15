@@ -7,6 +7,7 @@ import ModalWindow from "./ModalWindow"
 import { Link } from 'react-router-dom';
 import { animationDir } from '../animations/CardsAnimation';
 import { motion } from "framer-motion"
+import logoonly from '../assets/Heads/logotextdown.svg'
 
 interface callBackData {
     name: string;
@@ -73,7 +74,7 @@ const Footer = () => {
         }
         if (e.key === 'Backspace') {
             const n = phone.length;
-            if (phone[n - 1] === '-' || phone[n - 1] === ')' || phone[n - 1] === '(') setPhone(phone.slice(0, n - 1))
+            if (['-', ')', '('].includes(phone[n - 1])) setPhone(phone.slice(0, n - 1))
         }
     }
 
@@ -94,8 +95,6 @@ const Footer = () => {
             return;
         }
         setIsSMS(true)
-        console.log(phone + 'qqqqq');
-        console.log(dataToSend);
         return fetch(url, {
             method: 'POST',
             body: JSON.stringify(dataToSend),
@@ -105,9 +104,6 @@ const Footer = () => {
         })
             .then(response => response.json())
             .then(responseData => {
-
-                console.log('Успешно отправлено и получено:', responseData);
-
                 return responseData;
             })
             .catch(error => {
@@ -144,20 +140,20 @@ const Footer = () => {
                         <span className="contacts-text">+7 (999) - 999 - 99 - 99</span>
                     </div>
                     <div className="icons-footer">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" /></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" /></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={ws} alt="" className="social-icon" /></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={ws} alt="" className="social-icon" loading="lazy"/></a>
                     </div>
 
                 </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor" width="940" height="271" />
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor" width="940" height="271" loading="lazy"/>
 
                 <div className="footer-info">
-                    <a href="/"><span className="footer-logo">Роботик</span></a>
+                    <a href="/" id="logo-a"><img src={logoonly} alt="" id="logo-footer"/></a>
                     <div className="socials">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" /></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" /></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" /></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" loading="lazy"/></a>
                     </div>
                     <div className="documents">
                         <Link to="/privacy#privacy" className="doc-text">Политика конфиденциальности </Link>

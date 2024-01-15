@@ -1,5 +1,5 @@
 
-
+import { QueryClient, QueryClientProvider } from 'react-query';
 import NavBar from "./components/Navbar";
 import Banner from "./components/Banner";
 import About from "./components/About";
@@ -11,27 +11,32 @@ import { Route, Routes } from 'react-router-dom';
 import Privacy from "./components/Privacy";
 import "./css/App.css"
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
     <>
-    <BatteryStatusListener>
-      <Routes>
-        <Route path="/privacy" element={<Privacy />} />
-        <Route
-          path="/"
-          element={
-            <>
-              <NavBar />
-              <Banner />
-              <About />
-              <DirectionsMain />
-              <Pluses />
-              <Footer />
-            </>
-          }
-        />
-      </Routes>
-    </BatteryStatusListener>
+      <BatteryStatusListener>
+        <Routes>
+          <Route path="/privacy" element={<Privacy />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <QueryClientProvider client={queryClient}>
+
+                  <NavBar />
+                  <Banner />
+                  <About />
+                  <DirectionsMain />
+                  <Pluses />
+                  <Footer />
+                </QueryClientProvider>
+              </>
+            }
+          />
+        </Routes>
+      </BatteryStatusListener>
     </>
   );
 }

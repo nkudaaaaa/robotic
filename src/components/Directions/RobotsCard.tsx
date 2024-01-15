@@ -76,7 +76,7 @@ const RobotsCard = () => {
                         <span className="directions-sign" id="robot-dir-right-age">4-16 лет</span>
                         </div>
                     </div>
-                    <div className="robot-dir-mid" id="programming" >
+                    <div className="robot-dir-mid" id="programming">
                         <img src={robotHead} id="robothead" />
                         <img src={robotBody} id="robotbody" alt="" />
                     </div>
@@ -98,9 +98,9 @@ const RobotsCard = () => {
                         <span className="directions-sign" id="robot-dir-flipped-main" >Робототехника</span>
                         <span className="directions-sign" id="robot-dir-flipped-thin">{texts[textId]}</span>
                         <div className="robot-dir-flipped-buttons">
-                            {threeBtnActive ? <img src={leftman} id="leftman" /> : ""}
+                            {threeBtnActive ? <img src={leftman} id="leftman" loading="lazy"/> : ""}
                             <button className={threeBtnActive ? "flipped-btn-active" : "flipped-btn"} onClick={threeHandle}>3 месяца (Базовый курс)</button>
-                            {sixBtnActive ? <img src={rightman} alt="" id="rightman" /> : ""}
+                            {sixBtnActive ? <img src={rightman} alt="" id="rightman" loading="lazy"/> : ""}
                             <button className={sixBtnActive ? "flipped-btn-active" : "flipped-btn"} onClick={sixHandle}>6 месяцев (Продвинутый курс)</button>
                         </div>
                         <button onClick={handleFlip} className="close-icon"><img src={closeIcon} alt="" className="close-icon"/></button>

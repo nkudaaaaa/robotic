@@ -10,20 +10,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+    overflow-x: hidden;
 }
 
 .images-bg {
     position: relative;
+
 }
 #about-bg {
     position: absolute;
-    top: -130px;
-    left: -760px;
+    top: 100px;
+    left: 10%;
 }
 
+#about-bg-w {
+    position: absolute;
 
+}
 .main-sign-about {
     z-index: 100;
     display: inline;
@@ -79,7 +82,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: .3s ease-in-out;
+
 }
 
 .upper-line {
@@ -122,5 +125,5 @@
     display: grid;
     box-sizing: border-box;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0px !important;
+    gap: 0px;
 }
