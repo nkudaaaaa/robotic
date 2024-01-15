@@ -89,6 +89,11 @@
     #holiday-img {
         width: 150px;
     }
+    #plus-last {
+        position: relative;
+        right: 2%;
+    }
+
 }
 
 @media screen and (max-width: 1319px) and (min-width: 1018px) {
@@ -102,6 +107,7 @@
         grid-column: span 3;
         justify-self: center;
     }
+
 }
 
 
@@ -293,6 +299,10 @@
 
     .main-sign-pluses {
         padding-bottom: 70px;
+    }
+    #plus-last {
+        position: relative;
+        right: 3%;
     }
 }
 
@@ -630,6 +640,10 @@
     #gamedev {
         opacity: 1;
     }
+    #plus-last {
+        position: relative;
+        right: 0%;
+    }
 }
 
 @media screen and (max-width: 820px) and (min-width: 715px) {
@@ -656,6 +670,10 @@
         top: 31.5%;
         width: 150px;
     }
+    #plus-last {
+        position: relative;
+        right: 0%;
+    }
 }
 
 
@@ -666,6 +684,7 @@
         z-index: 100;
         width: 84%;
     }
+
 }
 
 
@@ -1103,7 +1122,7 @@
 
     #plus-last {
         position: relative;
-        right: -2%;
+        right: 0%;
     }
 
     .pluses {

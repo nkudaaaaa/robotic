@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion} from "framer-motion";
+import {  useState } from "react";
 import comp from "../../assets/directions/computer.svg"
 import closeIcon from "../../assets/directions/add.svg"
 import minecr from "../../assets/directions/minecr.svg"
 import ModalWindow from "../ModalWindow";
+import {animation} from "../../animations/CardsAnimation"
 
 const ProgramCard = () => {
 
@@ -37,14 +38,20 @@ const ProgramCard = () => {
 
 
     return (
-        <div className="programming-gamedev" >
+        <div className="programming-gamedev"        
+    >
             <motion.div className="program-card-main"
                 initial={false}
                 animate={{ rotateY: isFlippedPr ? 180 : 360 }}
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimatingPr(false)}>
 
-                <div className={isFlippedPr ? "program-front close" : "program-front"}>
+                <motion.div className={isFlippedPr ? "program-front close" : "program-front"}
+                        variants={animation}      
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2}}
+                        transition={{ duration: 0.8 }}>
                     <div className="program-front-left">
                         <img src={comp} alt="" id="computer-img" />
                     </div>
@@ -57,7 +64,7 @@ const ProgramCard = () => {
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="program-back">
                     <span className="card-back-sign">В основе курса лежит изучение таких языков программирования как Java, C#,
@@ -73,7 +80,12 @@ const ProgramCard = () => {
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimatingGm(false)}>
 
-                <div className="game-front">
+                <motion.div className="game-front"
+                        variants={animation}      
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2}}
+                        transition={{ duration: 0.8 }}>
                     <div className="game-front-left">
                         <img src={minecr} alt="" id="minecr-img" />
                     </div>
@@ -86,7 +98,7 @@ const ProgramCard = () => {
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="game-back">
                     <span className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если Ваш ребёнок - творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов</span>

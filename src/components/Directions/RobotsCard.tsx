@@ -7,6 +7,8 @@ import closeIcon from "../../assets/directions/add.svg"
 import leftman from "../../assets/directions/3monthman.svg"
 import rightman from "../../assets/directions/6monthman.svg"
 import ModalWindow from "../ModalWindow";
+import {animation} from "../../animations/CardsAnimation"
+
 
 const RobotsCard = () => {
 
@@ -48,7 +50,9 @@ const RobotsCard = () => {
     }
 
     return (
-        <div className="robot-super-main">
+        <motion.div className="robot-super-main"
+       
+>
             <motion.div className="robot-dir-main"
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 360 }}
@@ -56,7 +60,13 @@ const RobotsCard = () => {
                 onAnimationComplete={() => setIsAnimating(false)}
             >
 
-                <div className="robot-dir1">
+                <motion.div className="robot-dir1"
+                        variants={animation}      
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.2}}
+                        transition={{ duration: 0.8 }}  
+>
                     <div className="robot-dir-left">
                         <span className="directions-sign" id="robot-dir-left-sign">Робототехника</span>
                         <span className="directions-sign" id="robot-dir-left-thin">Научим Вашего ребенка работать с роботами</span>
@@ -82,7 +92,7 @@ const RobotsCard = () => {
                         </div>
                     </div>
 
-                </div>
+                </motion.div>
                 <div className="robot-dir2" >
                     <div className="robot-dir-flipped" >
                         <span className="directions-sign" id="robot-dir-flipped-main" >Робототехника</span>
@@ -99,7 +109,7 @@ const RobotsCard = () => {
                 </div>
             </motion.div>
             {isModalOpen && <ModalWindow onClose={toggleModal} selectedDirection="Робототехника" isVisible={true} info={{name: '', phone: ''}}/>}
-        </div>
+        </motion.div>
     )
 }
 

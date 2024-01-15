@@ -45,7 +45,7 @@ const Banner = () => {
             <div className="container-main">
 
             <div className="down-banner">
-                <m.div className="banner-text" variants={leftAnimation} initial="hidden" animate="visible">
+                <m.div className="banner-text" variants={leftAnimation} initial="hidden" whileInView="visible">
                     <span className='banner-text-bold'>в Краснодаре</span>
                     <span className='banner-text-sign'>Влюбляемся в IT профессии, повышаем успеваемость в школе и учимся по-новому взаимодействовать с гаджетами</span>
                 </m.div>

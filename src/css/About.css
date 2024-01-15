@@ -79,6 +79,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: .3s ease-in-out;
 }
 
 .upper-line {
@@ -102,10 +103,6 @@
 .directions-item {
     transform: scale(0.95);    
     transition: .3s ease-in-out;
-}
-.directions-item:hover {
-    transform: scale(1);
-
 }
 
 .cards-education {

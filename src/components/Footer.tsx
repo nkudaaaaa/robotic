@@ -5,6 +5,8 @@ import ws from "../assets/footer/Whatsapp.svg"
 import { ChangeEvent, useState } from "react"
 import ModalWindow from "./ModalWindow"
 import { Link } from 'react-router-dom';
+import { animationDir } from '../animations/CardsAnimation';
+import { motion } from "framer-motion"
 
 interface callBackData {
     name: string;
@@ -24,7 +26,15 @@ const Footer = () => {
     }
 
     const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
-        setName(e.target.value)
+        const inputValue = e.target.value;
+
+        if (/^[А-Яа-яA-Za-z]*$/.test(inputValue)) {
+            if (inputValue.length > 30) {
+                setName(inputValue.slice(0, 30));
+            }
+            else setName(inputValue)
+        }
+
     }
 
     const handleChangePhone = (e: ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +119,12 @@ const Footer = () => {
 
         <section className="footer">
             <div className="container-main">
-                <div className="call-form">
+                <motion.div className="call-form" 
+                    variants={animationDir}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.9 }} >
                     <div className="call-form-text">
                         <span className="call-form-header">Не знаете, с чего начать?</span>
                         <span className="call-form-desc">Подберем оптимальную форму обучения исходя из ваших пожеланий</span>
@@ -122,7 +137,7 @@ const Footer = () => {
                         </form>
                         <span className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="#!">обработкой персональных данных</a></span>
                     </div>
-                </div>
+                </motion.div>
                 <div className="call-form cont">
                     <div className="contacts-div">
                         <span className="contacts-text">ул. Героя Пешкова, 14</span>
@@ -154,9 +169,11 @@ const Footer = () => {
                 </div>
             </div>
 
-            {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}>
-            </ModalWindow>}
-        </section>
+            {
+                isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}>
+                </ModalWindow>
+            }
+        </section >
     )
 }
 

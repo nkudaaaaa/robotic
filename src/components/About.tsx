@@ -1,12 +1,4 @@
 import "../css/About.css"
-// import minecr from "../assets/about/minecraftLogo.svg"
-// import wifi from "../assets/about/wifiLogo.svg"
-// import gear from "../assets/about/gearLogo.svg"
-// import fire from "../assets/about/fireLogo.svg"
-// import puzzle from "../assets/about/puzzle.svg"
-// import hummer from "../assets/about/hammer.svg"
-// import figma from "../assets/about/figma.svg"
-// import lightning from "../assets/about/lightningLogo.svg"
 import bg from "../assets/about/bg.svg";
 import legoCard from "../assets/about/legoCard.svg"
 import htmlCard from "../assets/about/htmlCard.svg"
@@ -20,8 +12,8 @@ import modeling from "../assets/about/3D.svg"
 import websites from "../assets/about/websites.svg"
 import programming from "../assets/about/programming.svg"
 import robots from "../assets/about/robots.svg"
-
-
+import { animationDir, hrAnimation, animationDirReversed } from '../animations/CardsAnimation';
+import { motion } from "framer-motion"
 
 const About = () => {
     return (
@@ -38,9 +30,19 @@ const About = () => {
                 <span className="main-sign-about" id="span-hashtags">#Роботик #Технотворчество #ПрограммированиеДляДетей</span>
                 <span className="main-sign-about" id="span-education">ПРОГРАММА ОБУЧЕНИЯ</span>
 
-                <div className="line" />
+                <motion.div className="line"
+                    variants={hrAnimation}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.9 }} />
+                <motion.div className="cards-directions"
+                    variants={animationDir}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.9 }}  >
                 <span className="main-sign-about" id="span-program">НАПРАВЛЕНИЯ ДЛЯ ИЗУЧЕНИЯ</span>
-                <div className="cards-directions">
                     <div className="upper-line">
                         <img src={legoCard} className="directions-item" />
                         <img src={htmlCard} alt="" className="directions-item" />
@@ -49,12 +51,18 @@ const About = () => {
                     <div className="down-line">
                         <img src={pythonCard} alt="" className="directions-item" id="python" />
                         <img src={cplusCard} className="directions-item" />
-                        <img src={cshCard} className="directions-item" id="csharp"/>
+                        <img src={cshCard} className="directions-item" id="csharp" />
                         <img src={unityCard} className="directions-item" id="unity" />
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="cards-education">
+                <motion.div className="cards-education"
+                    variants={animationDirReversed}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.9}} 
+                    >
                     <span className="main-sign-about" id="span-directions">ЧЕМУ МЫ ОБУЧАЕМ</span>
                     <div className="down-directions">
                         <img src={programming} alt="" className="down-directions-item" />
@@ -63,11 +71,11 @@ const About = () => {
                     <div className="upper-directions">
                         <img src={websites} alt="" className="down-directions-item grid" />
                         <img src={modeling} alt="" className="down-directions-item grid" />
-                        <img src={gamedev} alt="" className="down-directions-item" id="gamedev"/>
+                        <img src={gamedev} alt="" className="down-directions-item" id="gamedev" />
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </section >
     )
 }
 
