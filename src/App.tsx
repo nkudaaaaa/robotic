@@ -24,13 +24,14 @@ function App() {
             element={
               <>
                 <QueryClientProvider client={queryClient}>
-
                   <NavBar />
-                  <Banner />
-                  <About />
-                  <DirectionsMain />
-                  <Pluses />
-                  <Footer />
+                  <main title='robotick main'>
+                    <Banner />
+                    <About />
+                    <DirectionsMain />
+                    <Pluses />
+                    <Footer />
+                  </main>
                 </QueryClientProvider>
               </>
             }

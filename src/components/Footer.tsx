@@ -16,9 +16,9 @@ interface callBackData {
 
 const Footer = () => {
 
-    const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [isSMS, setIsSMS] = useState(false)
+    const [name, setName] = useState<string>('')
+    const [phone, setPhone] = useState<string>('')
+    const [isSMS, setIsSMS] = useState<boolean>(false)
 
     const toggleModal = () => {
         setIsSMS(!isSMS);
@@ -35,7 +35,6 @@ const Footer = () => {
             }
             else setName(inputValue)
         }
-
     }
 
     const handleChangePhone = (e: ChangeEvent<HTMLInputElement>) => {
@@ -91,7 +90,7 @@ const Footer = () => {
             return;
         }
         if (phone.length !== 18) {
-            alert("Вы не заполнили правильно номер телефона ")
+            alert("Вы не заполнили правильно номер телефона!")
             return;
         }
         setIsSMS(true)
@@ -115,45 +114,45 @@ const Footer = () => {
 
         <section className="footer">
             <div className="container-main">
-                <motion.div className="call-form" 
+                <motion.div className="call-form"
                     variants={animationDir}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.9 }} >
                     <div className="call-form-text">
-                        <span className="call-form-header">Не знаете, с чего начать?</span>
+                        <h6 className="call-form-header">Не знаете, с чего начать?</h6>
                         <span className="call-form-desc">Подберем оптимальную форму обучения исходя из ваших пожеланий</span>
                     </div>
                     <div className="form-div">
-                        <form method="post">
-                            <input type="text" placeholder="Имя..." className="form-input" value={name} onChange={handleChangeName} onKeyDown={submitFromInput} />
-                            <input type="text" placeholder="Телефон..." className="form-input" value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput} />
-                            <input type="button" value="Заказать звонок" className="form-btn" onClick={submitForm} />
+                        <form method="post" action="">
+                            <input type="text" placeholder="Имя..." name="name" className="form-input" value={name} onChange={handleChangeName} onKeyDown={submitFromInput} />
+                            <input type="text" placeholder="Телефон..." name="phone" className="form-input" value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput} />
+                            <input type="button" value="Заказать звонок" className="form-btn" onClick={submitForm} title="Отправить запрос на звонок" />
                         </form>
-                        <span className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="#!">обработкой персональных данных</a></span>
+                        <p className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="/privacy">обработкой персональных данных</a></p>
                     </div>
                 </motion.div>
                 <div className="call-form cont">
                     <div className="contacts-div">
-                        <span className="contacts-text">ул. Героя Пешкова, 14</span>
-                        <span className="contacts-text">+7 (999) - 999 - 99 - 99</span>
+                    <mark><h6 className="contacts-text">ул. Героя Пешкова, 14</h6></mark>
+                        <mark><h6 className="contacts-text">+7 (918) - 123 - 05 - 93</h6></mark>
                     </div>
                     <div className="icons-footer">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={ws} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="telegram" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="vkontakte" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={ws} alt="whatsapp" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
                     </div>
 
                 </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor" width="940" height="271" loading="lazy"/>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor;theme=light" width="940" height="271" loading="lazy" title="yandex-map" />
 
-                <div className="footer-info">
-                    <a href="/" id="logo-a"><img src={logoonly} alt="" id="logo-footer"/></a>
+                <footer className="footer-info">
+                    <a href="/" id="logo-a"><img src={logoonly} alt="logo" id="logo-footer" /></a>
                     <div className="socials">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" loading="lazy"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
                     </div>
                     <div className="documents">
                         <Link to="/privacy#privacy" className="doc-text">Политика конфиденциальности </Link>
@@ -162,13 +161,9 @@ const Footer = () => {
                         </Link>
 
                     </div>
-                </div>
+                </footer>
             </div>
-
-            {
-                isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}>
-                </ModalWindow>
-            }
+            {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}/>}
         </section >
     )
 }

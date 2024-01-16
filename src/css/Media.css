@@ -37,8 +37,8 @@
 
     .card-back-sign {
         font-size: 17px;
-        width: 95%;
-        line-height: 32px;
+        width: 97%;
+        line-height: 30px;
     }
 
     #minecr-img {
@@ -246,8 +246,8 @@
     }
 
     .card-back-sign {
-        font-size: 16px;
-        width: 95%;
+        font-size: 15px;
+        width: 100%;
         line-height: 30px;
     }
 
@@ -292,7 +292,7 @@
     }
 
     .age {
-        top: -15%;
+        top: -12%;
         right: -94%;
         font-size: 17px;
     }
@@ -488,12 +488,12 @@
 
     #rightman {
         left: 82%;
-        top: 31%;
+        top: 28.5%;
         width: 150px;
     }
 
     #leftman {
-        top: 31%;
+        top: 28.5%;
         width: 150px;
     }
 
@@ -652,9 +652,6 @@
     #logo-footer {
         width: 170px;
     }
-    .navbar {
-        height: 60px;
-    }
     .navbar-toggler  {
         margin-top: 8px;
     }
@@ -676,12 +673,12 @@
 
     #rightman {
         left: 79%;
-        top: 31.5%;
+        top: 29%;
         width: 150px;
     }
 
     #leftman {
-        top: 31.5%;
+        top: 29%;
         width: 150px;
     }
     #plus-last {
@@ -828,6 +825,7 @@
         width: 100%;
         height: 35px;
         gap: 0px;
+        min-width: 170px;
     }
     
     .down-directions {
@@ -837,8 +835,9 @@
     }
 
     .upper-directions {
-        display: grid;
+        display: -webkit-grid;
         width: 350px;
+        -webkit-grid-template-columns: repeat(1, 1fr);
         grid-template-columns: repeat(1, 1fr);
         column-gap: 0px;
         left: 4%;
@@ -952,13 +951,13 @@
 
     #rightman {
         left: 77%;
-        top: 22.5%;
+        top: 20%;
         width: 25%;
     }
 
     #leftman {
         width: 25%;
-        top: 22.5%;
+        top: 20%;
         left: -0.5%;
     }
 
@@ -1063,9 +1062,11 @@
     }
 
     .card-back-sign {
-        line-height: 15px;
+        font-family: "Raleway";
         font-size: 11px;
-        width: 120%;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 25px;
     }
 
 
@@ -1172,7 +1173,7 @@
     iframe {
         position: relative;
         top: -60px;
-        height: 150px;
+        height: 200px;
     }
 
     .footer-info {
@@ -1429,6 +1430,7 @@
         overflow: hidden;
       }
 
+
       #logo {
         top: 15%;
         width: 90px;
@@ -1438,12 +1440,7 @@
         left: 0%;
         top: -25%;
     }
-    .navbar {
-        height: 60px;
-    }
-    .navbar-toggler  {
-        margin-top: 8px;
-    }
+
     #logo-a {
         height: 50px;
     }
@@ -1478,10 +1475,11 @@
 
 @media screen and (max-width: 369px) and (min-width: 50px) {
     #rightman {
-        top: 33%;
+        top: 32%;
+        left: 75%;
     }
     #leftman {
-        top: 25.5%;
+        top: 24%;
     }
 
 }

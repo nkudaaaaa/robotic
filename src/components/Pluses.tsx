@@ -8,15 +8,11 @@ import { plusesAnimation } from '../animations/CardsAnimation'
 const Pluses = () => {
 
     return (
-
         <section className="pluses">
-
-
-
-            <span className="main-sign-pluses">Почему стоит выбрать нас?</span>
+            <h4 className="main-sign-pluses">Почему стоит выбрать нас?</h4>
             <div className="container-main">
                 <div className="pluses-main">
-                    <motion.div className="plus"
+                    <motion.figure className="plus"
                         variants={plusesAnimation}
                         initial="hidden"
                         whileInView="visible"
@@ -24,13 +20,12 @@ const Pluses = () => {
                         viewport={{ amount: 0.1}}>
                         <img src={first} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div">
-
-                            <span className="plus-name">Результативность</span>
-                            <span className="plus-description">Каждый из обучающихся детей отрабатывает теоретические навыки на практике. Будь то создание роботов или игр в 3D.</span>
+                            <h3 className="plus-name">Результативность</h3>
+                            <p className="plus-description">Каждый из обучающихся детей отрабатывает теоретические навыки на практике. Будь то создание роботов или игр в 3D.</p>
                         </div>
-                    </motion.div>
+                    </motion.figure>
 
-                    <motion.div className="plus"
+                    <motion.figure className="plus"
                         variants={plusesAnimation}
                         initial="hidden"
                         whileInView="visible"
@@ -40,12 +35,12 @@ const Pluses = () => {
                         <img src={second} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div">
 
-                            <span className="plus-name">Участие в олимпиадах</span>
-                            <span className="plus-description">У каждого ребенка будет возможность проявить себя в различных олимпиадах, за прохождение которых будут выдаваться сертификаты.</span>
+                            <h3 className="plus-name">Участие в олимпиадах</h3>
+                            <p className="plus-description">У каждого ребенка будет возможность проявить себя в различных олимпиадах, за прохождение которых будут выдаваться сертификаты.</p>
                         </div>
-                    </motion.div>
+                    </motion.figure>
 
-                    <motion.div className="plus"
+                    <motion.figure className="plus"
                         variants={plusesAnimation}
                         initial="hidden"
                         whileInView="visible"
@@ -53,11 +48,11 @@ const Pluses = () => {
                         viewport={{ amount: 0.1}}>
                         <img src={third} alt="" className="image-plus" loading="lazy"/>
                         <div className="plus-text-div" id="plus-last">
-                            <span className="plus-name">Профессиональные кураторы</span>
-                            <span className="plus-description">Наши программы обучения разработаны высококвалифицированными экспертами, а лучшие педагоги помогут все понять с первого раза.</span>
+                            <h3 className="plus-name">Профессиональные кураторы</h3>
+                            <p className="plus-description">Наши программы обучения разработаны высококвалифицированными экспертами, а лучшие педагоги помогут все понять с первого раза.</p>
                         </div>
 
-                    </motion.div>
+                    </motion.figure>
                 </div>
             </div>
         </section>

@@ -10,21 +10,25 @@ interface LessonRegistrationModalProps {
   isVisible: boolean;
   info: { name: string, phone: string };
 }
-
+interface data {
+  name: string;
+  surname: string,
+  phone: string,
+  direction: string;
+}
 
 const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selectedDirection, isVisible, info }) => {
-  const initialDir = selectedDirection;
+  const initialDir: string = selectedDirection;
 
   const [name, setName] = useState<string>(info.name);
   const [surname, setSurname] = useState<string>('');
-  console.log(info);
 
   const [phoneNumber, setPhoneNumber] = useState<string>(info.phone)
-  const [selected, setSelected] = useState(initialDir);
+  const [selected, setSelected] = useState<string>(initialDir);
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
-  const [isModalFirstVisible, setIsModalFirstVisible] = useState(isVisible);
+  const [isModalFirstVisible, setIsModalFirstVisible] = useState<boolean>(isVisible);
 
   const inputRefs = useRef<HTMLInputElement | null>(null);
 
@@ -32,25 +36,18 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-
     if (/^[А-Яа-яA-Za-z]*$/.test(inputValue)) {
-      if (inputValue.length > 30) {
-        setName(inputValue.slice(0, 30));
-      }
+      if (inputValue.length > 30) setName(inputValue.slice(0, 30));
       else setName(inputValue)
     }
-
   };
 
   const handleSurNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     if (/^[А-Яа-яA-Za-z]*$/.test(inputValue)) {
-      if (inputValue.length > 50) {
-        setSurname(inputValue.slice(0, 50));
-      }
+      if (inputValue.length > 50) setSurname(inputValue.slice(0, 50));
       else setSurname(inputValue)
     }
-
   };
 
   const handlePhoneNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,33 +67,18 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
     if (!value) return value;
 
     let phoneNumber = value.replace(/[^\d+]/g, '');
-
     const phoneNumberLength = phoneNumber.length;
 
-    if (phoneNumberLength === 1 && phoneNumber !== "+") {
-      phoneNumber = `+7 ${phoneNumber}`;
-    }
+    if (phoneNumberLength === 1 && phoneNumber !== "+") phoneNumber = `+7 ${phoneNumber}`;
 
-    if (phoneNumberLength < 6) {
-      return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
-    }
+    if (phoneNumberLength < 6) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
 
-    if (phoneNumberLength < 8) {
-      return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
-    }
-    if (phoneNumberLength < 10) {
-      return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
-    }
+    if (phoneNumberLength < 8) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
+
+    if (phoneNumberLength < 10) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
 
     return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10, 12)}`;
   };
-
-  interface data {
-    name: string;
-    surname: string,
-    phone: string,
-    direction: string;
-  }
 
   const formDataPostFromInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -107,7 +89,6 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
       if (phoneNumber[n - 1] === '-' || phoneNumber[n - 1] === ')' || phoneNumber[n - 1] === '(') setPhoneNumber(phoneNumber.slice(0, phoneNumber.length - 1))
     }
   }
-
 
   const formDataPost = () => {
     const url = 'http://localhost:8080/post';
@@ -127,8 +108,6 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
       alert("Вы не заполнили правильно номер телефона ")
       return;
     }
-    console.log('Отправляемые данные:', JSON.stringify(dataToSend));
-
     return fetch(url, {
       method: 'POST',
       body: JSON.stringify(dataToSend),
@@ -144,37 +123,32 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
       })
       .then(responseData => {
         animateForm();
-        console.log('Успешно отправлено и получено:', responseData);
         return responseData;
       })
       .catch(error => {
         console.error('Ошибка при отправке данных:', error);
         throw error;
       });
-
   }
 
-
   useEffect(() => {
-
     document.body.classList.add('modal-open');
     inputRefs.current?.focus();
 
     return () => {
       document.body.classList.remove('modal-open');
-
     };
   }, []);
 
   return (
     <motion.div className="modal-overlay" onClick={onClose}>
-      <motion.div className="modal" onClick={(e) => e.stopPropagation()}>
+      <motion.form className="modal" onClick={(e) => e.stopPropagation()} title="Запись на занятие">
         {isModalFirstVisible && <motion.div className="modal-first" animate={controls}>
-          <span className="modal-main-sign">Заполните форму для записи на интересующее направление</span>
+          <h3 className="modal-main-sign">Заполните форму для записи на интересующее направление</h3>
           <div className="inputs">
-            <input type="text" value={name} onChange={handleNameChange} className="input-field" placeholder="Имя" ref={inputRefs} />
-            <input type="text" value={surname} onChange={handleSurNameChange} className="input-field" placeholder="Фамилия" />
-            <input type="tel" value={phoneNumber} onChange={handlePhoneNumberChange} className="input-field" placeholder="Телефон" required onKeyDown={formDataPostFromInput} />
+            <input type="text" value={name} onChange={handleNameChange} name="name" className="input-field" placeholder="Имя..." ref={inputRefs} />
+            <input type="text" value={surname} onChange={handleSurNameChange} name="surname" className="input-field" placeholder="Фамилия..." />
+            <input type="tel" value={phoneNumber} onChange={handlePhoneNumberChange} name="phone" className="input-field" placeholder="Телефон..." required onKeyDown={formDataPostFromInput} />
             <div className="dropdown-form">
               <div className="dropdown-form-btn" onClick={() => setIsActive(!isActive)}>
                 {selected}
@@ -197,14 +171,11 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
 
               )}
             </div>
-            <button onClick={formDataPost} className="signup" id="form-btn">Записаться</button>
+            <button onClick={formDataPost} className="signup" id="form-btn" title="Записаться на занятие">Записаться</button>
           </div>
         </motion.div>}
-
-        {!isModalFirstVisible && <SMSValidation phone={phoneNumber.slice(13)} onClose={onClose} />
-        }
-
-      </motion.div>
+        {!isModalFirstVisible && <SMSValidation phone={phoneNumber.slice(13)} onClose={onClose} />}
+      </motion.form>
     </motion.div>
   );
 };

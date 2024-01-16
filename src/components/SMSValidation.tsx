@@ -7,7 +7,6 @@ interface SMSProps {
     phone: string;
     onClose: () => void
 }
-
 const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
 
     const [smsContent1, setSmsContent1] = useState<string>("");
@@ -17,13 +16,9 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
     const [password, setPassword] = useState<string>("");
 
     const [unsuccessCount, setUnsuccessCount] = useState<number>(0);
-
-
     const [countdown, setCountdown] = useState(50);
     const [isShaking, setIsShaking] = useState(false);
-
     const [success, setSuccess] = useState<boolean>(false);
-
     const [showFirstDiv, setShowFirstDiv] = useState(true);
 
     const switchDivs = () => {
@@ -31,14 +26,8 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
     };
 
     const inputRefs = [useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null)];
-
-
     const handleInputChange = (index: number, value: string) => {
-
-        if (index === 3) {
-            value = value.slice(0, 1)
-        }
-
+        if (index === 3) value = value.slice(0, 1)
         switch (index) {
             case 0:
                 setSmsContent1(value);
@@ -55,26 +44,17 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
             default:
                 break;
         }
-
-        if (value.length === 1 && index < 3) {
-            inputRefs[index + 1].current?.focus();
-        }
-
+        if (value.length === 1 && index < 3) inputRefs[index + 1].current?.focus();
     };
 
     const handleSubmitFromInput = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
-        if (e.key === 'Enter') {
-            passwordValidation(password);
-        }
+        if (e.key === 'Enter') passwordValidation(password);
         if (e.key === "Backspace") {
-
             if (index !== 0) {
                 setSmsContent4('')
                 inputRefs[index - 1].current?.focus();
             }
-            else {
-                inputRefs[0].current?.focus();
-            }
+            else inputRefs[0].current?.focus();
         }
         return;
     }
@@ -91,28 +71,23 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
             })
             .then(hashedPassword => {
                 setPassword(hashedPassword);
-                console.log('Хэшированный пароль:', hashedPassword);
             })
             .catch(error => {
                 console.error('Ошибка при выполнении GET-запроса:', error);
             });
-        }, 2000);
-
-
+        }, 1000);
     }
 
     const passwordValidation = (hashedP: string) => {
         const password = (smsContent1 + smsContent2 + smsContent3 + smsContent4).trim();
-
         const isPasswordValid = bcrypt.compareSync(password, hashedP);
 
         if (isPasswordValid) {
-            console.log('Пароль верен');
             setSuccess(true)
-            switchDivs()
-            // setTimeout(() => {
-            //     onClose()
-            // }, 5000);
+            switchDivs();
+            setTimeout(() => {
+                onClose()
+            }, 5000);
         } else {
             setSmsContent1('')
             setSmsContent2('')
@@ -127,9 +102,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
                 setIsShaking(false);
             }, 500);
             inputRefs[0].current?.focus();
-            console.log('Неправильный пароль из SMS!');
         }
-
     }
 
     useEffect(() => {
@@ -147,8 +120,6 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
         const interval = setInterval(() => {
             setCountdown((prevCountdown) => prevCountdown - 1);
         }, 1000);
-
-        // Очистка интервала после завершения
         setTimeout(() => {
             clearInterval(interval);
         }, 50000);
@@ -168,10 +139,8 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
                         transition={{ duration: 0.5 }}>
 
 
-                        <span className="modal-main-sign">Введите код, отправленный на номер ***{phone}</span>
+                        <h3 className="modal-main-sign">Введите код, отправленный на номер ***{phone}</h3>
                         <div className={isShaking ? "inputs-div-shaking" : "inputs-div"}>
-
-
                             <input
                                 className={success ? 'sms-field success' : 'sms-field'}
                                 type="tel"
@@ -203,14 +172,13 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
                                 onChange={(e) => handleInputChange(3, e.target.value)}
                                 onKeyDown={(e) => handleSubmitFromInput(e, 3)}
                                 ref={inputRefs[3]}
-
                             />
                         </div>
                         {(countdown < 50 && countdown > 0 && !success) &&
-                            <span className='clock-locked'>Отправить SMS повторно через 0:{countdown < 10 && "0"}{countdown}</span>
+                            <p className='clock-locked'>Отправить SMS повторно через 0:{countdown < 10 && "0"}{countdown}</p>
                         }
                         {(countdown === 0 && !success) ?
-                            <span className='clock-unlocked' onClick={passwordFetching}>Отправить SMS повторно</span> : ""
+                            <p className='clock-unlocked' onClick={passwordFetching}>Отправить SMS повторно</p> : ""
                         }
 
                         <button className="signup" id="form-btn" onClick={() => passwordValidation(password)}>Записаться</button>
@@ -220,7 +188,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
                         initial={{ opacity: 0, x: '100%' }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}>
-                        <span id='success-sign'>Вы успешно зарегистрировались!</span>
+                        <h6 id='success-sign'>Вы успешно зарегистрировались!</h6>
                         <button className="signup" id="form-btn" onClick={onClose}>Отлично!</button>
                     </motion.div>
                 )}

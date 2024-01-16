@@ -1,10 +1,10 @@
-import { motion} from "framer-motion";
-import {  useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import comp from "../../assets/directions/computer.svg"
 import closeIcon from "../../assets/directions/add.svg"
 import minecr from "../../assets/directions/minecr.svg"
 import ModalWindow from "../ModalWindow";
-import {animation} from "../../animations/CardsAnimation"
+import { animation } from "../../animations/CardsAnimation"
 
 const ProgramCard = () => {
 
@@ -35,62 +35,60 @@ const ProgramCard = () => {
         }
     }
 
-
-
     return (
-        <div className="programming-gamedev"        
-    >
-            <motion.div className="program-card-main"
+        <div className="programming-gamedev" >
+            <motion.figure className="program-card-main"
                 initial={false}
                 animate={{ rotateY: isFlippedPr ? 180 : 360 }}
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimatingPr(false)}>
 
+            <div className="routing" id="programming"/>
                 <motion.div className={isFlippedPr ? "program-front close" : "program-front"}
-                        variants={animation}      
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ amount: 0.2}}
-                        transition={{ duration: 0.8 }}>
+                    variants={animation}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.8 }}>
                     <div className="program-front-left">
-                        <img src={comp} alt="" id="computer-img" />
+                        <img src={comp} alt="computer" id="computer-img" />
                     </div>
                     <div className="program-front-right">
-                        <span className="card-front-mainsign">Программирование</span>
+                    <mark><h3 className="card-front-mainsign">Программирование</h3></mark>
                         <span className="card-front-thinsign">Научим Вашего ребенка основам различных языков</span>
                         <div className="card-front-btn">
                             <button className="signup smallw" id="holidays" onClick={() => toggleModal("Программирование")}>Записаться!</button>
-                            <button className="more smallw" onClick={handleFlipPr} id="oge">Подробнее</button>
+                            <button className="more smallw" onClick={handleFlipPr}>Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>
                     </div>
                 </motion.div>
 
                 <div className="program-back">
-                    <span className="card-back-sign">В основе курса лежит изучение таких языков программирования как Java, C#,
+                    <p className="card-back-sign">В основе курса лежит изучение таких языков программирования как Java, C#,
                         HTML и CSS, основы вёрстки и FRONTEND-разработки. Курс рассчитан на 2 года, затрагивает разные направления
-                        программирования и даёт ребёнку полное понимание того, чем ему интересно занимать в сфере IT.</span>
-                    <img src={closeIcon} className="close-icon" onClick={handleFlipPr} />
+                        программирования и даёт ребёнку полное понимание того, чем ему интересно занимать в сфере IT.</p>
+                    <img src={closeIcon} className="close-icon" onClick={handleFlipPr} alt="close" />
                 </div>
-            </motion.div>
+            </motion.figure>
 
-            <motion.div className="game-card-main"
+            <motion.figure className="game-card-main"
                 initial={false}
                 animate={{ rotateY: isFlippedGm ? 180 : 360 }}
                 transition={{ duration: 0.6, animationDirection: "normal" }}
                 onAnimationComplete={() => setIsAnimatingGm(false)}>
-
+            <div className="routing" id="gamedevelop"/>
                 <motion.div className="game-front"
-                        variants={animation}      
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ amount: 0.2}}
-                        transition={{ duration: 0.8 }}>
+                    variants={animation}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.2 }}
+                    transition={{ duration: 0.8 }}>
                     <div className="game-front-left">
-                        <img src={minecr} alt="" id="minecr-img" />
+                        <img src={minecr} alt="minecraft" id="minecr-img" />
                     </div>
                     <div className="game-front-right">
-                        <span className="card-front-mainsign">Разработка игр</span>
+                    <mark><h3 className="card-front-mainsign">Разработка игр</h3></mark>
                         <span className="card-front-thinsign">Научим Вашего ребенка создавать игры на Unity</span>
                         <div className="card-front-btn">
                             <button className="signup smallw" onClick={() => toggleModal("Разработка игр")}>Записаться!</button>
@@ -101,11 +99,11 @@ const ProgramCard = () => {
                 </motion.div>
 
                 <div className="game-back">
-                    <span className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если Ваш ребёнок - творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов</span>
+                    <p className="card-back-sign">Разработка игр - одно из самых перспективных направлений в сфере IT. Если Ваш ребёнок - творческая личность, то это направление идеально ему подойдёт. Курс обучения 2 года и включает в себя всё, начиная с азов программирования и до создания полноценных 2D и 3D проектов</p>
                     <img src={closeIcon} className="close-icon" onClick={handleFlipGm} />
                 </div>
-            </motion.div>
-            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} isVisible={true} info={{name: '', phone: ''}}/>}
+            </motion.figure>
+            {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} isVisible={true} info={{ name: '', phone: '' }} />}
         </div >
     )
 }

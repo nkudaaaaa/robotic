@@ -1,0 +1,11 @@
+img {
+    image-rendering: optimizeSpeed; /* для IE */
+    image-rendering: -moz-crisp-edges; /* для Firefox */
+    image-rendering: -o-crisp-edges; /* для Opera */
+    image-rendering: -webkit-optimize-contrast; /* для Webkit (Safari/Chrome) */
+    image-rendering: optimize-contrast; /* стандартное значение */
+  }
+
+  mark {
+    background-color: transparent;
+  }

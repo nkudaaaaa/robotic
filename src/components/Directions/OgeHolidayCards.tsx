@@ -17,11 +17,9 @@ const OgeEgeCard = () => {
     }
 
     return (
-        <div className="oge-holidays"
-        >
-            <div className="oge-card-main"
-            >
-
+        <div className="oge-holidays">
+            <figure className="oge-card-main">
+            <div className="routing" id="oge" />
                 <motion.div className="oge-front"
                     variants={animation}
                     initial="hidden"
@@ -29,20 +27,21 @@ const OgeEgeCard = () => {
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.8 }}
                     exit="hidden">
+  
                     <div className="oge-front-left">
-                        <img src={pensil} alt="" id="pensil-img1" />
+                        <img src={pensil} alt="pensil-img" id="pensil-img1" />
                     </div>
                     <div className="oge-front-right">
-                        <span className="card-front-mainsign">Подготовка к ОГЭ</span>
+                        <mark><h3 className="card-front-mainsign">Подготовка к ОГЭ</h3></mark>
                         <span className="card-front-thinsign nowraps">Математика, информатика</span>
                         <div className="card-front-btn">
                             <button className="signup big" onClick={() => toggleModal("Подготовка к ОГЭ")}>Записаться!</button>
                         </div>
                     </div>
                 </motion.div>
-            </div>
-
-            <div className="holiday-card-main">
+            </figure>
+            <div className="routing" id="holiday" />
+            <figure className="holiday-card-main">
                 <motion.div className="holiday-front"
                     variants={animation}
                     initial="hidden"
@@ -50,10 +49,10 @@ const OgeEgeCard = () => {
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.8 }}>
                     <div className="holiday-front-left">
-                        <img src={holidayImg} id="holiday-img" />
+                        <img src={holidayImg} id="holiday-img" alt="holiday-img" />
                     </div>
                     <div className="holiday-front-right" >
-                        <span className="card-front-mainsign nowrap">Проведение праздников</span>
+                        <mark><h3 className="card-front-mainsign nowrap">Проведение праздников</h3></mark>
                         <span className="card-front-thinsign" >Создадим праздник по Вашим пожеланиям</span>
                         <div className="card-front-btn">
                             <button className="signup big" onClick={() => toggleModal("Проведение праздников")}>Записаться!</button>
@@ -61,7 +60,7 @@ const OgeEgeCard = () => {
                     </div>
 
                 </motion.div>
-            </div>
+            </figure>
             {isModalOpen && <ModalWindow onClose={() => toggleModal('')} selectedDirection={selectedDirection} isVisible={true} info={{ name: '', phone: '' }} />}
         </div>
     )

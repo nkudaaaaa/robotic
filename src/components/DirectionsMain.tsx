@@ -11,8 +11,7 @@ const DirectionsMain = () => {
         <m.section className="directions-main">
 
             <div className="container-main">
-                <span className="directions-sign" >Наши направления</span>
-
+                <h1 className="directions-sign" >Наши направления</h1>
                 <RobotsCard />
                 <ProgramCard />
                 <OgeHolidaysCard />

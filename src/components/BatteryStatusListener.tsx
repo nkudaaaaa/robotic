@@ -1,6 +1,5 @@
 import React, { useEffect, ReactNode } from 'react';
 
-// Объявление интерфейса для уровня заряда батареи
 interface CustomBatteryManager {
   level: number;
   addEventListener: (type: string, listener: EventListenerOrEventListenerObject) => void;
@@ -28,7 +27,6 @@ const BatteryStatusListener: React.FC<BatteryStatusListenerProps> = ({ children 
         }
       }
     };
-
     const disableAnimations = () => {
       const styleElement = document.createElement('style');
       styleElement.textContent = `
@@ -39,18 +37,13 @@ const BatteryStatusListener: React.FC<BatteryStatusListenerProps> = ({ children 
       `;
       document.head.appendChild(styleElement);
     };
-
     checkBatteryStatus();
-
-    // Добавьте прослушиватель событий для изменения уровня заряда
     if ('getBattery' in navigator) {
       (navigator as Navigator & { getBattery?: () => Promise<CustomBatteryManager> }).getBattery?.().then(battery => {
         battery?.addEventListener('levelchange', checkBatteryStatus);
       });
     }
-
     return () => {
-      // Удалите прослушиватель событий при размонтировании компонента
       if ('getBattery' in navigator) {
         (navigator as Navigator & { getBattery?: () => Promise<CustomBatteryManager> }).getBattery?.().then(battery => {
           battery?.removeEventListener('levelchange', checkBatteryStatus);

@@ -29,24 +29,24 @@ const About = () => {
     const { data: bgsmallData } = useQuery('about-bg', () => loadImage(bgsmall));
 
     return (
-        <section className="about" id="about">
+        <section className="about" >
+            <div className="routing" id="about"></div>
             <div className="container-main">
                 <div className="images-bg">
                     <picture>
-                    <source media="(min-width: 3440px)" srcSet={bgData} id="about-bg-w"/>
                     <source media="(min-width: 1440px)" srcSet={bgData} id="about-bg-w"/>
                     <source media="(min-width: 768px)" srcSet={bgData} id="about-bg-w"/>
                     <img src={bgsmallData} id="about-bg" />
                     </picture>
                 </div>
 
-                <span className="main-sign-about">Добро пожаловать в Роботик— ваш ключ к захватывающему миру технологий и творчества!{<br />}{<br />}
+                <h4 className="main-sign-about">Добро пожаловать в Роботик— ваш ключ к захватывающему миру технологий и творчества!{<br />}{<br />}
 
                     Открывайте для себя веселое программирование, захватывающие проекты и уникальные курсы, которые не только раскроют ваши таланты, но и повысят успеваемость в школе!
                     Превратите свою любовь к технике в потрясающий опыт обучения с Роботик— где будущее начинается сегодня!
-                </span>
-                <span className="main-sign-about" id="span-hashtags">#Роботик #Технотворчество #ПрограммированиеДляДетей</span>
-                <span className="main-sign-about" id="span-education">ПРОГРАММА ОБУЧЕНИЯ</span>
+                </h4>
+                <h6 className="main-sign-about" id="span-hashtags">#Роботик #Технотворчество #ПрограммированиеДляДетей</h6>
+                <h3 className="main-sign-about" id="span-education">ПРОГРАММА ОБУЧЕНИЯ</h3>
 
                 <motion.div className="line"
                     variants={hrAnimation}
@@ -61,17 +61,17 @@ const About = () => {
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.9 }} 
                      >
-                <span className="main-sign-about" id="span-program">НАПРАВЛЕНИЯ ДЛЯ ИЗУЧЕНИЯ</span>
+                <h1 className="main-sign-about" id="span-program">НАПРАВЛЕНИЯ ДЛЯ ИЗУЧЕНИЯ</h1>
                     <div className="upper-line">
-                        <img src={legoCard} className="directions-item" loading="lazy"/>
-                        <img src={htmlCard} alt="" className="directions-item" loading="lazy"/>
-                        <img src={javaCard} alt="" className="directions-item" loading="lazy"/>
+                        <img src={legoCard} className="directions-item" alt="лего"/>
+                        <img src={htmlCard} alt="html" className="directions-item" />
+                        <img src={javaCard} alt="java" className="directions-item" />
                     </div>
                     <div className="down-line">
-                        <img src={pythonCard} alt="" className="directions-item" id="python" loading="lazy"/>
-                        <img src={cplusCard} className="directions-item" loading="lazy"/>
-                        <img src={cshCard} className="directions-item" id="csharp" loading="lazy"/>
-                        <img src={unityCard} className="directions-item" id="unity" loading="lazy"/>
+                        <img src={pythonCard} alt="python" className="directions-item" id="python" />
+                        <img src={cplusCard} className="directions-item" alt="c++"/>
+                        <img src={cshCard} className="directions-item" id="csharp" alt="c#"/>
+                        <img src={unityCard} className="directions-item" id="unity" alt="unity"/>
                     </div>
                 </motion.div>
 
@@ -82,15 +82,15 @@ const About = () => {
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.9, delay: 0.1}} 
                     >
-                    <span className="main-sign-about" id="span-directions">ЧЕМУ МЫ ОБУЧАЕМ</span>
+                    <h1 className="main-sign-about" id="span-directions">ЧЕМУ МЫ ОБУЧАЕМ</h1>
                     <div className="down-directions">
-                        <img src={programming} alt="" className="down-directions-item" loading="lazy"/>
-                        <img src={robots} alt="" id="robototechnics" className="down-directions-item" loading="lazy"/>
+                        <img src={programming} alt="programming" className="down-directions-item" />
+                        <img src={robots} alt="robototechnics" className="down-directions-item" />
                     </div>
                     <div className="upper-directions">
-                        <img src={websites} alt="" className="down-directions-item grid" loading="lazy"/>
-                        <img src={modeling} alt="" className="down-directions-item grid" loading="lazy"/>
-                        <img src={gamedev} alt="" className="down-directions-item" id="gamedev" loading="lazy"/>
+                        <img src={modeling} alt="3dmodeling" className="down-directions-item grid" />
+                        <img src={websites} alt="websites" className="down-directions-item"/>
+                        <img src={gamedev} alt="gamedev" className="down-directions-item grid" id="gamedev"/>
                     </div>
                 </motion.div>
             </div>
