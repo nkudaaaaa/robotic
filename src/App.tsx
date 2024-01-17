@@ -9,6 +9,7 @@ import Footer from "./components/Footer"
 import BatteryStatusListener from "./components/BatteryStatusListener";
 import { Route, Routes } from 'react-router-dom';
 import Privacy from "./components/Privacy";
+import CookiesInfo from './components/Cookies';
 import "./css/App.css"
 
 const queryClient = new QueryClient();
@@ -25,7 +26,8 @@ function App() {
               <>
                 <QueryClientProvider client={queryClient}>
                   <NavBar />
-                  <main title='robotick main'>
+                  <CookiesInfo />
+                  <main title=''>
                     <Banner />
                     <About />
                     <DirectionsMain />

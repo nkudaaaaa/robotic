@@ -9,3 +9,69 @@ img {
   mark {
     background-color: transparent;
   }
+.cookies-main {
+  position: fixed;
+  z-index: 1000;
+  top: 86%;
+  width: 100%;
+  min-width: 360px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cookies {
+  z-index: 1000;
+  padding: 15px 30px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  border: 0.8px solid #000000;
+  border-radius: 20px;
+  width: 40%;
+  max-width: 570px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cookies-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cookies-img {
+  width: 110px;
+}
+
+.cookies-header {
+  font-family: "Raleway";
+  font-size: 20px;
+}
+
+.cookies-sign {
+  font-family: "Raleway";
+  font-size: 15px;
+}
+
+.cookies-btn {
+  
+  width: 19rem;
+  height: 30px;
+  border-radius: 20px;
+  background: #0054FF;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FFF;
+  font-family: "Raleway";
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 23px;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.cookies-btn:hover {
+  transform: scale(1.03);
+}

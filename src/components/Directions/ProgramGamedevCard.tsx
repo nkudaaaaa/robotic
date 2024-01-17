@@ -57,7 +57,7 @@ const ProgramCard = () => {
                     <mark><h3 className="card-front-mainsign">Программирование</h3></mark>
                         <span className="card-front-thinsign">Научим Вашего ребенка основам различных языков</span>
                         <div className="card-front-btn">
-                            <button className="signup smallw" id="holidays" onClick={() => toggleModal("Программирование")}>Записаться!</button>
+                            <button className="signup smallw" onClick={() => toggleModal("Программирование")}>Записаться!</button>
                             <button className="more smallw" onClick={handleFlipPr}>Подробнее</button>
                         </div>
                         <span className="card-front-mainsign age">12-18 лет</span>

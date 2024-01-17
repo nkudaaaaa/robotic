@@ -71,16 +71,17 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
 
     if (phoneNumberLength === 1 && phoneNumber !== "+") phoneNumber = `+7 ${phoneNumber}`;
 
-    if (phoneNumberLength < 6) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
+    if (phoneNumberLength < 6) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
 
-    if (phoneNumberLength < 8) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
+    if (phoneNumberLength < 8) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
 
-    if (phoneNumberLength < 10) `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
+    if (phoneNumberLength < 10) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
 
     return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10, 12)}`;
   };
 
   const formDataPostFromInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+
     if (e.key === 'Enter') {
       formDataPost()
     }
@@ -91,8 +92,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
   }
 
   const formDataPost = () => {
-    const url = 'http://localhost:8080/post';
-
+    const url = 'http://localhost:8080/post'; 
     const dataToSend: data = {
       name,
       surname,
@@ -142,7 +142,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
 
   return (
     <motion.div className="modal-overlay" onClick={onClose}>
-      <motion.form className="modal" onClick={(e) => e.stopPropagation()} title="Запись на занятие">
+      <motion.div className="modal" onClick={(e) => e.stopPropagation()} title="Запись на занятие" >
         {isModalFirstVisible && <motion.div className="modal-first" animate={controls}>
           <h3 className="modal-main-sign">Заполните форму для записи на интересующее направление</h3>
           <div className="inputs">
@@ -171,11 +171,11 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
 
               )}
             </div>
-            <button onClick={formDataPost} className="signup" id="form-btn" title="Записаться на занятие">Записаться</button>
+            <button onClick={formDataPost} className="signup" id="form-btn" title="Записаться на занятие" >Записаться</button>
           </div>
         </motion.div>}
         {!isModalFirstVisible && <SMSValidation phone={phoneNumber.slice(13)} onClose={onClose} />}
-      </motion.form>
+      </motion.div>
     </motion.div>
   );
 };

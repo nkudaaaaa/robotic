@@ -125,7 +125,6 @@
 .marquee2__content {
     width: 300%;
     display: flex;
-    gap: 15px !important;
     line-height: 30px;
     animation: marquee2 25s linear infinite forwards;
 }

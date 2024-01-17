@@ -40,8 +40,8 @@ const OgeEgeCard = () => {
                     </div>
                 </motion.div>
             </figure>
-            <div className="routing" id="holiday" />
             <figure className="holiday-card-main">
+            <div className="routing" id="holidays" />
                 <motion.div className="holiday-front"
                     variants={animation}
                     initial="hidden"

@@ -3,7 +3,7 @@
         font-size: 18px;
         width: 865px;
     }
-
+  
     li {
         font-size: 19px;
     }
@@ -19,7 +19,7 @@
         display: flex;
         flex-direction: column;
     }
-    
+
 
     .signup,
     .more {
@@ -27,7 +27,10 @@
         font-size: 20px;
     }
 
-    .program-front-left, .game-front-left, .oge-front-left, .holiday-front-left {
+    .program-front-left,
+    .game-front-left,
+    .oge-front-left,
+    .holiday-front-left {
         width: 140px;
     }
 
@@ -73,7 +76,9 @@
     }
 
     .program-front-right,
-    .game-front-right, .oge-front-right, .holiday-front-right {
+    .game-front-right,
+    .oge-front-right,
+    .holiday-front-right {
         left: -2%;
     }
 
@@ -86,12 +91,17 @@
         right: -4%;
         top: -13%;
     }
+
     #holiday-img {
         width: 150px;
     }
+
     #plus-last {
         position: relative;
         right: 2%;
+    }
+    .cookies-main {
+        top: 83.5%;
     }
 
 }
@@ -115,6 +125,30 @@
 
     .container-main {
         padding: 0px 90px;
+    }
+    .cookies-main {
+        top: 86.5%;
+    }
+
+    .cookies {
+        padding: 13px 27px;
+    }
+
+    .cookies-img {
+        width: 100px;
+    }
+
+    .cookies-header {
+        font-size: 18px;
+    }
+
+    .cookies-sign {
+        font-size: 13px;
+    }
+
+    .cookies-btn {
+        width: 17rem;
+        height: 30px;
     }
 
     .banner-text-bold {
@@ -183,7 +217,10 @@
         font-size: 18px;
     }
 
-    .program-front-left, .game-front-left, .oge-front-left, .holiday-card  {
+    .program-front-left,
+    .game-front-left,
+    .oge-front-left,
+    .holiday-card {
         width: 140px;
     }
 
@@ -220,7 +257,9 @@
     }
 
     .program-front-right,
-    .game-front-right, .oge-front-right, .holiday-front-right {
+    .game-front-right,
+    .oge-front-right,
+    .holiday-front-right {
         left: 0%;
         width: 300px;
     }
@@ -233,9 +272,11 @@
     #holiday-img {
         width: 150px;
     }
+
     .nowraps {
         margin-top: 15px;
     }
+
     #robot-dir-flipped-thin {
         font-size: 16px;
         width: 85%;
@@ -287,6 +328,7 @@
     .doc-text {
         font-size: 18px;
     }
+
     .card-front-mainsign {
         width: 120%;
     }
@@ -300,6 +342,7 @@
     .main-sign-pluses {
         padding-bottom: 70px;
     }
+
     #plus-last {
         position: relative;
         right: 3%;
@@ -315,13 +358,37 @@
     .container-main {
         padding: 0px 50px;
     }
+
+    .cookies {
+        padding: 11px 24px;
+    }
+
+    .cookies-img {
+        width: 85px;
+    }
+
+    .cookies-header {
+        font-size: 17px;
+    }
+
+    .cookies-sign {
+        font-size: 12px;
+    }
+
+    .cookies-btn {
+        width: 15rem;
+        height: 26px;
+        font-size: 13px;
+    }
+
     .modal-first {
         height: 100%;
         display: flex;
         flex-direction: column;
         overflow: visible !important;
         z-index: 500;
-      }
+    }
+
     .about {
         overflow-y: hidden;
     }
@@ -457,6 +524,7 @@
     .robot-dir-right {
         opacity: 0;
     }
+
     .robot-dir-mid {
         position: relative;
         right: 6%;
@@ -505,22 +573,31 @@
         font-size: 15px;
     }
 
-    .programming-gamedev,    .oge-holidays, .container-main {
+    .programming-gamedev,
+    .oge-holidays,
+    .container-main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .program-card-main, .game-card-main, .oge-card-main, .holiday-card-main {
+    .program-card-main,
+    .game-card-main,
+    .oge-card-main,
+    .holiday-card-main {
         width: 100%;
         max-width: 750px;
     }
 
 
-    .program-front-right, .game-front-right, .oge-front-right, .holiday-front-right {
+    .program-front-right,
+    .game-front-right,
+    .oge-front-right,
+    .holiday-front-right {
         left: -5%;
         width: 350px;
     }
+
     .smallw {
         width: 200px;
     }
@@ -534,6 +611,7 @@
         margin-top: 0px;
         margin-bottom: 30px;
     }
+
     .big {
         width: 300px;
     }
@@ -641,18 +719,22 @@
     #gamedev {
         opacity: 1;
     }
+
     #plus-last {
         position: relative;
         right: 0%;
     }
+
     #logo {
         top: 9%;
         width: 100px;
     }
+
     #logo-footer {
         width: 170px;
     }
-    .navbar-toggler  {
+
+    .navbar-toggler {
         margin-top: 8px;
     }
 }
@@ -681,6 +763,7 @@
         top: 29%;
         width: 150px;
     }
+
     #plus-last {
         position: relative;
         right: 0%;
@@ -827,7 +910,7 @@
         gap: 0px;
         min-width: 170px;
     }
-    
+
     .down-directions {
         box-sizing: border-box;
         display: grid;
@@ -836,7 +919,7 @@
 
     .upper-directions {
         display: -webkit-grid;
-        width: 350px;
+        width: 365px;
         -webkit-grid-template-columns: repeat(1, 1fr);
         grid-template-columns: repeat(1, 1fr);
         column-gap: 0px;
@@ -863,7 +946,7 @@
         justify-content: center;
         height: 200px;
     }
-    
+
     .robot-dir1 {
         padding: 23px 18px 25px 21px;
         overflow: hidden;
@@ -981,8 +1064,10 @@
         justify-content: center;
     }
 
-    .program-card-main, .game-card-main,
-    .oge-card-main, .holiday-card-main {
+    .program-card-main,
+    .game-card-main,
+    .oge-card-main,
+    .holiday-card-main {
         width: 100%;
         max-width: 360px;
         height: 200px;
@@ -998,14 +1083,17 @@
     }
 
     .program-front-right,
-    .game-front-right, .oge-front-right, .holiday-front-right  {
+    .game-front-right,
+    .oge-front-right,
+    .holiday-front-right {
         width: 210px;
         left: -33%;
     }
 
     .program-front-left,
-    .game-front-left, .oge-front-left,
-    .holiday-front-left  {
+    .game-front-left,
+    .oge-front-left,
+    .holiday-front-left {
         position: relative;
         width: 100px;
         left: 68%;
@@ -1035,7 +1123,7 @@
 
     .age {
         top: -7%;
-        right:-58%;
+        right: -58%;
         width: 100px;
 
     }
@@ -1363,43 +1451,43 @@
         font-weight: 800;
         padding-left: 10px;
         color: #333;
-      }
-      
-      .modal-second {
+    }
+
+    .modal-second {
         background: #fff;
         width: 200px;
         height: 100%;
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content:flex-start;
+        justify-content: flex-start;
         align-items: center;
         overflow: hidden;
-      }
-      
-      .inputs-div {
-        padding-top: 30px;
-        margin-bottom: 40px;
-        display: flex;
-        flex-direction: row;
-      }
+    }
 
-      .inputs-div-shaking {
+    .inputs-div {
         padding-top: 30px;
         margin-bottom: 40px;
         display: flex;
         flex-direction: row;
-      }
-      
-      .clock-locked {
+    }
+
+    .inputs-div-shaking {
+        padding-top: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .clock-locked {
         opacity: 0.85;
         font-size: 10px;
         transition: 0.2s ease-in-out;
         position: absolute;
         top: 63%;
-      }
-      
-      .clock-unlocked {
+    }
+
+    .clock-unlocked {
         opacity: 1;
         font-size: 10px;
         text-decoration: underline;
@@ -1407,16 +1495,17 @@
         transition: 0.2s ease-in-out;
         position: absolute;
         top: 63%;
-      }
-      .modal-second-success {
+    }
+
+    .modal-second-success {
         position: absolute;
         top: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
-      
-      #success-sign {
+    }
+
+    #success-sign {
         margin-top: 60px;
         margin-bottom: 20px;
         color: #000;
@@ -1428,13 +1517,14 @@
         line-height: 34px;
         line-height: normal;
         overflow: hidden;
-      }
+    }
 
 
-      #logo {
+    #logo {
         top: 15%;
         width: 90px;
     }
+
     #logo-footer {
         width: 70px;
         left: 0%;
@@ -1458,15 +1548,19 @@
     .age {
         right: -49%;
     }
+
     .robot-dir-mid {
         width: 70px;
     }
+
     .more {
         width: 90px;
     }
+
     .signup {
         width: 90px;
     }
+
     .big {
         width: 130px;
     }
@@ -1478,6 +1572,7 @@
         top: 32%;
         left: 75%;
     }
+
     #leftman {
         top: 24%;
     }
@@ -1535,4 +1630,79 @@
         left: -400px;
         height: 700px;
     }
+}
+
+@media screen and (max-width: 990px) and (min-width: 700px) {
+    .cookies {
+        padding: 10px 20px;
+        width: 52%;
+    }
+    .cookies-img {
+        width: 85px;
+    }
+
+    .cookies-header {
+        font-size: 15px;
+    }
+
+    .cookies-sign {
+        font-size: 12px;
+    }
+
+    .cookies-btn {
+        width: 13rem;
+        height: 25px;
+    }
+}
+@media screen and (max-width: 699px) and (min-width: 350px) {
+    .cookies {
+        padding: 10px 20px;
+        width: 60%;
+    }
+
+    .cookies-img {
+        width: 75px;
+    }
+
+    .cookies-header {
+        font-size: 14px;
+    }
+
+    .cookies-sign {
+        font-size: 11px;
+    }
+
+    .cookies-btn {
+        width: 13rem;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 477px) {
+    .cookies {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 476px) and (min-width: 50px) {
+    .cookies {
+        width: 92%;
+    }
+    .cookies-img {
+        width: 60px;
+    }
+
+    .cookies-header {
+        font-size: 13px;
+    }
+
+    .cookies-sign {
+        font-size: 10px;
+    }
+
+    .cookies-btn {
+        width: 13rem;
+        height: 25px;
+    }
+
 }

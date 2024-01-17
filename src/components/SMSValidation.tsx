@@ -27,24 +27,33 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
 
     const inputRefs = [useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null), useRef<HTMLInputElement | null>(null)];
     const handleInputChange = (index: number, value: string) => {
-        if (index === 3) value = value.slice(0, 1)
+        const numericValue = value.replace(/[^\d]/g, '');
+
+        // Limit the length of the value based on the index
+        const maxLength = index === 3 ? 1 : 2;
+        const trimmedValue = numericValue.slice(0, maxLength);
+    
         switch (index) {
             case 0:
-                setSmsContent1(value);
+                setSmsContent1(trimmedValue);
                 break;
             case 1:
-                setSmsContent2(value);
+                setSmsContent2(trimmedValue);
                 break;
             case 2:
-                setSmsContent3(value);
+                setSmsContent3(trimmedValue);
                 break;
             case 3:
-                setSmsContent4(value);
+                setSmsContent4(trimmedValue);
                 break;
             default:
                 break;
         }
-        if (value.length === 1 && index < 3) inputRefs[index + 1].current?.focus();
+    
+        // Move focus to the next input if a single character is entered
+        if (trimmedValue.length === 1 && index < 3) {
+            inputRefs[index + 1].current?.focus();
+        }
     };
 
     const handleSubmitFromInput = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
