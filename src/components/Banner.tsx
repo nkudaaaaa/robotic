@@ -25,13 +25,13 @@ const Banner = () => {
                 <div className="marquee">
                     <div className="marquee__content">
                         <ul className="list-inline">
-                            <li><img src={rs} alt="robotick" id='rs' /></li>
+                            <li><img src={rs} alt="" id='rs' /></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="robotick" id='rs' /></li>
+                            <li><img src={rs} alt="" id='rs' /></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={rs} alt="robotick" id='rs' /></li>
+                            <li><img src={rs} alt="" id='rs' /></li>
                         </ul>
 
                     </div>
@@ -39,13 +39,13 @@ const Banner = () => {
                 <div className="marquee2">
                     <div className="marquee2__content">
                         <ul className="list-inline">
-                            <li><img src={lsData} alt="robotick" id='ls' /></li>
+                            <li><img src={lsData} alt="" id='ls' /></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={lsData} alt="robotick" id='ls' /></li>
+                            <li><img src={lsData} alt="" id='ls' /></li>
                         </ul>
                         <ul className="list-inline">
-                            <li><img src={lsData} alt="robotick" id='ls' /></li>
+                            <li><img src={lsData} alt="" id='ls' /></li>
                         </ul>
                     </div>
                 </div>

@@ -26,9 +26,9 @@ function App() {
               <>
                 <QueryClientProvider client={queryClient}>
                   <NavBar />
+                    <Banner />
                   <CookiesInfo />
                   <main title=''>
-                    <Banner />
                     <About />
                     <DirectionsMain />
                     <Pluses />
