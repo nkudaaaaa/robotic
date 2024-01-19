@@ -78,7 +78,7 @@ const Footer = () => {
     }
 
     const submitForm = () => {
-        const url = 'http://localhost:8080/postConsultation';
+        const url = 'https://slrserver.tech/callBack';
 
         const dataToSend: callBackData = {
             name: name,
@@ -93,6 +93,8 @@ const Footer = () => {
             alert("Вы не заполнили правильно номер телефона!")
             return;
         }
+        console.log(dataToSend);
+        
         setIsSMS(true)
         return fetch(url, {
             method: 'POST',
@@ -136,7 +138,7 @@ const Footer = () => {
                 <div className="call-form cont">
                     <div className="contacts-div">
                     <mark><h6 className="contacts-text">ул. Героя Пешкова, 14</h6></mark>
-                        <mark><h6 className="contacts-text">+7 (918) - 123 - 05 - 93</h6></mark>
+                        <mark><h6 className="contacts-text phone">+7 (918) - 123 - 05 - 93</h6></mark>
                     </div>
                     <div className="icons-footer">
                         <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="telegram" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>

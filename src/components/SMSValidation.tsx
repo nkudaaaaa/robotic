@@ -69,7 +69,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
     }
 
     const passwordFetching = () => {
-        const url = 'http://localhost:8080/';
+        const url = 'https://slrserver.tech/getPassword';
         setTimeout(() => {
             fetch(url)
             .then(response => {

@@ -92,7 +92,7 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({ onClose, selected
   }
 
   const formDataPost = () => {
-    const url = 'http://localhost:8080/post'; 
+    const url = 'https://slrserver.tech/submitUserData'; 
     const dataToSend: data = {
       name,
       surname,
