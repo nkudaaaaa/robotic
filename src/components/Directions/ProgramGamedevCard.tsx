@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import comp from "../../assets/directions/computer.svg"
 import closeIcon from "../../assets/directions/add.svg"
-import minecr from "../../assets/directions/minecr.svg"
+import gamepad from "../../assets/directions/gamer.webp"
 import ModalWindow from "../ModalWindow";
 import { animation } from "../../animations/CardsAnimation"
 
@@ -85,7 +85,7 @@ const ProgramCard = () => {
                     viewport={{ amount: 0.2 }}
                     transition={{ duration: 0.8 }}>
                     <div className="game-front-left">
-                        <img src={minecr} alt="minecraft" id="minecr-img" />
+                        <img src={gamepad} alt="minecraft" id="minecr-img" />
                     </div>
                     <div className="game-front-right">
                     <mark><h3 className="card-front-mainsign">Разработка игр</h3></mark>

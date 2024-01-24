@@ -28,6 +28,9 @@
     position: relative;
     right: 3%;
 }
+#last-img-plus {
+    width: 15%;
+}
 
 .plus-name {
     font-family: 'Raleway';

@@ -22,10 +22,9 @@ export const leftAnimation = {
     opacity: 1,
     transition: {
       duration: 0.9,
-      delay: 0.9,
+      delay: 0.4,
       type: "spring",
-      damping: 20,
-      stifness: 10
+      damping: 20
 
     }
   }
@@ -46,21 +45,3 @@ export const downAnimation = {
     }
   }
 }
-
-export const robotsAnimation = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-    pathOffset: 1,
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    pathOffset: 0,
-    transition: {
-      duration: 2,
-      ease: "easeInOut",
-    },
-  },
-};
-

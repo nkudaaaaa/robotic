@@ -12,6 +12,7 @@ import logoonly from '../assets/Heads/logotextdown.svg'
 interface callBackData {
     name: string;
     phone: string;
+    time: string;
 }
 
 const Footer = () => {
@@ -74,15 +75,19 @@ const Footer = () => {
         if (e.key === 'Backspace') {
             const n = phone.length;
             if (['-', ')', '('].includes(phone[n - 1])) setPhone(phone.slice(0, n - 1))
+            if (n === 5) setPhone('')
         }
     }
 
     const submitForm = () => {
         const url = 'https://slrserver.tech/callBack';
+        const milliseconds =Date.now() ;
+        const parsedDate = new Date(milliseconds + 3 * 60 * 60 * 1000).toISOString();
 
         const dataToSend: callBackData = {
             name: name,
             phone: phone,
+            time: parsedDate
         }
 
         if (name === "" || phone === "") {
