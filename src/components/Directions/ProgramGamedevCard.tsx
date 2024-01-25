@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import comp from "../../assets/directions/computer.svg"
 import closeIcon from "../../assets/directions/add.svg"
-import gamepad from "../../assets/directions/gamer.webp"
+import gamepad from "../../assets/directions/gamepad.png"
 import ModalWindow from "../ModalWindow";
 import { animation } from "../../animations/CardsAnimation"
 

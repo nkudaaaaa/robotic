@@ -466,8 +466,8 @@ li {
 
 #minecr-img {
     position: relative;
-    width: 130px;
-    left: 10%;
+    width: 180px;
+    left: 0%;
     top: 17%;
     animation: minecr 6s  infinite linear;
     animation-delay: 1s;
@@ -486,7 +486,7 @@ li {
 }
 
 .program-back {
-    background-image: url("../assets/directions/bgprogram.svg");
+    background-image: url("../assets/directions/bgprogram.webp");
     background-size: cover;
     text-align: left;
     z-index: 200

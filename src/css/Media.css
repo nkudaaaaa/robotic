@@ -692,7 +692,12 @@
 
     #plus-last {
         position: relative;
-        right: 0%
+        right: 2%
+    }
+    #last-img-plus {
+        width: 17%;
+        position: relative;
+        left: -10px;
     }
 
     #logo {
@@ -735,8 +740,7 @@
     }
 
     #plus-last {
-        position: relative;
-        right: 0%
+        right: 1%
     }
 }
 
@@ -890,7 +894,7 @@
         -webkit-grid-template-columns: repeat(1, 1fr);
         grid-template-columns:repeat(1, 1fr);
         column-gap: 0;
-        left: 4%;
+        left: 1%;
         position: relative
     }
 
@@ -975,13 +979,13 @@
 
     #robothead {
         width: 70px;
-        left: 43px;
+        left: 40px;
         top: 5%
     }
 
     #robotbody {
         top: -10%;
-        width: 150px
+        width: 145px;
     }
 
     #robot-dir-flipped-main {
@@ -1171,7 +1175,12 @@
 
     #plus-last {
         position: relative;
-        right: 0%
+        right: 3%
+    }
+    #last-img-plus {
+        width: 13%;
+        position: relative;
+        left: -10px;
     }
 
     .pluses {

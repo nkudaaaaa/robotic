@@ -29,7 +29,9 @@
     right: 3%;
 }
 #last-img-plus {
-    width: 15%;
+    width: 15.5%;
+    position: relative;
+    left: -10px;
 }
 
 .plus-name {
@@ -102,13 +104,11 @@
     font-weight: 400;
     line-height: 35px;
     width: 481px;
-
 }
 
 .form-div {
     display: flex;
     flex-direction: column;
-
 }
 
 .form-input {
