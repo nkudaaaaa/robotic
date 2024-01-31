@@ -2,7 +2,7 @@ import "../css/ModalWindow.css"
 import React, {useState, ChangeEvent, useEffect, useRef} from 'react';
 import {motion, useAnimation} from "framer-motion";
 import SMSValidation from "./SMSValidation";
-
+import {formatPhone} from "./features/phoneMask.ts";
 
 interface LessonRegistrationModalProps {
     onClose: () => void;
@@ -11,30 +11,23 @@ interface LessonRegistrationModalProps {
     info: { name: string, phone: string };
 }
 
-interface data {
-    name: string;
-    surname: string,
-    phone: string,
-    direction: string;
-    date: string;
-}
 
 const ModalWindow: React.FC<LessonRegistrationModalProps> = ({onClose, selectedDirection, isVisible, info}) => {
     const initialDir: string = selectedDirection;
 
     const [name, setName] = useState<string>(info.name);
     const [surname, setSurname] = useState<string>('');
-
     const [phoneNumber, setPhoneNumber] = useState<string>(info.phone)
     const [selected, setSelected] = useState<string>(initialDir);
-
     const [isActive, setIsActive] = useState<boolean>(false);
-
     const [isModalFirstVisible, setIsModalFirstVisible] = useState<boolean>(isVisible);
+    const [phoneError, setPhoneError] = useState<boolean>(false);
 
     const inputRefs = useRef<HTMLInputElement | null>(null);
-
     const options = ["Робототехника", "Программирование", "Разработка игр", "Подготовка к ОГЭ (математика)", "Подготовка к ОГЭ (информатика)", "Проведение праздников"];
+    const milliseconds = Date.now();
+
+
 
     const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
         const inputValue = e.target.value;
@@ -64,24 +57,6 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({onClose, selectedD
         controls.start({x: -400, opacity: 0, transition: {duration: 0.5}});
     };
 
-
-    const formatPhone = (value: string) => {
-        if (!value) return value;
-
-        let phoneNumber = value.replace(/[^\d+]/g, '');
-        const phoneNumberLength = phoneNumber.length;
-
-        if (phoneNumberLength === 1 && phoneNumber !== "+") phoneNumber = `+7 ${phoneNumber}`;
-
-        if (phoneNumberLength < 6) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
-
-        if (phoneNumberLength < 8) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
-
-        if (phoneNumberLength < 10) return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
-
-        return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10, 12)}`;
-    };
-
     const formDataPostFromInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
 
         if (e.key === 'Enter') {
@@ -93,49 +68,63 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({onClose, selectedD
             if (n === 5) setPhoneNumber('')
         }
     }
-
     const formDataPost = () => {
-        const url = 'https://slrserver.tech/submitUserData';
-        const milliseconds = Date.now() ;
-        const parsedDate = new Date(milliseconds + 3 * 60 * 60 * 1000).toISOString()
-        const dataToSend: data = {
-            name,
-            surname,
-            phone: phoneNumber,
-            direction: selected,
-            date: parsedDate
+        const btn = document.getElementById('form-btn') as HTMLButtonElement;
+        const nameInput = document.getElementById('validation-name-closed');
+        const surNameInput = document.getElementById('validation-surname-closed');
+        const phoneInput = document.getElementById('validation-phone-closed');
+
+        nameInput!.classList.remove('validation-open');
+        surNameInput!.classList.remove('validation-open');
+        btn!.disabled = true;
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 3000);
+
+        const url = 'https://slrserver.tech/isPhoneValid';
+
+        if (name === "") {
+            nameInput!.classList.add('validation-open');
+            return
+        }
+        if (surname === "") {
+            surNameInput!.classList.add('validation-open');
+            return
         }
 
-        if (name === "" || surname === "" || phoneNumber === "") {
-            alert("Вы не заполнили все поля!")
-            return;
+        if (phoneNumber.length !== 18 || phoneNumber === '') {
+            setPhoneError(false);
+            phoneInput!.classList.add('validation-open');
+            return
         }
-        if (phoneNumber.length !== 18) {
-            alert("Вы не заполнили правильно номер телефона ")
-            return;
-        }
-        console.log(dataToSend)
         return fetch(url, {
             method: 'POST',
-            body: JSON.stringify(dataToSend),
+            body: JSON.stringify({ phone: phoneNumber }),
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             },
         })
             .then(response => {
                 if (!response.ok) {
+                    if (response.status === 403) {
+                        setPhoneError(true);
+                        phoneInput!.classList.add('validation-open');
+                    }
                     throw new Error('Network response was not ok');
                 }
                 return response;
             })
             .then(responseData => {
-                animateForm();
-                return responseData;
+                if (responseData) {
+                    animateForm();
+                    setIsModalFirstVisible(false);
+                    return responseData;
+                }
             })
             .catch(error => {
-                console.error('Ошибка при отправке данных:', error);
                 throw error;
             });
+
     }
 
     useEffect(() => {
@@ -154,12 +143,19 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({onClose, selectedD
                     <h3 className="modal-main-sign">Заполните форму для записи на интересующее направление</h3>
                     <div className="inputs">
                         <input type="text" value={name} onChange={handleNameChange} name="name" className="input-field"
-                               placeholder="Имя..." ref={inputRefs}/>
+                               placeholder="Имя..." ref={inputRefs} aria-label="Введите свое имя" required/>
+                        <span id="validation-name-closed" className='input-validation'>Вы не заполнили это поле!</span>
                         <input type="text" value={surname} onChange={handleSurNameChange} name="surname"
-                               className="input-field" placeholder="Фамилия..."/>
+                               className="input-field" placeholder="Фамилия..." aria-label="Введите свою фамилию"
+                               required/>
+                        <span id="validation-surname-closed"
+                              className='input-validation'>Вы не заполнили это поле!</span>
                         <input type="tel" value={phoneNumber} onChange={handlePhoneNumberChange} name="phone"
                                className="input-field" placeholder="Телефон..." required
-                               onKeyDown={formDataPostFromInput}/>
+                               onKeyDown={formDataPostFromInput} aria-label="Введите свой номер телефона"/>
+                        <span id="validation-phone-closed"
+                              className='input-validation'>{!phoneError ?  "Вы не заполнили это поле!" : "Этот номер уже зарегистрирован"}</span>
+
                         <div className="dropdown-form">
                             <div className="dropdown-form-btn" onClick={() => setIsActive(!isActive)}>
                                 {selected}
@@ -183,11 +179,13 @@ const ModalWindow: React.FC<LessonRegistrationModalProps> = ({onClose, selectedD
                             )}
                         </div>
                         <button onClick={formDataPost} className="signup" id="form-btn"
-                                title="Записаться на занятие">Записаться
+                                title="Записаться на занятие" aria-label="Отправить данные для записи">Записаться
                         </button>
                     </div>
                 </motion.div>}
-                {!isModalFirstVisible && <SMSValidation phone={phoneNumber.slice(13)} onClose={onClose}/>}
+                {!isModalFirstVisible && <SMSValidation onClose={onClose} data={{
+                    name,
+                    surname, phone: phoneNumber, direction: selected, date: new Date(milliseconds + 3 * 60 * 60 * 1000).toISOString()}}/>}
             </motion.div>
         </motion.div>
     );

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import pensil from "../../assets/directions/pensil.svg"
 import ModalWindow from "../ModalWindow";
-import holidayImg from "../../assets/directions/holidays.svg"
+import holidayImg from "../../assets/directions/holiday2.png"
 import { motion } from "framer-motion"
-import { animation } from "../../animations/CardsAnimation"
+import { animation } from "../../animations/animations.tsx"
 
-const OgeEgeCard = () => {
+const OgeHolidayCards = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedDirection, setSelectedDirection] = useState<string>('')
@@ -18,7 +18,7 @@ const OgeEgeCard = () => {
 
     return (
         <div className="oge-holidays">
-            <figure className="oge-card-main">
+            <figure className="oge-card-main" aria-labelledby="Карточка подготовки к ОГЭ">
             <div className="routing" id="oge" />
                 <motion.div className="oge-front"
                     variants={animation}
@@ -40,7 +40,7 @@ const OgeEgeCard = () => {
                     </div>
                 </motion.div>
             </figure>
-            <figure className="holiday-card-main">
+            <figure className="holiday-card-main" aria-labelledby="Карточка проведения праздников">
             <div className="routing" id="holidays" />
                 <motion.div className="holiday-front"
                     variants={animation}
@@ -66,4 +66,4 @@ const OgeEgeCard = () => {
     )
 }
 
-export default OgeEgeCard;
+export default OgeHolidayCards;

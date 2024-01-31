@@ -2,12 +2,7 @@
 import { useState } from "react";
 import cookie from "../assets/Heads/cookies.jpg"
 import { motion } from "framer-motion";
-
-const animation = {
-    hidden: { y: "200%", },
-    visible: { y: "0%", }
-}
-
+import {cookiesAnimation} from "../animations/animations.tsx";
 
 const CookiesInfo = () => {
     const [isActive, setIsActive] = useState<boolean>(true);
@@ -17,7 +12,7 @@ const CookiesInfo = () => {
                     { isActive && <div className="cookies-main"
                     >
                         <motion.div className="cookies"
-                            variants={animation}
+                            variants={cookiesAnimation}
                             initial="hidden"
                             animate="visible"
                             transition={{ duration: 1, type: 'spring', delay: 3 }}

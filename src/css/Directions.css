@@ -256,8 +256,10 @@ li {
     border: none;
     background: transparent;
     outline: none;
-    top: 0%;
-    right: 2%
+    top: 0;
+    right: 2%;
+    transition: .3s ease-in-out;
+    border-radius: 50%;
 }
 
 .robot-dir-flipped-buttons {

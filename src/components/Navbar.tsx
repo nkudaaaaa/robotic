@@ -23,7 +23,6 @@ function NavBar() {
 
   return (
     <m.div variants={parentNav} className='navbar-main-div' initial="hidden" animate="show" >
-
     <Navbar collapseOnSelect expand="lg" className="navbar" bg='black'>
       <Container className='navbar-cont'>
         <Navbar.Brand href="/"><img src={logoMain} alt="robotick logo" id='logo'/></Navbar.Brand>

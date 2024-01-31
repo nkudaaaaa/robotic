@@ -1,5 +1,5 @@
 
-import robotHead from "../../assets/directions/Heads/0001 2.svg"
+import robotHead from "../../assets/directions/0001 2.svg"
 import robotBody from "../../assets/directions/Group 23.svg";
 import { useCallback, useState } from "react";
 import { motion } from "framer-motion";
@@ -7,8 +7,7 @@ import closeIcon from "../../assets/directions/add.svg"
 import leftman from "../../assets/directions/3monthman.svg"
 import rightman from "../../assets/directions/6monthman.svg"
 import ModalWindow from "../ModalWindow";
-import { animation } from "../../animations/CardsAnimation"
-
+import { animation } from "../../animations/animations.tsx"
 
 const RobotsCard = () => {
 
@@ -53,7 +52,7 @@ const RobotsCard = () => {
     return (
         <div className="robot-super-main">
                      <div className="routing" id="robototechnics" />
-            <motion.figure className="robot-dir-main"
+            <motion.figure className="robot-dir-main" aria-labelledby="Карточка робототехники"
                 initial={false}
                 animate={{ rotateY: isFlipped ? 180 : 360 }}
                 transition={{ duration: 0.6, animationDirection: "normal" }}

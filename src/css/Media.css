@@ -508,7 +508,7 @@
     .robot-dir-mid {
         position: relative;
         right: 6%;
-        top: 0%
+        top: 0
     }
 
     .signup {
@@ -692,7 +692,7 @@
 
     #plus-last {
         position: relative;
-        right: 2%
+        right: 0
     }
     #last-img-plus {
         width: 17%;
@@ -732,6 +732,9 @@
         left: 79%;
         top: 29%;
         width: 150px
+    }
+    .form-input {
+        padding-left: 25px;
     }
 
     #leftman {
@@ -891,7 +894,6 @@
     .upper-directions {
         display: -webkit-grid;
         width: 365px;
-        -webkit-grid-template-columns: repeat(1, 1fr);
         grid-template-columns:repeat(1, 1fr);
         column-gap: 0;
         left: 1%;
@@ -1060,7 +1062,7 @@
     #minecr-img {
         position: relative;
         width: 100px;
-        left: 0%
+        left: 0
     }
 
     .card-front-thinsign {
@@ -1175,7 +1177,7 @@
 
     #plus-last {
         position: relative;
-        right: 3%
+        right: 0
     }
     #last-img-plus {
         width: 13%;
@@ -1264,11 +1266,24 @@
     .form-div {
         padding-left: 20px
     }
+    .validation-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form {
+        gap: 0;
+    }
+    #footer-validation-phone-closed,  #footer-validation-name-closed{
+        font-size: 7px;
+        margin-bottom: 2px;
+    }
 
     .form-btn {
         width: 160px;
         font-size: 10px;
-        height: 40px
+        height: 40px;
+        margin: 0;
     }
 
     #contacts {
@@ -1276,6 +1291,11 @@
         width: 155px
     }
 
+    .footer-input-validation {
+        position: relative;
+        font-family: "Raleway";
+        font-size: 9px;
+    }
     .cont {
         height: 100px;
         padding-right: 30px
@@ -1304,28 +1324,19 @@
     }
 
     .modal {
-        background: #fff;
-        position: relative;
         padding: 20px 15px;
         border-radius: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
         width: 250px;
         height: 340px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: visible
     }
 
     .input-field {
         border-radius: 15px;
         font-size: 10px;
         border: 1px solid #a9a9a9;
-        margin-bottom: 10px;
         padding-left: 13px;
         width: 85%;
-        height: 35px;
+        height: 30px;
         background: #fff
     }
 
@@ -1348,11 +1359,9 @@
         margin-bottom: 20px;
         color: #000;
         text-align: center;
-        font-family: 'Raleway';
         font-size: 10px;
         font-style: normal;
         font-weight: 800;
-        line-height: 30px;
         line-height: normal
     }
 
@@ -1361,69 +1370,47 @@
         user-select: none;
         position: relative;
         font-size: 10px;
-        font-family: "Raleway"
     }
 
     .dropdown-form .dropdown-form-btn {
         border-radius: 15px;
-        border: 1px solid #a9a9a9;
-        margin-bottom: 15px;
         padding-left: 13px;
-        height: 35px;
+        height: 30px;
         width: 100%;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        justify-content: space-between
     }
 
     .dropdown-form .dropdown-form-content {
         position: absolute;
         padding: 10px;
-        background: #fff;
-        box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, .06);
-        font-size: 10px;
-        font-weight: 500;
-        color: #333;
         border-radius: 15px;
         width: 100%
+    }
+    .input-validation {
+        font-size: 8px;
+        color: #de3b34;
+    }
+    .validation-open {
+        opacity: 1;
     }
 
     .sms-field {
         width: 30px;
         height: 30px;
         margin: 10px;
-        background-color: #f0f0f0;
         font-family: "Raleway";
-        border: 1px solid #ccc;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 800;
-        padding-left: 10px;
-        color: #333
+        font-size: 16px;
+        padding-left: 9px;
     }
 
     .modal-second {
         background: #fff;
         width: 200px;
         height: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: hidden
     }
 
     .inputs-div {
         padding-top: 30px;
-        margin-bottom: 40px;
-        display: flex;
-        flex-direction: row
+        margin-bottom: 30px;
     }
 
     .inputs-div-shaking {
@@ -1468,8 +1455,6 @@
         font-size: 17px;
         font-style: normal;
         font-weight: 800;
-        line-height: 34px;
-        line-height: normal;
         overflow: hidden
     }
 
@@ -1480,7 +1465,7 @@
 
     #logo-footer {
         width: 70px;
-        left: 0%;
+        left: 0;
         top: -25%
     }
 

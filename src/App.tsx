@@ -4,14 +4,13 @@ import NavBar from "./components/Navbar";
 import Banner from "./components/Banner";
 import About from "./components/About";
 import DirectionsMain from "./components/DirectionsMain";
-import Pluses from "./components/Pluses";
-import Footer from "./components/Footer"
+import Pluses from "./components/Pluses/Pluses.tsx";
+import Footer from "./components/Footer.tsx"
 import BatteryStatusListener from "./components/BatteryStatusListener";
 import { Route, Routes } from 'react-router-dom';
 import Privacy from "./components/Privacy";
 import CookiesInfo from './components/Cookies';
 import "./css/App.css"
-
 const queryClient = new QueryClient();
 
 function App() {

@@ -1,19 +1,25 @@
-import { useRef, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import {useRef, useState, useEffect} from 'react';
+import {motion, AnimatePresence} from "framer-motion";
 import "../css/ModalWindow.css"
-import * as bcrypt from 'bcryptjs';
+
+interface data {
+    name: string;
+    surname: string,
+    phone: string,
+    direction: string;
+    date: string;
+}
 
 interface SMSProps {
-    phone: string;
+    data: data;
     onClose: () => void
 }
-const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
 
+const SMSValidation: React.FC<SMSProps> = ({onClose, data}) => {
     const [smsContent1, setSmsContent1] = useState<string>("");
     const [smsContent2, setSmsContent2] = useState<string>("");
     const [smsContent3, setSmsContent3] = useState<string>("");
     const [smsContent4, setSmsContent4] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
 
     const [unsuccessCount, setUnsuccessCount] = useState<number>(0);
     const [countdown, setCountdown] = useState(50);
@@ -32,7 +38,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
         // Limit the length of the value based on the index
         const maxLength = index === 3 ? 1 : 2;
         const trimmedValue = numericValue.slice(0, maxLength);
-    
+
         switch (index) {
             case 0:
                 setSmsContent1(trimmedValue);
@@ -49,7 +55,7 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
             default:
                 break;
         }
-    
+
         // Move focus to the next input if a single character is entered
         if (trimmedValue.length === 1 && index < 3) {
             inputRefs[index + 1].current?.focus();
@@ -57,72 +63,79 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
     };
 
     const handleSubmitFromInput = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
-        if (e.key === 'Enter') passwordValidation(password);
+        if (e.key === 'Enter') passwordValidation();
         if (e.key === "Backspace") {
             if (index !== 0) {
                 setSmsContent4('')
                 inputRefs[index - 1].current?.focus();
-            }
-            else inputRefs[0].current?.focus();
+            } else inputRefs[0].current?.focus();
         }
         return;
     }
 
-    const passwordFetching = () => {
-        const url = 'https://slrserver.tech/getPassword';
-        setTimeout(() => {
-            fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Ошибка HTTP: ${response.status}`);
+    const passwordValidation = () => {
+        const code = (smsContent1 + smsContent2 + smsContent3 + smsContent4).trim();
+        const url = 'https://slrserver.tech/submitUserData';
+        console.log(JSON.stringify({...data, code: code}) + '  отправляемые данные с кодом из смс')
+        return fetch(url, {
+            method: "POST",
+            body: JSON.stringify({...data, code: code}),
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+        })
+            .then((response) => {
+                console.log(response + ' - респонс с сервера')
+                if (response.status === 403) {
+                    console.log("c сервера: код неверный")
+                    setSmsContent1('')
+                    setSmsContent2('')
+                    setSmsContent3('')
+                    setSmsContent4('')
+                    setIsShaking(true);
+                    setUnsuccessCount(unsuccessCount + 1)
+                    if (unsuccessCount === 2) countdownStart();
+                    setTimeout(() => {
+                        setIsShaking(false);
+                    }, 500);
+                    inputRefs[0].current?.focus();
+
+                } else {
+                    console.log("c сервера: код верный, все хорошо")
+                    setSuccess(true)
+                    switchDivs();
+                    setTimeout(() => {
+                        onClose()
+                    }, 5000);
                 }
-                return response.text();
-            })
-            .then(hashedPassword => {
-                setPassword(hashedPassword);
+                console.log(response)
             })
             .catch(error => {
-                console.error('Ошибка при выполнении GET-запроса:', error);
+                console.error('Ошибка при отправке данных:', error);
+                throw error;
             });
-        }, 1000);
     }
 
-    const passwordValidation = (hashedP: string) => {
-        const password = (smsContent1 + smsContent2 + smsContent3 + smsContent4).trim();
-        const isPasswordValid = bcrypt.compareSync(password, hashedP);
-
-        if (isPasswordValid) {
-            setSuccess(true)
-            switchDivs();
-            setTimeout(() => {
-                onClose()
-            }, 5000);
-        } else {
-            setSmsContent1('')
-            setSmsContent2('')
-            setSmsContent3('')
-            setSmsContent4('')
-            setIsShaking(true);
-            setUnsuccessCount(unsuccessCount + 1)
-            if (unsuccessCount === 2) {
-                countdownStart();
-            }
-            setTimeout(() => {
-                setIsShaking(false);
-            }, 500);
-            inputRefs[0].current?.focus();
-        }
+    const passwordValidationAgain = () => {
+        const url = 'https://slrserver.tech/isPhoneValid';
+        return fetch(url, {
+            method: "POST",
+            body: JSON.stringify({phone: data.phone}),
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8'
+            },
+        })
+            .catch(error => {
+                console.error('Ошибка при отправке данных:', error);
+                throw error;
+            });
     }
 
     useEffect(() => {
         if (inputRefs[0].current) {
             inputRefs[0].current.focus();
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        passwordFetching();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const countdownStart = () => {
@@ -137,18 +150,19 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
     return (
         <motion.div
             className="modal-second"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{x: 100, opacity: 0}}
+            animate={{x: 0, opacity: 1}}
         >
             <AnimatePresence>
                 {showFirstDiv ? (
                     <motion.div className="modal-second-main" key="firstDiv"
-                        initial={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: '-100%' }}
-                        transition={{ duration: 0.5 }}>
+                                initial={{opacity: 1, x: 0}}
+                                exit={{opacity: 0, x: '-100%'}}
+                                transition={{duration: 0.5}}>
 
 
-                        <h3 className="modal-main-sign">Введите код, отправленный на номер ***{phone}</h3>
+                        <h3 className="modal-main-sign">Введите код, отправленный на номер
+                            ***{data.phone.slice(13)}</h3>
                         <div className={isShaking ? "inputs-div-shaking" : "inputs-div"}>
                             <input
                                 className={success ? 'sms-field success' : 'sms-field'}
@@ -184,19 +198,22 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
                             />
                         </div>
                         {(countdown < 50 && countdown > 0 && !success) &&
-                            <p className='clock-locked'>Отправить SMS повторно через 0:{countdown < 10 && "0"}{countdown}</p>
+                            <p className='clock-locked'>Отправить SMS повторно через
+                                0:{countdown < 10 && "0"}{countdown}</p>
                         }
                         {(countdown === 0 && !success) ?
-                            <p className='clock-unlocked' onClick={passwordFetching}>Отправить SMS повторно</p> : ""
+                            <p className='clock-unlocked' onClick={passwordValidationAgain}>Отправить SMS повторно</p> : ""
                         }
 
-                        <button className="signup" id="form-btn" onClick={() => passwordValidation(password)}>Записаться</button>
+                        <button className="signup" id="form-btn"
+                                onClick={passwordValidation}>Записаться
+                        </button>
                     </motion.div>
                 ) : (
                     <motion.div className="modal-second-success" key="secondDiv"
-                        initial={{ opacity: 0, x: '100%' }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}>
+                                initial={{opacity: 0, x: '100%'}}
+                                animate={{opacity: 1, x: 0}}
+                                transition={{duration: 0.5}}>
                         <h6 id='success-sign'>Вы успешно зарегистрировались!</h6>
                         <button className="signup" id="form-btn" onClick={onClose}>Отлично!</button>
                     </motion.div>
@@ -207,3 +224,4 @@ const SMSValidation: React.FC<SMSProps> = ({ phone, onClose }) => {
 };
 
 export default SMSValidation;
+

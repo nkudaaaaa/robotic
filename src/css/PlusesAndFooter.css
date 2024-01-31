@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .pluses {
-    margin-bottom: 272px;
+    margin-bottom: 122px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-    margin-bottom: 60px;
+    margin-bottom: 60px
 }
 
 .plus-text-div {
@@ -142,7 +142,8 @@ form {
     font-family: "Raleway";
     font-size: 24px;
     border: none;
-    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
     transition: .3s ease-in-out;
 }
 
@@ -196,6 +197,7 @@ form {
 
 iframe {
     width: 100%;
+    height: 380px;
     border-radius: 30px;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px rgba(0, 0, 0, 0.2);
 }
@@ -257,4 +259,19 @@ a {
 #logo-a {
     width: 150px;
     height: 100px;
+}
+
+.footer-input-validation {
+    position: relative;
+    font-family: "Raleway";
+    font-size: 12px;
+    color: #de3b34;
+    font-weight: bold;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    left: 10px;
+}
+
+.footer-validation-open {
+    opacity: 1;
 }

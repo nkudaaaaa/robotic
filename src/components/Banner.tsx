@@ -19,7 +19,7 @@ const Banner = () => {
     const { data: lsData } = useQuery('ls', () => loadImage(ls));
 
     return (
-        <section className="banner-main">
+        <section className="banner-main" aria-labelledby="Главный баннер 'Роботик'">
             <div className="home-routing"></div>
             <div className="banner">
                 <div className="marquee">
@@ -58,8 +58,8 @@ const Banner = () => {
                         <span className='banner-text-sign'>Влюбляемся в IT профессии, повышаем успеваемость в школе и учимся по-новому взаимодействовать с гаджетами</span>
                     </m.div>
                     <m.div className="robots" variants={downAnimation} initial="hidden" animate="visible" >
-                        <m.img src={robotL} id='robotL' />
-                        <m.img src={robotR} id='robotR' />
+                        <m.img src={robotL} id='robotL' alt="robot1"/>
+                        <m.img src={robotR} id='robotR' alt="robot2"/>
                     </m.div>
                 </div>
             </div>

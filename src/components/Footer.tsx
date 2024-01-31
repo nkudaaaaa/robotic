@@ -2,24 +2,20 @@ import "../css/PlusesAndFooter.css"
 import tg from "../assets/footer/Telegram.svg"
 import vk from "../assets/footer/Vk.svg"
 import ws from "../assets/footer/Whatsapp.svg"
-import { ChangeEvent, useState } from "react"
-import ModalWindow from "./ModalWindow"
-import { Link } from 'react-router-dom';
-import { animationDir } from '../animations/CardsAnimation';
-import { motion } from "framer-motion"
-import logoonly from '../assets/Heads/logotextdown.svg'
-
-interface callBackData {
-    name: string;
-    phone: string;
-    time: string;
-}
+import React, {ChangeEvent, useState} from "react"
+import ModalWindow from "./ModalWindow.tsx"
+import {Link} from 'react-router-dom';
+import {animationFooter} from '../animations/animations.tsx';
+import {motion} from "framer-motion"
+import logoonly from '../assets/footer/logotextdown.svg'
+import {formatPhone} from "./features/phoneMask.ts";
 
 const Footer = () => {
 
     const [name, setName] = useState<string>('')
     const [phone, setPhone] = useState<string>('')
     const [isSMS, setIsSMS] = useState<boolean>(false)
+    const [phoneError, setPhoneError] = useState<boolean>(false);
 
     const toggleModal = () => {
         setIsSMS(!isSMS);
@@ -33,8 +29,7 @@ const Footer = () => {
         if (/^[А-Яа-яA-Za-z]*$/.test(inputValue)) {
             if (inputValue.length > 30) {
                 setName(inputValue.slice(0, 30));
-            }
-            else setName(inputValue)
+            } else setName(inputValue)
         }
     }
 
@@ -42,31 +37,6 @@ const Footer = () => {
         const formatted = formatPhone(e.target.value)
         setPhone(formatted)
     }
-
-    const formatPhone = (value: string) => {
-        if (!value) return value;
-
-        let phoneNumber = value.replace(/[^\d+]/g, '');
-
-        const phoneNumberLength = phoneNumber.length;
-
-        if (phoneNumberLength === 1 && phoneNumber !== "+") {
-            phoneNumber = `+7 ${phoneNumber}`;
-        }
-
-        if (phoneNumberLength < 6) {
-            return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2)})`;
-        }
-
-        if (phoneNumberLength < 8) {
-            return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5)}`;
-        }
-        if (phoneNumberLength < 10) {
-            return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`
-        }
-
-        return `${phoneNumber.slice(0, 2)} (${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 10)}-${phoneNumber.slice(10, 12)}`;
-    };
 
     const submitFromInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
@@ -80,98 +50,149 @@ const Footer = () => {
     }
 
     const submitForm = () => {
-        const url = 'https://slrserver.tech/callBack';
-        const milliseconds =Date.now() ;
-        const parsedDate = new Date(milliseconds + 3 * 60 * 60 * 1000).toISOString();
+        const url = 'https://slrserver.tech/isPhoneValid';
+        const btn = document.getElementById('form-btn-footer') as HTMLButtonElement;
+        const nameInput = document.getElementById('footer-validation-name-closed');
+        const phoneInput = document.getElementById('footer-validation-phone-closed');
+        nameInput!.classList.remove('footer-validation-open')
 
-        const dataToSend: callBackData = {
-            name: name,
-            phone: phone,
-            time: parsedDate
-        }
-
-        if (name === "" || phone === "") {
-            alert("Вы не заполнили все поля!")
+        btn!.disabled = true;
+        setTimeout(() => {
+            btn.disabled = false;
+        }, 3000);
+        if (name === "") {
+            nameInput!.classList.add('footer-validation-open')
             return;
         }
         if (phone.length !== 18) {
-            alert("Вы не заполнили правильно номер телефона!")
+            setPhoneError(false)
+            phoneInput!.classList.add('footer-validation-open')
             return;
         }
-        console.log(dataToSend);
-        
-        setIsSMS(true)
+
         return fetch(url, {
             method: 'POST',
-            body: JSON.stringify(dataToSend),
+            body: JSON.stringify({phone: phone}),
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             },
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    if (response.status === 403) {
+                        phoneInput!.classList.add('footer-validation-open')
+                        setPhoneError(true);
+                    }
+                    return
+                }
+                return response;
+            })
             .then(responseData => {
-                return responseData;
+                if (responseData) {
+                    setIsSMS(true)
+                    setName('');
+                    setPhone('');
+                    return responseData;
+                }
             })
             .catch(error => {
-                console.error('Ошибка при отправке данных:', error);
                 throw error;
             });
     }
+
+
     return (
 
-        <section className="footer">
+        <section className="footer" aria-labelledby="Футер сайта">
             <div className="container-main">
                 <motion.div className="call-form"
-                    variants={animationDir}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ amount: 0.2 }}
-                    transition={{ duration: 0.9 }} >
+                            variants={animationFooter}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{amount: 0.2}}
+                            transition={{duration: 0.9}}>
                     <div className="call-form-text">
                         <h6 className="call-form-header">Не знаете, с чего начать?</h6>
-                        <span className="call-form-desc">Подберем оптимальную форму обучения исходя из ваших пожеланий</span>
+                        <span
+                            className="call-form-desc">Подберем оптимальную форму обучения исходя из ваших пожеланий</span>
                     </div>
                     <div className="form-div">
                         <form method="post" action="">
-                            <input type="text" placeholder="Имя..." name="name" className="form-input" value={name} onChange={handleChangeName} onKeyDown={submitFromInput} />
-                            <input type="text" placeholder="Телефон..." name="phone" className="form-input" value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput} />
-                            <input type="button" value="Заказать звонок" className="form-btn" onClick={submitForm} title="Отправить запрос на звонок" />
+                            <div className="validation-div">
+
+                            <input type="text" placeholder="Имя..." name="name" className="form-input" value={name}
+                                   onChange={handleChangeName} onKeyDown={submitFromInput}
+                                   aria-label="Введите ваше имя"/>
+                            <span id="footer-validation-name-closed"
+                                  className='footer-input-validation'>Вы не заполнили это поле!</span>
+                            </div>
+                            <div className="validation-div">
+
+                            <input type="tel" placeholder="Телефон..." name="phone" className="form-input"
+                                   value={phone} onChange={handleChangePhone} onKeyDown={submitFromInput}
+                                   aria-label="Введите ваш номер телефона"/>
+                            <span id="footer-validation-phone-closed"
+                                  className='footer-input-validation'>{!phoneError ? "Вы не заполнили это поле!" : "Этот номер уже зарегистрирован"}</span>
+                            </div>
+                            <input type="button" value="Заказать звонок" className="form-btn" onClick={submitForm}
+                                   title="Отправить запрос на звонок" aria-label="Отправить запрос на звонок" id={"form-btn-footer"}/>
                         </form>
-                        <p className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a href="/privacy">обработкой персональных данных</a></p>
+                        <p className="politicy-span" id="contacts">Нажимая на кнопку, вы соглашаетесь с <a
+                            href="/privacy">обработкой персональных данных</a></p>
                     </div>
                 </motion.div>
-                <div className="call-form cont">
+                <motion.div className="call-form cont"
+                            variants={animationFooter}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{amount: 0.2}}
+                            transition={{duration: 0.9}}>
                     <div className="contacts-div">
-                    <mark><h6 className="contacts-text">ул. Героя Пешкова, 14</h6></mark>
+                        <mark><h6 className="contacts-text">ул. Героя Пешкова, 14</h6></mark>
                         <mark><h6 className="contacts-text phone">+7 (918) - 123 - 05 - 93</h6></mark>
                     </div>
                     <div className="icons-footer">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="telegram" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="vkontakte" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={ws} alt="whatsapp" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="telegram"
+                                                                                   className="social-icon"
+                                                                                   loading="lazy"
+                                                                                   rel="noopener noreferrer"
+                                                                                   aria-label="Телеграмм-бот"/></a>
+                        <a href="https://vk.com/club224483268" target="_blank"><img src={vk} alt="vkontakte" className="social-icon" loading="lazy"
+                                                         rel="noopener noreferrer" aria-label="Группа Вконтакте"/></a>
+                        <a href="#" target="_blank"><img src={ws} alt="whatsapp" className="social-icon" loading="lazy"
+                                                         rel="noopener noreferrer" aria-label="WhatsApp"/></a>
                     </div>
 
-                </div>
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor;theme=light" width="940" height="271" loading="lazy" title="yandex-map" />
+                </motion.div>
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc36c1edc98ca4d8d885ab666600305f1cbb4df8e201b23de0efbc24cf7e4e1e&amp;source=constructor;theme=light"
+                    width="940" height="271" loading="lazy" title="yandex-map"/>
 
                 <footer className="footer-info">
-                    <a href="/" id="logo-a"><img src={logoonly} alt="logo" id="logo-footer" /></a>
+                    <a href="/public" id="logo-a"><img src={logoonly} alt="logo" id="logo-footer" loading="lazy"/></a>
                     <div className="socials">
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
-                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"> <img src={ws} alt="" className="social-icon" loading="lazy" rel="noopener noreferrer"/></a>
+                        <a href="https://t.me/ROBOTIKKRD_BOT" target="_blank"><img src={tg} alt=""
+                                                                                   className="social-icon"
+                                                                                   loading="lazy"
+                                                                                   rel="noopener noreferrer"
+                                                                                   aria-label="Телеграмм-бот"/></a>
+                        <a href="https://vk.com/club224483268" target="_blank"><img src={vk} alt="" className="social-icon" loading="lazy"
+                                                         rel="noopener noreferrer" aria-label="Группа Вконтакте"/></a>
+                        <a href="#" target="_blank"> <img src={ws} alt="" className="social-icon" loading="lazy"
+                                                          rel="noopener noreferrer" aria-label="WhatsApp"/></a>
                     </div>
                     <div className="documents">
                         <Link to="/privacy#privacy" className="doc-text">Политика конфиденциальности </Link>
-                        <Link to="/privacy" className="doc-text">
+                        <Link to="/privacy#agreement" className="doc-text">
                             Пользовательское соглашение
                         </Link>
 
                     </div>
                 </footer>
             </div>
-            {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false} info={{ name, phone }}/>}
-        </section >
+            {isSMS && <ModalWindow onClose={() => toggleModal()} selectedDirection="Консультация" isVisible={false}
+                                   info={{name, phone}}/>}
+        </section>
     )
 }
 

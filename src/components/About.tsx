@@ -6,15 +6,15 @@ import legoCard from "../assets/about/legoCard.svg"
 import htmlCard from "../assets/about/htmlCard.svg"
 import javaCard from "../assets/about/javaCard.svg"
 import pythonCard from "../assets/about/pythonCard.svg"
-import cplusCard from "../assets/about/cplusCard.svg"
-import cshCard from "../assets/about/cshLogo.svg"
+import cplusCard from "../assets/about/cplusCard1.svg"
+import cshCard from "../assets/about/cshCard.svg"
 import unityCard from "../assets/about/unityCard.svg";
 import gamedev from "../assets/about/gamedev.svg"
 import modeling from "../assets/about/3D.svg"
 import websites from "../assets/about/websites.svg"
 import programming from "../assets/about/programming.svg"
 import robots from "../assets/about/robots.svg"
-import { animationDir, hrAnimation, animationDirReversed } from '../animations/CardsAnimation';
+import { animationDir, hrAnimation, animationDirReversed } from '../animations/animations.tsx';
 import { motion } from "framer-motion"
 
 const loadImage = async (src: string) => {
@@ -29,14 +29,14 @@ const About = () => {
     const { data: bgsmallData } = useQuery('about-bg', () => loadImage(bgsmall));
 
     return (
-        <section className="about" >
+        <section className="about" aria-labelledby="Секция О нас">
             <div className="routing" id="about"></div>
             <div className="container-main">
-                <div className="images-bg">
+                <div className="images-bg" aria-hidden="true">
                     <picture>
                     <source media="(min-width: 1440px)" srcSet={bgData} id="about-bg-w"/>
                     <source media="(min-width: 768px)" srcSet={bgData} id="about-bg-w"/>
-                    <img src={bgsmallData} id="about-bg" />
+                    <img src={bgsmallData} id="about-bg" alt=""/>
                     </picture>
                 </div>
 
